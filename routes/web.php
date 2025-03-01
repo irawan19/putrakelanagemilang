@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BerandaController as Beranda;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Beranda::class, 'index']);
+Route::get('/beranda', [Beranda::class, 'index']);
+
 
 Route::middleware([
     'auth:sanctum',
