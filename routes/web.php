@@ -5,6 +5,7 @@ use App\Http\Controllers\BerandaController as Beranda;
 
 use App\Http\Controllers\Admin\DashboardController as Dashboard;
 use App\Http\Controllers\Admin\AkunController as Akun;
+use App\Http\Controllers\Admin\SosialMediaController as SosialMedia;
 use App\Http\Controllers\Admin\AdminController as Admin;
 use App\Http\Controllers\Admin\AplikasiController as Aplikasi;
 
@@ -22,6 +23,15 @@ Route::middleware([
         Route::group(['prefix' => 'akun'], function() {
             Route::get('/', [Akun::class, 'index']);
             Route::patch('/prosesedit', [Akun::class, 'prosesedit']);
+        });
+
+        Route::group(['prefix' => 'sosial-media'], function() {
+            Route::get('/', [SosialMedia::class, 'index']);
+            Route::get('/tambah', [SosialMedia::class, 'tambah']);
+            Route::post('/prosestambah', [SosialMedia::class, 'prosestambah']);
+            Route::get('/edit/{id}', [SosialMedia::class, 'edit']);
+            Route::patch('/prosesedit/{id}', [SosialMedia::class, 'prosesedit']);
+            Route::delete('/hapus/{id}', [SosialMedia::class, 'hapus']);
         });
 
         Route::group(['prefix' => 'admin'], function() {
