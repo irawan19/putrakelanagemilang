@@ -38,7 +38,7 @@ Route::middleware([
 
         Route::group(['prefix' => 'kontak'], function() {
             Route::get('/', [Kontak::class, 'index']);
-            Route::patch('/prosesedit/{id}', [Kontak::class, 'prosesedit']);
+            Route::patch('/prosesedit', [Kontak::class, 'prosesedit']);
         });
 
         Route::group(['prefix' => 'pesan'], function() {

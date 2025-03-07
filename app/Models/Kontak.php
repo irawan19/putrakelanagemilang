@@ -12,9 +12,10 @@ class Kontak extends Model
     protected $primaryKey = 'id_kontaks';
 
     protected $fillable = [
-        'email_pesans',
-        'telepon_pesans',
-        'nama_pesans',
-        'konten_pesans',
+        'telepon_kontaks',
+        'email_kontaks',
+        'alamat_kontaks',
+        'lat_alamat_kontaks',
+        'long_alamat_kontaks',
     ];
 }

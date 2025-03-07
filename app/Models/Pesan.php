@@ -13,10 +13,9 @@ class Kontak extends Model
 
 
     protected $fillable = [
-        'telepon_kontaks',
-        'email_kontaks',
-        'alamat_kontaks',
-        'lat_alamat_kontaks',
-        'long_alamat_kontaks',
+        'email_pesans',
+        'telepon_pesans',
+        'nama_pesans',
+        'konten_pesans',
     ];
 }
