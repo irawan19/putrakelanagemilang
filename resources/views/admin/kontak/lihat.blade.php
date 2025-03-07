@@ -1,0 +1,56 @@
+@extends('layouts.back.app')
+@section('content')
+
+    <div class="row g-4 mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <form class="form-horizontal m-t-40" action="{{ URL('dashboard/kontak/prosesedit') }}" method="POST">
+                    {{ csrf_field() }}
+                    @method('PATCH')
+                    <div class="card-header">
+                        <strong>Kontak</strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label" for="telepon_kontaks">Telepon <b style="color:red">*</b></label>
+                            <input class="form-control {{ \App\Helpers\General::validForm($errors->first('telepon_kontaks')) }}" id="telepon_kontaks" type="text" name="telepon_kontaks" value="{{Request::old('telepon_kontaks') == '' ? $kontaks->telepon_kontaks : Request::old('telepon_kontaks')}}">
+                            {{\App\Helpers\General::pesanErrorForm($errors->first('telepon_kontaks'))}}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="email_kontaks">Email <b style="color:red">*</b></label>
+                            <input class="form-control {{ \App\Helpers\General::validForm($errors->first('email_kontaks')) }}" id="email_kontaks" type="email" name="email_kontaks" value="{{Request::old('email_kontaks') == '' ? $kontaks->email_kontaks : Request::old('email_kontaks')}}">
+                            {{\App\Helpers\General::pesanErrorForm($errors->first('email_kontaks'))}}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="alamat_kontaks">Alamat <b style="color:red">*</b></label>
+                            <textarea class="form-control {{ \App\Helpers\General::validForm($errors->first('alamat_kontaks')) }}" id="alamat_kontaks" name="alamat_kontaks" rows="5">{{Request::old('alamat_kontaks') == '' ? $kontaks->alamat_kontaks : Request::old('alamat_kontaks')}}</textarea>
+                            {{\App\Helpers\General::pesanErrorForm($errors->first('alamat_kontaks'))}}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="lat_alamat_kontaks">Latitude Alamat <b style="color:red">*</b></label>
+                            <input class="form-control {{ \App\Helpers\General::validForm($errors->first('lat_alamat_kontaks')) }}" id="lat_alamat_kontaks" type="text" name="lat_alamat_kontaks" value="{{Request::old('lat_alamat_kontaks') == '' ? $kontaks->lat_alamat_kontaks : Request::old('lat_alamat_kontaks')}}">
+                            {{\App\Helpers\General::pesanErrorForm($errors->first('lat_alamat_kontaks'))}}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="long_alamat_kontaks">Longitude Alamat <b style="color:red">*</b></label>
+                            <input class="form-control {{ \App\Helpers\General::validForm($errors->first('long_alamat_kontaks')) }}" id="long_alamat_kontaks" type="text" name="long_alamat_kontaks" value="{{Request::old('long_alamat_kontaks') == '' ? $kontaks->long_alamat_kontaks : Request::old('long_alamat_kontaks')}}">
+                            {{\App\Helpers\General::pesanErrorForm($errors->first('long_alamat_kontaks'))}}
+                        </div>
+                    </div>
+                    <div class="card-footer right-align">
+                        {{\App\Helpers\General::perbarui()}}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    @if (Session::get('setelah_simpan.alert') == 'sukses')
+        @include('layouts.back.modalsukses')
+        <script>
+            $(window).on('load', function() {
+                $('#modalsukses').modal('show');
+            });
+        </script>
+    @endif
+@endsection

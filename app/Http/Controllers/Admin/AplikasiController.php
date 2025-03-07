@@ -10,7 +10,7 @@ class AplikasiController extends AdminCoreController {
     
     public function index()
     {
-        $data['aplikasis']  = aplikasi::first();
+        $data['aplikasis']  = Aplikasi::first();
         session()->forget('halaman');
         return view('admin.aplikasi.lihat',$data);
     }
@@ -30,7 +30,7 @@ class AplikasiController extends AdminCoreController {
             'keyword_aplikasis'                => $request->keyword_aplikasis,
             'updated_at'                                    => date('Y-m-d H:i:s'),
         ];
-        aplikasi::query()->update($aplikasi_data);
+        Aplikasi::query()->update($aplikasi_data);
 
         $setelah_simpan = [
             'alert'                     => 'sukses',
@@ -46,7 +46,7 @@ class AplikasiController extends AdminCoreController {
         ];
         $this->validate($request, $aturan);
 
-        $cek_logo       = aplikasi::first();
+        $cek_logo       = Aplikasi::first();
         if (!empty($cek_logo)) {
             $logo_lama        = $cek_logo->logo_aplikasis;
             if (Storage::disk('public')->exists($logo_lama))
@@ -54,7 +54,7 @@ class AplikasiController extends AdminCoreController {
         }
 
         $nama_logo = date('Ymd') . date('His') . str_replace(')', '', str_replace('(', '', str_replace(' ', '-', $request->file('userfile_logo')->getClientOriginalName())));
-        $path_logo = 'logo/';
+        $path_logo = 'aplikasi/';
         Storage::disk('public')->put($path_logo.$nama_logo, file_get_contents($request->file('userfile_logo')));
 
         $data = [
@@ -62,7 +62,7 @@ class AplikasiController extends AdminCoreController {
             'updated_at'                    => date('Y-m-d H:i:s'),
         ];
 
-        aplikasi::query()->update($data);
+        Aplikasi::query()->update($data);
 
         $setelah_simpan = [
             'alert'                     => 'sukses',
@@ -78,7 +78,7 @@ class AplikasiController extends AdminCoreController {
         ];
         $this->validate($request, $aturan);
 
-        $cek_icon       = aplikasi::first();
+        $cek_icon       = Aplikasi::first();
         if (!empty($cek_icon)) {
             $icon_lama        = $cek_icon->icon_aplikasis;
             if (Storage::disk('public')->exists($icon_lama))
@@ -86,7 +86,7 @@ class AplikasiController extends AdminCoreController {
         }
 
         $nama_icon = date('Ymd') . date('His') . str_replace(')', '', str_replace('(', '', str_replace(' ', '-', $request->file('userfile_icon')->getClientOriginalName())));
-        $path_icon = 'logo/';
+        $path_icon = 'aplikasi/';
         Storage::disk('public')->put($path_icon.$nama_icon, file_get_contents($request->file('userfile_icon')));
 
         $data = [
@@ -94,7 +94,7 @@ class AplikasiController extends AdminCoreController {
             'updated_at'                    => date('Y-m-d H:i:s'),
         ];
 
-        aplikasi::query()->update($data);
+        Aplikasi::query()->update($data);
 
         $setelah_simpan = [
             'alert'                     => 'sukses',
@@ -110,7 +110,7 @@ class AplikasiController extends AdminCoreController {
         ];
         $this->validate($request, $aturan);
 
-        $cek_logo_text       = aplikasi::first();
+        $cek_logo_text       = Aplikasi::first();
         if (!empty($cek_logo_text)) {
             $logo_text_lama        = $cek_logo_text->logo_text_aplikasis;
             if (Storage::disk('public')->exists($logo_text_lama))
@@ -118,7 +118,7 @@ class AplikasiController extends AdminCoreController {
         }
 
         $nama_logo_text = date('Ymd') . date('His') . str_replace(')', '', str_replace('(', '', str_replace(' ', '-', $request->file('userfile_logo_text')->getClientOriginalName())));
-        $path_logo_text = 'logo/';
+        $path_logo_text = 'aplikasi/';
         Storage::disk('public')->put($path_logo_text.$nama_logo_text, file_get_contents($request->file('userfile_logo_text')));
 
         $data = [
@@ -126,7 +126,7 @@ class AplikasiController extends AdminCoreController {
             'updated_at'                        => date('Y-m-d H:i:s'),
         ];
 
-        aplikasi::query()->update($data);
+        Aplikasi::query()->update($data);
 
         $setelah_simpan = [
             'alert'                     => 'sukses',

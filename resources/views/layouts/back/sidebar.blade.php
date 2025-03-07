@@ -33,6 +33,13 @@
                     </svg> Kontak
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{URL('/dashboard/pesan')}}">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-envelope-open')}}"></use>
+                    </svg> Pesan
+                </a>
+            </li>
         </li>
         <li class="nav-title">Pengaturan</li>
             <li class="nav-item">
