@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BerandaController as Beranda;
 
 use App\Http\Controllers\Admin\DashboardController as Dashboard;
-use App\Http\Controller\Admin\AkunController as Akun;
+use App\Http\Controllers\Admin\AkunController as Akun;
 use App\Http\Controllers\Admin\AdminController as Admin;
 use App\Http\Controllers\Admin\AplikasiController as Aplikasi;
 
