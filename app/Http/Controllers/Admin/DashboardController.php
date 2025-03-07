@@ -30,7 +30,7 @@ class DashboardController extends AdminCoreController
 
     public function index()
     {
-        $data['lihat_Aplikasis']    = Aplikasi::first();
+        $data['aplikasi']    = Aplikasi::first();
         return view('admin.dashboard.lihat',$data);
     }
 

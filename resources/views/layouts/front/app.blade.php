@@ -1,3 +1,4 @@
+@php($aplikasi				= \App\Models\Aplikasi::first())
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,12 +6,23 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-        <title>{{ config('app.name', 'Laravel') }}</title>
-        <meta name="keywords" content="">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="shortcut icon" href="{{URL::asset('template/front/images/fevicon.ico.png')}}" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="{{URL::asset('template/front/images/apple-touch-icon.png')}}">
+        <title>{{ $aplikasi->nama_aplikasis }}</title>
+        <meta name="keywords" content="{{ $aplikasi->keyword_aplikasis }}">
+        <meta name="description" content="{{ $aplikasi->deskripsi_aplikasis }}">
+        <meta name="author" content="admin {{ $aplikasi->nama_aplikasis }}">
+        <link rel="apple-touch-icon" sizes="57x57" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
+        <link rel="icon" type="image/png" sizes="192x192" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
         <link rel="stylesheet" href="{{URL::asset('template/front/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{URL::asset('template/front/style.css')}}">
         <link rel="stylesheet" href="{{URL::asset('template/front/css/colors.css')}}">

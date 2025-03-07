@@ -27,41 +27,6 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{URL('/dashboard/slideshow')}}">
-                    <svg class="nav-icon">
-                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-featured-playlist')}}"></use>
-                    </svg> Slideshow
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{URL('/dashboard/profil')}}">
-                    <svg class="nav-icon">
-                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-info')}}"></use>
-                    </svg> Profil
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{URL('/dashboard/program')}}">
-                    <svg class="nav-icon">
-                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-sitemap')}}"></use>
-                    </svg> Program
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{URL('/dashboard/foto')}}">
-                    <svg class="nav-icon">
-                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-image')}}"></use>
-                    </svg> Foto
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{URL('/dashboard/video')}}">
-                    <svg class="nav-icon">
-                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-video')}}"></use>
-                    </svg> Video
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="{{URL('/dashboard/kontak')}}">
                     <svg class="nav-icon">
                         <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-chat-bubble')}}"></use>

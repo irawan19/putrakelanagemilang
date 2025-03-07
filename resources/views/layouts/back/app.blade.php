@@ -9,7 +9,7 @@
         <meta name="description" content="admin, dashboard">
         <meta name="author" content="{{$aplikasi->nama_aplikasis}}">
         <meta name="keyword" content="Tiket, bootstrap, admin, dashboard">
-        <title>Dashboard {{$aplikasi->nama_aplikasis}}</title>
+        <title>Admin {{$aplikasi->nama_aplikasis}}</title>
         <link rel="apple-touch-icon" sizes="57x57" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
         <link rel="apple-touch-icon" sizes="60x60" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
         <link rel="apple-touch-icon" sizes="72x72" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
