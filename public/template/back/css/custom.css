@@ -1,0 +1,33 @@
+.center-align {
+    text-align: center;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.textmodalsukses{
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    padding:20px;
+}
+
+.errorform{
+    margin-top: 10px;
+    color: red;
+}
+
+.errorformfile{
+    margin-top: 10px;
+    color: red;
+}
+
+.row-center {
+    margin: 0 auto;
+}
+
+a.anostylewhite {
+    text-decoration: none !important;
+    color: white !important;
+}
