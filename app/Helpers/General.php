@@ -4,10 +4,10 @@ namespace App\Helpers;
 use Auth;
 use Datetime;
 use URL;
-use App\Models\Penawaran;
 
-class General 
-{
+class General {
+
+
 	//Notifikasi
 		public static function pesanErrorForm($form_input='')
 		{
@@ -24,31 +24,13 @@ class General
 		public static function pesanSuksesForm($form_input='')
 		{
 			if($form_input != '')
-			{
-				echo '<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-						<div class="alert alert-success alert-dismissible fade show" role="alert">
-						'.$form_input.'
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-					</div>';
-			}
+				echo '<div class="alert alert-success" role="alert">'.$form_input.'</div>';
 		}
 
 		public static function pesanFlashErrorForm($form_input = '')
 		{
 			if ($form_input != '')
-			{
-				echo '<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-						<div class="alert alert-danger alert-dismissible fade show" role="alert">
-						'.$form_input.'
-							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-					</div>';
-			}
+				echo '<div class="alert alert-danger" role="alert">' . $form_input . '</div>';
 		}
 
 		public static function validForm($alert="")
@@ -59,69 +41,75 @@ class General
 	//Notifikasi
 
 	//Tombol
-		public static function simpan($link = '')
+		public static function pencarian()
 		{
-			echo  '<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-green pull-right" data-upgraded=",MaterialButton,MaterialRipple">
-                 	    <i class="material-icons">add</i>
-                 	    simpan
-                 	</button>';
+			echo '<button class="btn btn-sm btn-primary" type="submit">
+					<span class="cil-search"></span> Cari
+				</button>';
 		}
 
-		public static function edit($link)
+		public static function reset()
+		{ 
+			echo '<button class="btn btn-sm btn-danger resetbutton" type="button">
+					<span class="cil-sync"></span> Reset
+				</button>';
+		}
+
+		public static function simpan()
 		{
-			echo '<a href="'.URL($link).'" class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--colored-purple" data-upgraded=",MaterialButton,MaterialRipple">
-                    <i class="material-icons">create</i>
-                    <span class="mdl-button__ripple-container">
-						<span class="mdl-ripple is-animating" style="width: 92.5097px; height: 92.5097px; transform: translate(-50%, -50%) translate(22px, 23px);"></span>
-					</span>
-				</a>';
+			echo '<button class="btn btn-sm btn-success" type="submit" name="simpan" value="simpan">
+					<span class="cil-plus"></span> Simpan
+				</button>';
+		}
+
+		public static function simpankembali()
+		{
+			echo '<button class="btn btn-sm btn-success active" type="submit" name="simpan_kembali" value="simpan_kembali">
+					<span class="cil-reload"></span> Simpan Kembali
+				</button>';
 		}
 
 		public static function perbarui()
 		{
-			echo '<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-purple" data-upgraded=",MaterialButton,MaterialRipple">
-                	    <i class="material-icons">border_color</i>
-                	    Perbarui
-                	</button>';
+			echo '<button class="btn btn-sm btn-primary" type="submit">
+					<span class="cil-pencil"></span> Perbarui
+				</button>';
 		}
 
-		public static function batal($link='')
+		public static function kembali($url_kembali='')
 		{
-			echo '<a href="'.URL($link).'" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect button--colored-red" data-upgraded=",MaterialButton,MaterialRipple">
-                	    <i class="material-icons">cancel</i>
-                	    Batal
-                	</a>';
+			echo '<a class="btn btn-sm btn-danger" href="'.$url_kembali.'">
+					<span class="cil-ban"></span> Kembali
+				</a>';
+		}
 
+		public static function batal($url_kembali='')
+		{
+			echo '<a class="btn btn-sm btn-danger" href="'.$url_kembali.'">
+					<span class="cil-ban"></span> Batal
+				</a>';
+
+		}
+
+		public static function tambah($link = '')
+		{
+			echo  '<a href="' . URL($link) . '" class="btn btn-sm btn-success">
+						<span class="cil-plus"></span> Tambah
+					</a>';
+		}
+
+		public static function edit($link = '')
+		{
+			echo  '<a href="' . URL($link) . '" class="dropdown-item" style="color:#3399ff">
+						<span class="cil-pencil"></span> Edit
+					</a>';
 		}
 
 		public static function hapus($link = '', $label = '')
 		{
-			echo '<button type="button" class="showModalHapus mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--colored-red" data-upgraded=",MaterialButton,MaterialRipple" data-link="' . URL($link) . '" data-nama="' . $label . '">
-                    <i class="material-icons">delete</i>
-                    <span class="mdl-button__ripple-container">
-						<span class="mdl-ripple is-animating" style="width: 92.5097px; height: 92.5097px; transform: translate(-50%, -50%) translate(22px, 23px);"></span>
-					</span>
-				</button>';
-		}
-
-		public static function download($link)
-		{
-			echo '<a href="'.URL($link).'" target="_blank" class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--colored-green" data-upgraded=",MaterialButton,MaterialRipple">
-                    <i class="material-icons">file_download</i>
-                    <span class="mdl-button__ripple-container">
-						<span class="mdl-ripple is-animating" style="width: 92.5097px; height: 92.5097px; transform: translate(-50%, -50%) translate(22px, 23px);"></span>
-					</span>
-				</a>';
-		}
-
-		public static function cetak($link)
-		{
-			echo '<a href="'.URL($link).'" class="mdl-button mdl-js-button mdl-button--icon mdl-button--raised mdl-js-ripple-effect button--colored-green" data-upgraded=",MaterialButton,MaterialRipple">
-                    <i class="material-icons">print</i>
-                    <span class="mdl-button__ripple-container">
-						<span class="mdl-ripple is-animating" style="width: 92.5097px; height: 92.5097px; transform: translate(-50%, -50%) translate(22px, 23px);"></span>
-					</span>
-				</a>';
+			echo  '<button type="button" class="dropdown-item showModalHapus" style="color:#e55353" data-link="' . URL($link) . '" data-nama="' . $label . '">
+						<span class="cil-trash"></span> Hapus
+					</button>';
 		}
 	//Tombol
 
@@ -162,17 +150,36 @@ class General
     	} else
     		return '';
     }
-
-	public static function ubahDBKeHarga($harga = 0)
+		
+	public static function sosialMedia()
 	{
-		$db_ke_harga = number_format($harga, 2, '.', ',');
-		return $db_ke_harga;
-	}
-
-	public static function ubahHargaKeDB($harga = 0)
-	{
-		$harga_ke_db = preg_replace("/([^0-9\\.])/i", "", $harga);
-		return $harga_ke_db;
+		$sosial_media_data = array(
+			array(
+				'nama' 	=> 'Facebook',
+				'icon'	=> 'facebook'
+			),
+			array(
+				'nama'	=> 'Youtube',
+				'icon'	=> 'youtube'
+			),
+			array(
+				'nama' 	=> 'Twitter',
+				'icon'	=> 'twitter'
+			),
+			array(
+				'nama' 	=> 'Instagram',
+				'icon'	=> 'instagram'
+			),
+			array(
+				'nama' 	=> 'Website',
+				'icon'	=> 'website'
+			),
+			array(
+				'nama' 	=> 'Tiktok',
+				'icon'	=> 'tiktok'
+			),
+		);
+		return $sosial_media_data;
 	}
     
 }
