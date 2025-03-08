@@ -23,7 +23,7 @@ body.clinic_version .footer-links li:hover a,
 body.clinic_version .widget-title small,
 body.clinic_version .customwidget li i,
 body.clinic_version .navbar-nav span {
-    color: #1d86df !important;
+    color: #f60c07 !important;
 }
 
 body.clinic_version .testimonial h4,
@@ -31,7 +31,7 @@ body.clinic_version .lead strong,
 body.clinic_version .icon-wrapper:hover a,
 body.clinic_version a:hover,
 body.clinic_version a:focus {
-    color: #39b49a
+    color: #0000fe
 }
 
 
@@ -49,12 +49,12 @@ body.clinic_version .nav-pills > li.active > a:hover,
 body.clinic_version .icon-wrapper:hover i,
 body.clinic_version .grd1 {
     color: #ffffff;
-    background: #39b49a;
-    border: #39b49a;
-    background: -moz-linear-gradient(left, #39b49a 0%, #1d86df 100%);
-    background: -webkit-linear-gradient(left, #39b49a 0%, #1d86df 100%);
-    background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#39b49a', endColorstr='#1d86df', GradientType=1);
+    background: #0000fe;
+    border: #0000fe;
+    background: -moz-linear-gradient(left, #0000fe 0%, #f60c07 100%);
+    background: -webkit-linear-gradient(left, #0000fe 0%, #f60c07 100%);
+    background: linear-gradient(to right, #0000fe 0%, #f60c07 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#0000fe', endColorstr='#f60c07', GradientType=1);
 }
 
 body.clinic_version .dev-list .widget h3,
@@ -75,15 +75,15 @@ body.clinic_version .grd1:hover,
 body.clinic_version .grd1:focus {
     background-position: 100px;
     color: #ffffff;
-    background: #1d86df;
-    background: -moz-linear-gradient(left, #1d86df 0%, #39b49a 100%);
-    background: -webkit-linear-gradient(left, #1d86df 0%, #39b49a 100%);
-    background: linear-gradient(to right, #1d86df 0%, #39b49a 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1d86df', endColorstr='#39b49a', GradientType=1);
+    background: #f60c07;
+    background: -moz-linear-gradient(left, #f60c07 0%, #0000fe 100%);
+    background: -webkit-linear-gradient(left, #f60c07 0%, #0000fe 100%);
+    background: linear-gradient(to right, #f60c07 0%, #0000fe 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f60c07', endColorstr='#0000fe', GradientType=1);
 }
 
 body.clinic_version .navbar-nav span {
-    color: #1d86df !important;
+    color: #f60c07 !important;
 }
 
 body.clinic_version .affix {
@@ -176,7 +176,7 @@ body.clinic_version .message-box h2 {
 }
 
 body.clinic_version .effect-1:after {
-    box-shadow: 0 0 0 2px #39b49a;
+    box-shadow: 0 0 0 2px #0000fe;
 }
 
 body.clinic_version .section-title h3 {

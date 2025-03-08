@@ -6,15 +6,11 @@
                 <div class="header-info">
                 <div class="info-inner">
                     <span class="icontop"><img src="{{URL::asset('template/front/images/phone-icon.png')}}" alt="#"></span>
-                    <span class="iconcont"><a href="tel:800 123 456">800 123 456</a></span>	
+                    <span class="iconcont"><a href="tel:800 123 456">{{ $kontak->telepon_kontaks }}</a></span>	
                 </div>
                 <div class="info-inner">
                     <span class="icontop"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                    <span class="iconcont"><a data-scroll href="mailto:info@yoursite.com">info@Lifecare.com</a></span>	
-                </div>
-                <div class="info-inner">
-                    <span class="icontop"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                    <span class="iconcont"><a data-scroll href="#">Daily: 7:00am - 8:00pm</a></span>	
+                    <span class="iconcont"><a data-scroll href="mailto:info@yoursite.com">{{ $kontak->email_kontaks }}</a></span>	
                 </div>
                 </div>
             </div>
@@ -29,13 +25,11 @@
                 
                 <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a class="active" href="index.html">Home</a></li>
-                    <li><a data-scroll href="#about">About us</a></li>
-                    <li><a data-scroll href="#service">Services</a></li>
-                    <li><a data-scroll href="#doctors">Doctors</a></li>
-                    <li><a data-scroll href="#price">Price</a></li>
-                        <li><a data-scroll href="#testimonials">Testimonials</a></li>
-                    <li><a data-scroll href="#getintouch">Contact</a></li>
+                    <li><a class="active" href="#beranda">Beranda</a></li>
+                    <li><a data-scroll href="#tentang-kami">Tentang Kami</a></li>
+                    <li><a data-scroll href="#layanan">Layanan</a></li>
+                    <li><a data-scroll href="#katalog">Katalog</a></li>
+                    <li><a data-scroll href="#kontak">Kontak</a></li>
                 </ul>
                 </div>
             </nav>

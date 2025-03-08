@@ -8,8 +8,8 @@
              <div class="col-md-12 col-sm-12">
                 <div class="text-contant">
                    <h2>
-                      <span class="center"><span class="icon"><img src="{{URL::asset('template/front/images/icon-logo.png')}}" alt="#" /></span></span>
-                      <a href="" class="typewrite" data-period="2000" data-type='[ "Selamat Datang", "Di Halaman Website", "Putra Kelana Gemilang" ]'>
+                      <span class="center"><span class="icon"><img src="{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}" alt="#" /></span></span>
+                      <a href="" class="typewrite" data-period="2000" data-type='[ "PT. Putra Kelana Gemilang" ]'>
                       <span class="wrap"></span>
                       </a>
                    </h2>
@@ -25,7 +25,7 @@
        <div class="container">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
              <div class="row">
-                <div class="service-time one" style="background:#2895f1;">
+                <div class="service-time one" style="background:#fe0000;">
                    <span class="info-icon"><i class="fa fa-ambulance" aria-hidden="true"></i></span>
                    <h3>Emergency Case</h3>
                    <p>Dignissimos ducimus qui blanditii sentium volta tum deleniti atque cori as quos dolores et quas mole.</p>
@@ -34,7 +34,7 @@
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
              <div class="row">
-                <div class="service-time middle" style="background:#0071d1;">
+                <div class="service-time middle" style="background:#e30202;">
                    <span class="info-icon"><i class="fa fa-clock-o" aria-hidden="true"></i></span> 
                    <h3>Working Hours</h3>
                    <div class="time-table-section">
@@ -49,7 +49,7 @@
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
              <div class="row">
-                <div class="service-time three" style="background:#0060b1;">
+                <div class="service-time three" style="background:#bf0404;">
                    <span class="info-icon"><i class="fa fa-hospital-o" aria-hidden="true"></i></span>
                    <h3>Clinic Timetable</h3>
                    <p>Dignissimos ducimus qui blanditii sentium volta tum deleniti atque cori as quos dolores et quas mole.</p>
@@ -58,10 +58,10 @@
           </div>
        </div>
     </div>
-    <div id="about" class="section wow fadeIn">
+    <div id="tentang-kami" class="section wow fadeIn">
        <div class="container">
           <div class="heading">
-             <span class="icon-logo"><img src="{{URL::asset('template/front/images/icon-logo.png')}}" alt="#"></span>
+             <span class="icon-logo"><img src="{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}" alt="#"></span>
              <h2>The Specialist Clinic</h2>
           </div>
           <!-- end title -->
@@ -134,7 +134,7 @@
        </div>
        <!-- end container -->
     </div>
-    <div id="service" class="services wow fadeIn">
+    <div id="layanan" class="services wow fadeIn">
        <div class="container">
           <div class="row">
              <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
@@ -254,12 +254,10 @@
           </div>
        </div>
     </div>
-
-    <div id="doctors" class="parallax section db" data-stellar-background-ratio="0.4" style="background:#fff;" data-scroll-id="doctors" tabindex="-1">
+    <div id="katalog" class="parallax section db" data-stellar-background-ratio="0.4" style="background:#fff;" data-scroll-id="doctors" tabindex="-1">
       <div class="container">
-    	
     	<div class="heading">
-             <span class="icon-logo"><img src="{{URL::asset('template/front/images/icon-logo.png')}}" alt="#"></span>
+             <span class="icon-logo"><img src="{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}" alt="#"></span>
              <h2>The Specialist Clinic</h2>
           </div>
 
@@ -324,212 +322,10 @@
           </div><!-- end row -->
       </div><!-- end container -->
     <div>
-        
-    <div id="price" class="section pr wow fadeIn" style="background-image:url('{{URL::asset('template/front/images/price-bg.png')}}');">
-       <div class="container">
-          <div class="row">
-             <div class="col-md-12">
-                <div class="tab-content">
-                   <div class="tab-pane active fade in" id="tab1">
-                      <div class="row text-center">
-                         <div class="col-md-4">
-                            <div class="pricing-table">
-                               <div class="pricing-table-header">
-                                  <h2>Shared Hosting</h2>
-                                  <h3>$85/month</h3>
-                               </div>
-                               <div class="pricing-table-features">
-                                  <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
-                                  <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
-                                  <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
-                                  <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
-                                  <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
-                               </div>
-                               <div class="pricing-table-sign-up">
-                                  <a href="#contact" data-scroll="" class="btn btn-dark btn-radius btn-brd">Order Now</a>
-                               </div>
-                            </div>
-                         </div>
-                         <div class="col-md-4">
-                            <div class="pricing-table pricing-table-highlighted">
-                               <div class="pricing-table-header grd1">
-                                  <h2>WordPress Hosting</h2>
-                                  <h3>$59/year</h3>
-                               </div>
-                               <div class="pricing-table-space"></div>
-                               <div class="pricing-table-text">
-                                  <p>This is a perfect choice for small businesses and startups.</p>
-                               </div>
-                               <div class="pricing-table-features">
-                                  <p><i class="fa fa-envelope-o"></i> <strong>150</strong> Email Addresses</p>
-                                  <p><i class="fa fa-rocket"></i> <strong>65GB</strong> of Storage</p>
-                                  <p><i class="fa fa-database"></i> <strong>60</strong> Databases</p>
-                                  <p><i class="fa fa-link"></i> <strong>30</strong> Domains</p>
-                                  <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
-                               </div>
-                               <div class="pricing-table-sign-up">
-                                  <a href="#contact" data-scroll="" class="btn btn-light btn-radius btn-brd grd1 effect-1">Order Now</a>
-                               </div>
-                            </div>
-                         </div>
-                         <div class="col-md-4">
-                            <div class="pricing-table">
-                               <div class="pricing-table-header">
-                                  <h2>Reseller Hosting</h2>
-                                  <h3>$85/one-time</h3>
-                               </div>
-                               <div class="pricing-table-features">
-                                  <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
-                                  <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
-                                  <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
-                                  <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
-                                  <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
-                               </div>
-                               <div class="pricing-table-sign-up">
-                                  <a href="#contact" data-scroll="" class="btn btn-dark btn-radius btn-brd">Order Now</a>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-                      <!-- end row -->
-                   </div>
-                   <!-- end pane -->
-                   <div class="tab-pane fade" id="tab2">
-                      <div class="row text-center">
-                         <div class="col-md-6">
-                            <div class="pricing-table">
-                               <div class="pricing-table-header">
-                                  <h2>Dedicated Server</h2>
-                                  <h3>$85/month</h3>
-                               </div>
-                               <div class="pricing-table-space"></div>
-                               <div class="pricing-table-features">
-                                  <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
-                                  <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
-                                  <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
-                                  <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
-                                  <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
-                               </div>
-                               <div class="pricing-table-sign-up">
-                                  <a href="#contact" data-scroll="" class="btn btn-dark btn-radius btn-brd">Order Now</a>
-                               </div>
-                            </div>
-                         </div>
-                         <div class="col-md-6">
-                            <div class="pricing-table pricing-table-highlighted">
-                               <div class="pricing-table-header grd1">
-                                  <h2>VPS Server</h2>
-                                  <h3>$59/month</h3>
-                               </div>
-                               <div class="pricing-table-space"></div>
-                               <div class="pricing-table-text">
-                                  <p>This is a perfect choice for small businesses and startups.</p>
-                               </div>
-                               <div class="pricing-table-features">
-                                  <p><i class="fa fa-envelope-o"></i> <strong>150</strong> Email Addresses</p>
-                                  <p><i class="fa fa-rocket"></i> <strong>65GB</strong> of Storage</p>
-                                  <p><i class="fa fa-database"></i> <strong>60</strong> Databases</p>
-                                  <p><i class="fa fa-link"></i> <strong>30</strong> Domains</p>
-                                  <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
-                               </div>
-                               <div class="pricing-table-sign-up">
-                                  <a href="#contact" data-scroll="" class="btn btn-light btn-radius btn-brd grd1 effect-1">Order Now</a>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-                      <!-- end row -->
-                   </div>
-                   <!-- end pane -->
-                </div>
-                <!-- end content -->
-             </div>
-             <!-- end col -->
-          </div>
-       </div>
-    </div>
-        
-    <div id="testimonials" class="section wb wow fadeIn">
+    <div id="kontak" class="section wb wow fadeIn" style="padding-bottom:0;">
        <div class="container">
           <div class="heading">
-             <span class="icon-logo"><img src="{{URL::asset('template/front/images/icon-logo.png')}}" alt="#"></span>
-             <h2>Testimonials</h2>
-          </div>
-          <!-- end title -->
-          <div class="row">
-             <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <div class="testimonial clearfix">
-                   <div class="desc">
-                      <h3><i class="fa fa-quote-left"></i> The amazing clinic! Wonderful Support!</h3>
-                      <p class="lead">They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>
-                   </div>
-                   <div class="testi-meta">
-                      <img src="{{URL::asset('template/front/images/testi_01.png')}}" alt="" class="img-responsive alignleft">
-                      <h4>James Fernando <small>- Manager of Racer</small></h4>
-                   </div>
-                   <!-- end testi-meta -->
-                </div>
-                <!-- end testimonial -->
-             </div>
-             <!-- end col -->
-             <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                <div class="testimonial clearfix">
-                   <div class="desc">
-                      <h3><i class="fa fa-quote-left"></i> Thanks for Help us!</h3>
-                      <p class="lead">They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>
-                   </div>
-                   <div class="testi-meta">
-                      <img src="{{URL::asset('template/front/images/testi_02.png')}}" alt="" class="img-responsive alignleft">
-                      <h4>Andrew Atkinson <small>- Life Manager</small></h4>
-                   </div>
-                   <!-- end testi-meta -->
-                </div>
-                <!-- end testimonial -->
-             </div>
-             <!-- end col -->
-          </div>
-          <!-- end row -->
-          <hr class="invis">
-          <div class="row">
-             <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                <div class="testimonial clearfix">
-                   <div class="desc">
-                      <h3><i class="fa fa-quote-left"></i> The amazing clinic! Wonderful Support!</h3>
-                      <p class="lead">They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>
-                   </div>
-                   <div class="testi-meta">
-                      <img src="{{URL::asset('template/front/images/testi_03.png')}}" alt="" class="img-responsive alignleft">
-                      <h4>Amanda DOE <small>- Manager of Racer</small></h4>
-                   </div>
-                   <!-- end testi-meta -->
-                </div>
-                <!-- end testimonial -->
-             </div>
-             <!-- end col -->
-             <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                <div class="testimonial clearfix">
-                   <div class="desc">
-                      <h3><i class="fa fa-quote-left"></i> Thanks for Help us!</h3>
-                      <p class="lead">They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>
-                   </div>
-                   <div class="testi-meta">
-                      <img src="{{URL::asset('template/front/images/testi_01.png')}}" alt="" class="img-responsive alignleft">
-                      <h4>Martin Johnson <small>- Founder of Goosilo</small></h4>
-                   </div>
-                   <!-- end testi-meta -->
-                </div>
-                <!-- end testimonial -->
-             </div>
-             <!-- end col -->
-          </div>
-          <!-- end row -->
-       </div>
-       <!-- end container -->
-    </div>
-    <div id="getintouch" class="section wb wow fadeIn" style="padding-bottom:0;">
-       <div class="container">
-          <div class="heading">
-             <span class="icon-logo"><img src="{{URL::asset('template/front/images/icon-logo.png')}}" alt="#"></span>
+             <span class="icon-logo"><img src="{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}" alt="#"></span>
              <h2>Get in Touch</h2>
           </div>
        </div>

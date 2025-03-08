@@ -45,7 +45,7 @@ p {
     right: 0;
     bottom: 0;
     left: 0;
-    background: #39b49a;
+    background: #fff;
     z-index: 11000;
     position: fixed;
     display: flex;
@@ -55,7 +55,7 @@ p {
 .header-bottom {
     float: left;
     width: 100%;
-    background: #157fda;
+    background: #0000fe;
 }
 header {
     float: left;
@@ -88,7 +88,7 @@ header {
 }
 .header-bottom nav.main-menu ul.nav.navbar-nav > li a:hover, .header-bottom nav.main-menu ul.nav.navbar-nav > li a:focus, .header-bottom nav.main-menu ul.nav.navbar-nav > li a.active {
     color: #fff;
-    background: #39b49b;
+    background: #fe0000;
     box-shadow: 5px 5px 0 0px #fff;
 }
 .header-top {
@@ -113,7 +113,7 @@ header {
 }
 .info-inner span.icontop {
     float: left;
-    background: #157fda;
+    background: #fb6705;
     width: 45px;
     height: 45px;
     text-align: center;
@@ -126,7 +126,7 @@ header {
 }
 .iconcont {
     float: left;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: -1px;
     margin: 4px 0;
 }
@@ -214,7 +214,7 @@ header {
 .appointment-form h3 {
     float: left;
     margin: 0;
-    background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
+    background: linear-gradient(to right, #0000fe 0%, #f60c07 100%);
     width: 100%;
     color: #fff;
     padding: 15px 25px;
@@ -258,7 +258,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: solid #39b49b 3px;
+    border: solid #fe0000 3px;
 }
 .icon img {
     width: 50px;
@@ -277,7 +277,7 @@ header {
 }
 .info-inner:hover span.icontop,.info-inner:focus span.icontop {
     border-radius: 100%;
-    background: #39b49b;
+    background: #fe0000;
 }
 .typewrite {
     font-size: 60px;
@@ -415,7 +415,7 @@ body.clinic_version .first-section h2 {
 .heading h2::after {
     width: 50px;
     height: 4px;
-    background: #39b49b;
+    background: #fe0000;
     content: "";
     display: block;
     margin: 10px auto 0;
@@ -444,7 +444,7 @@ body.clinic_version .section {
     color: #ffffff;
     padding: 12px 0 12px;
     margin: 0;
-    background: #157fda;
+    background: #0000fe;
     text-align: center;
 }
 hr.hr1 {
@@ -454,7 +454,7 @@ hr.hr1 {
 }
 .services {
     width: 100%;
-    background: linear-gradient(to right, #1d86df 0%, #39b49a 100%);
+    background: linear-gradient(to right, #f60c07 0%, #0000fe 100%);
     padding: 75px 0;
 }
 .services {
@@ -571,7 +571,7 @@ hr.hr1 {
     display: flex;
 }
 .form-group button {
-    background: linear-gradient(to right, #1d86df 0%, #39b49a 100%);
+    background: linear-gradient(to right, #f60c07 0%, #0000fe 100%);
     border: none;
     margin-top: 15px;
     margin-bottom: 5px;
@@ -582,7 +582,7 @@ hr.hr1 {
     font-weight: 600;
 }
 .form-group button:hover,.form-group button:focus {
-    background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
+    background: linear-gradient(to right, #0000fe 0%, #f60c07 100%);
 }
 body.clinic_version .dev-list .widget h3 {
     display: inline-block;
@@ -605,7 +605,7 @@ body.clinic_version .dev-list .widget small {
     font-weight: 600;
     letter-spacing: 0.5px;
     font-size: 17px;
-    color: #0071d1;
+    color: #e30202;
 }
 #price.section {
     background-attachment: fixed;
@@ -734,7 +734,7 @@ body.clinic_version .footer .widget-title h3 {
     position: absolute;
     width: 40%;
     height: 100%;
-    background: rgba(0,0,0,.8);
+    background: url('../images/service-bg.png');
     z-index: 1;
     padding: 60px;
 }
@@ -759,14 +759,14 @@ body.clinic_version .footer .widget-title h3 {
 }
 #submitButton {
     padding: 15px 30px;
-    background: linear-gradient(to right, #1d86df 0%, #39b49a 100%);
+    background: linear-gradient(to right, #f60c07 0%, #0000fe 100%);
     color: #fff;
     border-radius: 50px;
     margin-top: 10px;
 	transition:ease all 1s;
 }
 #submitButton:hover,#submitButton:focus {
-    background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
+    background: linear-gradient(to right, #0000fe 0%, #f60c07 100%);
 }
 .footer-area {
     background: #fff;
@@ -796,7 +796,7 @@ body.clinic_version .footer .widget-title h3 {
     color: #222;
     font-size: 22px;
     font-weight: 600;
-    border-left: solid #157fda 5px;
+    border-left: solid #0000fe 5px;
     padding: 0 0 0 15px;
     margin-bottom: 24px;
 }
@@ -814,7 +814,7 @@ body.clinic_version .footer .widget-title h3 {
 }
 .copyright-area {
     padding: 20px 0px;
-    background: #157fda;
+    background: #0000fe;
     color: #fff;
 	float:left;
 	width:100%;
@@ -842,7 +842,7 @@ body.clinic_version .footer .widget-title h3 {
     font-size: 25px;
     width: 30px;
     text-align: center;
-	color: #157fda;
+	color: #0000fe;
 }
 .preloader {
     width: 350px;
@@ -883,7 +883,7 @@ body.clinic_version .footer .widget-title h3 {
     width: 20%;
     font-weight: bold;
     color: #fff;
-    background: linear-gradient(to right, #1d86df 0%, #39b49a 100%);
+    background: linear-gradient(to right, #f60c07 0%, #0000fe 100%);
     border: none;
     font-size: 24px;
     position: relative;
@@ -892,7 +892,7 @@ body.clinic_version .footer .widget-title h3 {
     text-align: center;
 }
 .newsletter-form .mc-submit:hover,.newsletter-form .mc-submit:focus {
-    background: linear-gradient(to right, #39b49a 0%, #1d86df 100%);
+    background: linear-gradient(to right, #0000fe 0%, #f60c07 100%);
 }
 #testimonials {
     background-image: url('../images/bg-testimonial.png');
@@ -930,7 +930,7 @@ body.clinic_version .footer .widget-title h3 {
 	border-radius:0;
 }
 .tabs-information .nav.nav-tabs li:hover a,.tabs-information .nav.nav-tabs li:focus a,.tabs-information .nav.nav-tabs li.active a {
-    background: linear-gradient(to right, #1d86df 0%, #39b49a 100%);
+    background: linear-gradient(to right, #f60c07 0%, #0000fe 100%);
     border-color: transparent;
     color: #fff;
 }
@@ -961,7 +961,7 @@ body.clinic_version .footer .widget-title h3 {
     left: 0;
     top: 7px;
     font-size: 18px;
-    color: #39b49b;
+    color: #fe0000;
 }
 .banner-inner {
     float: left;
@@ -976,7 +976,7 @@ body.clinic_version .footer .widget-title h3 {
     background-size: cover;
     background-attachment: fixed;
     position: relative;
-    border-bottom: solid #157fda 2px;
+    border-bottom: solid #0000fe 2px;
 }
 .banner-inner::after {
     content: "";
@@ -1006,7 +1006,7 @@ body.clinic_version .footer .widget-title h3 {
     display: block;
     width: 50px;
     height: 3px;
-    background: #39b49b;
+    background: #fe0000;
     margin: 8px auto 5px;
 }
 .breadcrum {
@@ -1024,7 +1024,7 @@ body.clinic_version .footer .widget-title h3 {
     margin-top: 5px;
 }
 .breadcrum ul li a {
-	color:#39b49b;
+	color:#fe0000;
 }
 .box {
     float: left;
@@ -1033,7 +1033,7 @@ body.clinic_version .footer .widget-title h3 {
     margin-top: 118px;
     box-shadow: 0 0 40px -20px rgba(0,0,0,.4);
     margin-bottom: -62px;
-    border: solid #157fda 2px;
+    border: solid #0000fe 2px;
 }
 .about2 {
     float: left;
@@ -1042,7 +1042,7 @@ body.clinic_version .footer .widget-title h3 {
 .girl-with-lap {
     float: left;
     width: 100%;
-    background: linear-gradient(to right, #1d86df 0%, #39b49a 100%);
+    background: linear-gradient(to right, #f60c07 0%, #0000fe 100%);
     margin-bottom: 75px;
     margin-top: -20px;
     color: #fff;
@@ -1100,7 +1100,7 @@ nav.main-menu .navbar-toggle {
     margin-top: 2px;
     margin-right: 0;
     margin-bottom: 0;
-    background: linear-gradient(to right, #1d86df 0%, #39b49a 100%);
+    background: linear-gradient(to right, #f60c07 0%, #0000fe 100%);
     border: none;
     border-radius: 0;
     font-size: 22px;
