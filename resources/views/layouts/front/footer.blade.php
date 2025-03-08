@@ -10,7 +10,7 @@
             </div>
             <div class="col-md-4">
                 <div class="footer-info padding">
-                <h3>CONTACT US</h3>
+                <h3 style="color:#000">CONTACT US</h3>
                 <p><i class="fa fa-map-marker" aria-hidden="true"></i> PO Box 16122 Collins Street West Victoria 8007 Australia</p>
                 <p><i class="fa fa-paper-plane" aria-hidden="true"></i> info@gmail.com</p>
                 <p><i class="fa fa-phone" aria-hidden="true"></i> (+1) 800 123 456</p>
@@ -18,7 +18,7 @@
             </div>
             <div class="col-md-4">
                 <div class="subcriber-info">
-                <h3>SUBSCRIBE</h3>
+                <h3 style="color:#000">SUBSCRIBE</h3>
                 <p>Get healthy news, tip and solutions to your problems from our experts.</p>
                 <div class="subcriber-box">
                     <form id="mc-form" class="mc-form">

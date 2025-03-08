@@ -25,7 +25,7 @@
                 
                 <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a class="active" href="#beranda">Beranda</a></li>
+                    <li><a class="active" href="#home">Beranda</a></li>
                     <li><a data-scroll href="#tentang-kami">Tentang Kami</a></li>
                     <li><a data-scroll href="#layanan">Layanan</a></li>
                     <li><a data-scroll href="#katalog">Katalog</a></li>
