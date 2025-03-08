@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kontak extends Model
+class Pesan extends Model
 {
     use HasFactory;
     protected $table = 'pesans';
@@ -17,5 +17,6 @@ class Kontak extends Model
         'telepon_pesans',
         'nama_pesans',
         'konten_pesans',
+        'status_baca_pesans',
     ];
 }

@@ -42,8 +42,8 @@ Route::middleware([
         });
 
         Route::group(['prefix' => 'pesan'], function() {
-            Route::get('/', [Kontak::class, 'index']);
-            Route::get('/baca/{id}', [Kontak::class, 'baca']);
+            Route::get('/', [Pesan::class, 'index']);
+            Route::get('/baca/{id}', [Pesan::class, 'baca']);
         });
 
         Route::group(['prefix' => 'admin'], function() {

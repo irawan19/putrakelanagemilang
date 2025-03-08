@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('telepon_pesans');
             $table->string('nama_pesans');
             $table->string('konten_pesans');
+            $table->boolean('status_baca_pesans')->default(false);
             $table->timestamps();
         });
     }

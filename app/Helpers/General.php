@@ -98,6 +98,13 @@ class General {
 					</a>';
 		}
 
+		public static function bacatombol($link = '')
+		{
+			echo '<a href="'.URL($link).'" class="btn btn-sm btn-warning">
+						<span class="cil-book"></span> Baca
+					</a';
+		}
+
 		public static function edit($link = '')
 		{
 			echo  '<a href="' . URL($link) . '" class="dropdown-item" style="color:#3399ff">
