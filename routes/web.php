@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+use Carbon\Carbon;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\SitemapGenerator;
+use Spatie\Sitemap\Tags\Url;
+
 use App\Http\Controllers\BerandaController as Beranda;
 use App\Http\Controllers\TentangKamiController as TentangKami;
 use App\Http\Controllers\LayananController as Layanan;
@@ -35,6 +41,23 @@ Route::post('/kirim-kontak', [Kontak::class, 'kirim']);
 Route::get('/lowongan-kerja', [LowonganKerja::class, 'index']);
 Route::get('/penawaran', [Penawaran::class, 'index']);
 Route::post('/kirim-penawaran', [Penawaran::class, 'kirim']);
+
+Route::get('/sitemap', function(){
+    $urlsitemap = 'https://www.putrakelanagemilang.com';
+    $sitemap = SitemapGenerator::create($urlsitemap)
+                                ->getSitemap()
+                                ->add(Url::create('/'))
+                                ->add(Url::create('/beranda'))
+                                ->add(Url::create('/tentang-kami'))
+                                ->add(Url::create('/layanan'))
+                                ->add(Url::create('/katalog'))
+                                ->add(Url::create('/kontak'))
+                                ->add(Url::create('/lowongan-kerja'))
+                                ->add(Url::create('/penawaran'));
+    $sitemap->writeToFile(public_path('sitemap.xml'));
+	return redirect('sitemap.xml');
+});
+
 
 Route::middleware([
     'auth:sanctum',

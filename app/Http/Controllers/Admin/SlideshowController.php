@@ -22,7 +22,7 @@ class SlideshowController extends AdminCoreController {
         $hasil_kata                 = $request->cari_kata;
         $data['hasil_kata']         = $hasil_kata;
         $url_sekarang               = $request->fullUrl();
-        $data['slideshows']         = Slideshow::Where('judul', 'LIKE', '%'.$hasil_kata.'%')
+        $data['slideshows']         = Slideshow::Where('judul_slideshows', 'LIKE', '%'.$hasil_kata.'%')
                                         ->paginate(10);
         session(['hasil_kata'		=> $hasil_kata]);
         session(['halaman'          => $url_sekarang]);

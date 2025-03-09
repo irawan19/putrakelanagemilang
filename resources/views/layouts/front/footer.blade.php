@@ -8,7 +8,7 @@
                         <div class="col-md-6 col-lg-6 col-xl-5">
                             <div class="footer-item">
                                 <a href="index.html" class="p-0">
-                                    <h3 class="text-white"><i class="fab fa-slack me-3"></i> {{ $aplikasi->nama_aplikasis }}</h3>
+                                    <h3 class="text-white"> {{ $aplikasi->nama_aplikasis }}</h3>
                                 </a>
                                 <p class="text-white mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
                                 <div class="footer-btn d-flex">
