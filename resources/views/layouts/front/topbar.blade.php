@@ -12,10 +12,9 @@
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-flex justify-content-end">
                     <div class="d-flex pe-3">
-                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
-                        <a class="btn p-0 text-primary me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        @foreach($sosial_medias as $sosial_media)
+                            <a class="btn p-0 text-primary me-3" href="{{ $sosial_media->link_sosial_medias }}" target="_blank"><i class="fab fa-{{$sosial_media->icon_sosial_medias}}"></i></a>
+                        @endforeach
                     </div>
                 </div>
             </div>

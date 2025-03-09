@@ -4,8 +4,8 @@
     <div class="sidebar-header border-bottom" style="margin: 0 auto">
         <div class="sidebar-brand">
             <a class="anostylewhite" href="{{URL('/')}}" target="_blank">
-                <img class="sidebar-brand-full" width="162" src="{{URL::asset('storage/'.$aplikasi->logo_text_aplikasis)}}">
-                <img class="sidebar-brand-narrow" width="32" src="{{URL::asset('storage/'.$aplikasi->logo_text_aplikasis)}}">
+                <img class="sidebar-brand-full" width="162" src="{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}">
+                <img class="sidebar-brand-narrow" width="32" src="{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}">
             </a>
         </div>
         <button class="btn-close d-lg-none" type="button" data-coreui-dismiss="offcanvas" data-coreui-theme="dark" aria-label="Close" onclick="coreui.Sidebar.getInstance(document.querySelector(&quot;#sidebar&quot;)).toggle()"></button>

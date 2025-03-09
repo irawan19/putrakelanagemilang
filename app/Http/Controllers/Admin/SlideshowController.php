@@ -22,8 +22,7 @@ class SlideshowController extends AdminCoreController {
         $hasil_kata                 = $request->cari_kata;
         $data['hasil_kata']         = $hasil_kata;
         $url_sekarang               = $request->fullUrl();
-        $data['slideshows']         = Slideshow::Where('text1_slideshows', 'LIKE', '%'.$hasil_kata.'%')
-                                        ->orWhere('text2_slideshows', 'LIKE', '%'.$hasil_kata.'%')
+        $data['slideshows']         = Slideshow::Where('judul', 'LIKE', '%'.$hasil_kata.'%')
                                         ->paginate(10);
         session(['hasil_kata'		=> $hasil_kata]);
         session(['halaman'          => $url_sekarang]);
@@ -37,8 +36,7 @@ class SlideshowController extends AdminCoreController {
     public function prosestambah(Request $request) {
         $aturan = [
             'userfile_gambar_slideshow' => 'required|mimes:jpg,jpeg,png',
-            'text1_slideshows'          => 'required',
-            'text2_slideshows'          => 'required',
+            'judul_slideshows'          => 'required',
         ];
         $this->validate($request, $aturan);
 
@@ -48,6 +46,7 @@ class SlideshowController extends AdminCoreController {
 
         $data = [
             'gambar_slideshows' => $path_gambar_slideshow . $nama_gambar_slideshow,
+            'judul_slideshows'  => $request->judul_slideshows,
             'text1_slideshows'  => $request->text1_slideshows,
             'text2_slideshows'  => $request->text2_slideshows,
             'created_at' => date('Y-m-d H:i:s'),
@@ -79,8 +78,7 @@ class SlideshowController extends AdminCoreController {
             if(!empty($request->userfile_gambar_slideshow)) {
                 $aturan = [
                     'userfile_gambar_slideshow' => 'required|mimes:jpg,jpeg,png',
-                    'text1_slideshows' => 'required',
-                    'text2_slideshows' => 'required',
+                    'judul_slideshows' => 'required',
                 ];
                 $this->validate($request, $aturan);
 
@@ -94,21 +92,22 @@ class SlideshowController extends AdminCoreController {
 
                 $data = [
                     'gambar_slideshows' => $path_gambar_slideshow . $nama_gambar_slideshow,
-                    'text1_slideshows' => $request->text1_slideshows,
-                    'text2_slideshows' => $request->text1_slideshows,
-                    'updated_at' => date('Y-m-d H:i:s'),
+                    'judul_slideshows'  => $request->judul_slideshows,
+                    'text1_slideshows'  => $request->text1_slideshows,
+                    'text2_slideshows'  => $request->text1_slideshows,
+                    'updated_at'        => date('Y-m-d H:i:s'),
                 ];
             } else {
                 $aturan = [
-                    'text1_slideshows' => 'required',
-                    'text2_slideshows' => 'required',
+                    'judul_slideshows' => 'required',
                 ];
                 $this->validate($request, $aturan);
 
                 $data = [
-                    'text1_slideshows' => $request->text1_slideshows,
-                    'text2_slideshows' => $request->text1_slideshows,
-                    'updated_at' => date('Y-m-d H:i:s'),
+                    'judul_slideshows'  => $request->judul_slideshows,
+                    'text1_slideshows'  => $request->text1_slideshows,
+                    'text2_slideshows'  => $request->text2_slideshows,
+                    'updated_at'        => date('Y-m-d H:i:s'),
                 ];
             }
             

@@ -8,26 +8,23 @@
                         <div class="col-md-6 col-lg-6 col-xl-5">
                             <div class="footer-item">
                                 <a href="index.html" class="p-0">
-                                    <h3 class="text-white"><i class="fab fa-slack me-3"></i> LifeSure</h3>
+                                    <h3 class="text-white"><i class="fab fa-slack me-3"></i> {{ $aplikasi->nama_aplikasis }}</h3>
                                 </a>
                                 <p class="text-white mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
                                 <div class="footer-btn d-flex">
-                                    <a class="btn btn-md-square rounded-circle me-3" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-md-square rounded-circle me-3" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-md-square rounded-circle me-3" href="#"><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-md-square rounded-circle me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    @foreach($sosial_medias as $sosial_media)
+                                        <a class="btn btn-md-square rounded-circle me-3" href="{{ $sosial_media->link_sosial_media }}" target="_blank"><i class="fab fa-{{$sosial_media->icon_sosial_medias}}"></i></a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-3">
                             <div class="footer-item">
-                                <h4 class="text-white mb-4">Useful Links</h4>
-                                <a href="#"><i class="fas fa-angle-right me-2"></i> About Us</a>
-                                <a href="#"><i class="fas fa-angle-right me-2"></i> Features</a>
-                                <a href="#"><i class="fas fa-angle-right me-2"></i> Services</a>
-                                <a href="#"><i class="fas fa-angle-right me-2"></i> FAQ's</a>
-                                <a href="#"><i class="fas fa-angle-right me-2"></i> Blogs</a>
-                                <a href="#"><i class="fas fa-angle-right me-2"></i> Contact</a>
+                                <h4 class="text-white mb-4">Link</h4>
+                                <a href="#"><i class="fas fa-angle-right me-2"></i> Tentang</a>
+                                <a href="#"><i class="fas fa-angle-right me-2"></i> Layanan</a>
+                                <a href="#"><i class="fas fa-angle-right me-2"></i> Katalog</a>
+                                <a href="#"><i class="fas fa-angle-right me-2"></i> Kontak</a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-4">
@@ -132,11 +129,10 @@
             
             <div class="col-xl-3">
                 <div class="footer-item">
-                    <h4 class="text-white mb-4">Newsletter</h4>
+                    <h4 class="text-white mb-4">Penawaran</h4>
                     <p class="text-white mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <div class="position-relative rounded-pill mb-4">
-                        <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
-                        <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
+                        <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-3 flex-shrink-0"> Dapatkan Penawaran</a>
                     </div>
                     <div class="d-flex flex-shrink-0">
                         <div class="footer-btn">
@@ -148,8 +144,8 @@
                             </a>
                         </div>
                         <div class="d-flex flex-column ms-3 flex-shrink-0">
-                            <span>Call to Our Experts</span>
-                            <a href="tel:+ 0123 456 7890"><span class="text-white">Free: + 0123 456 7890</span></a>
+                            <span>Hubungi Kami</span>
+                            <a href="tel:{{ $kontak->telepon_kontaks }}"><span class="text-white">{{ $kontak->telepon_kontaks }}</span></a>
                         </div>
                     </div>
                 </div>

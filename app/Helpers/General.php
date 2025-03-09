@@ -178,8 +178,8 @@ class General {
 				'icon'	=> 'instagram'
 			),
 			array(
-				'nama' 	=> 'Website',
-				'icon'	=> 'website'
+				'nama' 	=> 'Linkedin',
+				'icon'	=> 'linkedin'
 			),
 			array(
 				'nama' 	=> 'Tiktok',
