@@ -13,7 +13,7 @@
                                 <p class="text-white mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
                                 <div class="footer-btn d-flex">
                                     @foreach($sosial_medias as $sosial_media)
-                                        <a class="btn btn-md-square rounded-circle me-3" href="{{ $sosial_media->link_sosial_media }}" target="_blank"><i class="fab fa-{{$sosial_media->icon_sosial_medias}}"></i></a>
+                                        <a class="btn btn-md-square rounded-circle me-3" href="{{ $sosial_media->url_sosial_media }}" target="_blank"><i class="fab fa-{{$sosial_media->icon_sosial_medias}}"></i></a>
                                     @endforeach
                                 </div>
                             </div>
@@ -25,7 +25,8 @@
                                 <a href="{{ URL('/tentang-kami') }}"><i class="fas fa-angle-right me-2"></i> Tentang</a>
                                 <a href="{{ URL('/layanan') }}"><i class="fas fa-angle-right me-2"></i> Layanan</a>
                                 <a href="{{ URL('/katalog') }}"><i class="fas fa-angle-right me-2"></i> Katalog</a>
-                                <a href="{{ URL('kontak') }}"><i class="fas fa-angle-right me-2"></i> Kontak</a>
+                                <a href="{{ URL('/kontak') }}"><i class="fas fa-angle-right me-2"></i> Kontak</a>
+                                <a href="{{ URL('/lowongan-kerja') }}"><i class="fas fa-angle-right me-2"></i> Lowongan Kerja</a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-4">
@@ -137,7 +138,7 @@
                     </div>
                     <div class="d-flex flex-shrink-0">
                         <div class="footer-btn">
-                            <a href="#" class="btn btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s">
+                            <a href="{{ $kontak->telepon_kontaks }}" class="btn btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s">
                                 <i class="fa fa-phone-alt fa-2x"></i>
                                 <div class="position-absolute" style="top: 2px; right: 12px;">
                                     <span><i class="fa fa-comment-dots text-secondary"></i></span>
@@ -146,7 +147,7 @@
                         </div>
                         <div class="d-flex flex-column ms-3 flex-shrink-0">
                             <span>Hubungi Kami</span>
-                            <a href="tel:{{ $kontak->telepon_kontaks }}"><span class="text-white">{{ $kontak->telepon_kontaks }}</span></a>
+                            <a href="https://wa.me/{{ $kontak->telepon_kontaks }}"><span class="text-white">{{ $kontak->telepon_kontaks }}</span></a>
                         </div>
                     </div>
                 </div>

@@ -69,6 +69,13 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{URL('/dashboard/sosial-media')}}">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-share-alt')}}"></use>
+                    </svg> Sosial Media
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{URL('/dashboard/pesan')}}">
                     <svg class="nav-icon">
                         <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-envelope-open')}}"></use>
@@ -80,6 +87,13 @@
                     <svg class="nav-icon">
                         <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-file')}}"></use>
                     </svg> Penawaran
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{URL('/dashboard/lowongan-kerja')}}">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-factory')}}"></use>
+                    </svg> Lowongan Kerja
                 </a>
             </li>
         </li>

@@ -6,6 +6,7 @@ use App\Http\Controllers\TentangKamiController as TentangKami;
 use App\Http\Controllers\LayananController as Layanan;
 use App\Http\Controllers\KatalogController as Katalog;
 use App\Http\Controllers\KontakController as Kontak;
+use App\Http\Controllers\LowonganKerjaController as LowonganKerja;
 use App\Http\Controllers\PenawaranController as Penawaran;
 
 use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
@@ -18,6 +19,7 @@ use App\Http\Controllers\Admin\KatalogController as AdminKatalog;
 use App\Http\Controllers\Admin\TestimonialController as AdminTestimonial;
 use App\Http\Controllers\Admin\SosialMediaController as AdminSosialMedia;
 use App\Http\Controllers\Admin\KontakController as AdminKontak;
+use App\Http\Controllers\Admin\LowonganKerjaController as AdminLowonganKerja;
 use App\Http\Controllers\Admin\PesanController as AdminPesan;
 use App\Http\Controllers\Admin\PenawaranController as AdminPenawaran;
 use App\Http\Controllers\Admin\AdminController as AdminAdmin;
@@ -30,6 +32,7 @@ Route::get('/layanan', [Layanan::class, 'index']);
 Route::get('/katalog', [Katalog::class, 'index']);
 Route::get('/kontak', [Kontak::class, 'index']);
 Route::post('/kirim-kontak', [Kontak::class, 'kirim']);
+Route::get('/lowongan-kerja', [LowonganKerja::class, 'index']);
 Route::get('/penawaran', [Penawaran::class, 'index']);
 Route::post('/kirim-penawaran', [Penawaran::class, 'kirim']);
 
@@ -112,6 +115,15 @@ Route::middleware([
         Route::group(['prefix' => 'kontak'], function() {
             Route::get('/', [AdminKontak::class, 'index']);
             Route::patch('/prosesedit', [AdminKontak::class, 'prosesedit']);
+        });
+
+        Route::group(['prefix' => 'lowongan-kerja'], function() {
+            Route::get('/', [AdminLowonganKerja::class, 'index']);
+            Route::get('/tambah', [AdminLowonganKerja::class, 'tambah']);
+            Route::post('/prosestambah', [AdminLowonganKerja::class, 'prosestambah']);
+            Route::get('/edit/{id}', [AdminLowonganKerja::class, 'edit']);
+            Route::patch('/prosesedit/{id}', [AdminLowonganKerja::class, 'prosesedit']);
+            Route::delete('/hapus/{id}', [AdminLowonganKerja::class, 'hapus']);
         });
 
         Route::group(['prefix' => 'pesan'], function() {

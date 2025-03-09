@@ -12,7 +12,7 @@
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
-                            <label class="form-label" for="telepon_kontaks">Telepon <b style="color:red">*</b></label>
+                            <label class="form-label" for="telepon_kontaks">Telepon Whatsapp <b style="color:red">*</b></label>
                             <input class="form-control {{ \App\Helpers\General::validForm($errors->first('telepon_kontaks')) }}" id="telepon_kontaks" type="text" name="telepon_kontaks" value="{{Request::old('telepon_kontaks') == '' ? $kontaks->telepon_kontaks : Request::old('telepon_kontaks')}}">
                             {{\App\Helpers\General::pesanErrorForm($errors->first('telepon_kontaks'))}}
                         </div>
