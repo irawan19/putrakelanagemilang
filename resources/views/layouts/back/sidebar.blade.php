@@ -27,10 +27,38 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{URL('/dashboard/sosial-media')}}">
+                <a class="nav-link" href="{{URL('/dashboard/tentang-kami')}}">
                     <svg class="nav-icon">
-                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-share-alt')}}"></use>
-                    </svg> Sosial Media
+                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-info')}}"></use>
+                    </svg> Tentang Kami
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{URL('/dashboard/layanan')}}">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-badge')}}"></use>
+                    </svg> Layanan
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{URL('/dashboard/pertanyaan-umum')}}">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-task')}}"></use>
+                    </svg> Pertanyaan Umum
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{URL('/dashboard/Katalog')}}">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-tags')}}"></use>
+                    </svg> Katalog
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{URL('/dashboard/testimonial')}}">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-comment-square')}}"></use>
+                    </svg> Testimonial
                 </a>
             </li>
             <li class="nav-item">
@@ -45,6 +73,13 @@
                     <svg class="nav-icon">
                         <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-envelope-open')}}"></use>
                     </svg> Pesan
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{URL('/dashboard/penawaran')}}">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-file')}}"></use>
+                    </svg> Penawaran
                 </a>
             </li>
         </li>

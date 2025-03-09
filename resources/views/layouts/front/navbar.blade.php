@@ -11,13 +11,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-0 mx-lg-auto">
-                    <a href="index.html" class="nav-item nav-link active">Beranda</a>
-                    <a href="about.html" class="nav-item nav-link">Tentang</a>
-                    <a href="service.html" class="nav-item nav-link">Layanan</a>
-                    <a href="blog.html" class="nav-item nav-link">Katalog</a>
-                    <a href="contact.html" class="nav-item nav-link">Kontak</a>
+                    <a href="{{ URL('/') }}" class="nav-item nav-link active">Beranda</a>
+                    <a href="{{ URL('/tentang-kami') }}" class="nav-item nav-link">Tentang</a>
+                    <a href="{{ URL('/layanan') }}" class="nav-item nav-link">Layanan</a>
+                    <a href="{{ URL('/katalog') }}" class="nav-item nav-link">Katalog</a>
+                    <a href="{{ URL('/kontak') }}" class="nav-item nav-link">Kontak</a>
                     <div class="nav-btn px-3">
-                        <a href="#" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Dapatkan Penawaran</a>
+                        <a href="{{ URL('/penawaran') }}" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Dapatkan Penawaran</a>
                     </div>
                 </div>
             </div>

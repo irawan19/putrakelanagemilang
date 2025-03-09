@@ -33,9 +33,8 @@
         <div class="container py-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h4 class="text-primary">Tentang Kami</h4>
-                <h1 class="display-4 mb-4">Insurance Provide you a Better Future</h1>
-                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                </p>
+                <h1 class="display-4 mb-4">{{ $aplikasi->nama_aplikasis }}</h1>
+                <p class="mb-0">Kami perusahaan yang bergerak di bidang distribusi penjualan alat medis dan kesehatan</p>
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
@@ -93,8 +92,7 @@
             <div class="row g-5">
                 <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
                     <div class="about-item-content bg-white rounded p-5 h-100">
-                        <h4 class="text-primary">About Our Company</h4>
-                        <h1 class="display-4 mb-4">High Range of Exploring Protection</h1>
+                        <h4 class="text-primary">Sekilas Tentang {{ $aplikasi->nama_aplikasis }}</h4>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt debitis sint tempora. Corporis consequatur illo blanditiis voluptates aperiam quos aliquam totam aliquid rem explicabo,
                         </p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae praesentium recusandae eligendi modi hic
@@ -250,8 +248,8 @@
                 <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
                     <div class="h-100">
                         <div class="mb-5">
-                            <h4 class="text-primary">Some Important FAQ's</h4>
-                            <h1 class="display-4 mb-0">Common Frequently Asked Questions</h1>
+                            <h4 class="text-primary">Pertanyaan</h4>
+                            <h1 class="display-4 mb-0">Pertanyaan Umum Yang Sering Diajukan</h1>
                         </div>
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item">
@@ -305,10 +303,9 @@
     <div class="container-fluid blog py-5">
         <div class="container py-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                <h4 class="text-primary">From Blog</h4>
-                <h1 class="display-4 mb-4">News And Updates</h1>
-                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                </p>
+                <h4 class="text-primary">Katalog</h4>
+                <h1 class="display-4 mb-4">Produk Terbaru</h1>
+                <p class="mb-0">Berikut beberapa produk terbaru yang kami jual</p>
             </div>
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
@@ -316,58 +313,40 @@
                         <div class="blog-img">
                             <img src="{{URL::asset('template/front/img/blog-1.png') }}" class="img-fluid rounded-top w-100" alt="">
                             <div class="blog-categiry py-2 px-4">
-                                <span>Business</span>
+                                <span>Kategori Produk</span>
                             </div>
                         </div>
                         <div class="blog-content p-4">
-                            <div class="blog-comment d-flex justify-content-between mb-3">
-                                <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div>
-                                <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Dec 2025</div>
-                                <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Comments</div>
-                            </div>
                             <a href="#" class="h4 d-inline-block mb-3">Which allows you to pay down insurance bills</a>
                             <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
-                            <a href="#" class="btn p-0">Read More  <i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src="{{URL::asset('template/front/img/blog-2.png') }}" class="img-fluid rounded-top w-100" alt="">
+                            <img src="{{URL::asset('template/front/img/blog-1.png') }}" class="img-fluid rounded-top w-100" alt="">
                             <div class="blog-categiry py-2 px-4">
-                                <span>Business</span>
+                                <span>Kategori Produk</span>
                             </div>
                         </div>
                         <div class="blog-content p-4">
-                            <div class="blog-comment d-flex justify-content-between mb-3">
-                                <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div>
-                                <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Dec 2025</div>
-                                <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Comments</div>
-                            </div>
-                            <a href="#" class="h4 d-inline-block mb-3">Leverage agile frameworks to provide</a>
+                            <a href="#" class="h4 d-inline-block mb-3">Which allows you to pay down insurance bills</a>
                             <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
-                            <a href="#" class="btn p-0">Read More  <i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="blog-item">
                         <div class="blog-img">
-                            <img src="{{URL::asset('template/front/img/blog-3.png') }}" class="img-fluid rounded-top w-100" alt="">
+                            <img src="{{URL::asset('template/front/img/blog-1.png') }}" class="img-fluid rounded-top w-100" alt="">
                             <div class="blog-categiry py-2 px-4">
-                                <span>Business</span>
+                                <span>Kategori Produk</span>
                             </div>
                         </div>
                         <div class="blog-content p-4">
-                            <div class="blog-comment d-flex justify-content-between mb-3">
-                                <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div>
-                                <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Dec 2025</div>
-                                <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Comments</div>
-                            </div>
-                            <a href="#" class="h4 d-inline-block mb-3">Leverage agile frameworks to provide</a>
+                            <a href="#" class="h4 d-inline-block mb-3">Which allows you to pay down insurance bills</a>
                             <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
-                            <a href="#" class="btn p-0">Read More  <i class="fa fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -376,101 +355,12 @@
     </div>
     <!-- Blog End -->
 
-    <!-- Team Start -->
-    <div class="container-fluid testimonial pb-5">
-        <div class="container pb-5">
-            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                <h4 class="text-primary">Katalog Terbaru</h4>
-                <h1 class="display-4 mb-4">What Our Customers Are Saying</h1>
-                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                </p>
-            </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s">
-                <div class="testimonial-item bg-light rounded">
-                    <div class="row g-0">
-                        <div class="col-4  col-lg-4 col-xl-3">
-                            <div class="h-100">
-                                <img src="{{URL::asset('template/front/img/testimonial-1.jpg') }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
-                            </div>
-                        </div>
-                        <div class="col-8 col-lg-8 col-xl-9">
-                            <div class="d-flex flex-column my-auto text-start p-4">
-                                <h4 class="text-dark mb-0">Client Name</h4>
-                                <p class="mb-3">Profession</p>
-                                <div class="d-flex text-primary mb-3">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light rounded">
-                    <div class="row g-0">
-                        <div class="col-4  col-lg-4 col-xl-3">
-                            <div class="h-100">
-                                <img src="{{URL::asset('template/front/img/testimonial-2.jpg') }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
-                            </div>
-                        </div>
-                        <div class="col-8 col-lg-8 col-xl-9">
-                            <div class="d-flex flex-column my-auto text-start p-4">
-                                <h4 class="text-dark mb-0">Client Name</h4>
-                                <p class="mb-3">Profession</p>
-                                <div class="d-flex text-primary mb-3">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star text-body"></i>
-                                </div>
-                                <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item bg-light rounded">
-                    <div class="row g-0">
-                        <div class="col-4  col-lg-4 col-xl-3">
-                            <div class="h-100">
-                                <img src="{{URL::asset('template/front/img/testimonial-3.jpg') }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
-                            </div>
-                        </div>
-                        <div class="col-8 col-lg-8 col-xl-9">
-                            <div class="d-flex flex-column my-auto text-start p-4">
-                                <h4 class="text-dark mb-0">Client Name</h4>
-                                <p class="mb-3">Profession</p>
-                                <div class="d-flex text-primary mb-3">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star text-body"></i>
-                                    <i class="fas fa-star text-body"></i>
-                                </div>
-                                <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Team End -->
-
     <!-- Testimonial Start -->
     <div class="container-fluid testimonial pb-5">
         <div class="container pb-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h4 class="text-primary">Testimonial</h4>
-                <h1 class="display-4 mb-4">What Our Customers Are Saying</h1>
-                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                </p>
+                <h1 class="display-4 mb-4">Apa Kata Mereka</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s">
                 <div class="testimonial-item bg-light rounded">
@@ -484,13 +374,6 @@
                             <div class="d-flex flex-column my-auto text-start p-4">
                                 <h4 class="text-dark mb-0">Client Name</h4>
                                 <p class="mb-3">Profession</p>
-                                <div class="d-flex text-primary mb-3">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
                                 <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
                                 </p>
                             </div>
@@ -501,20 +384,13 @@
                     <div class="row g-0">
                         <div class="col-4  col-lg-4 col-xl-3">
                             <div class="h-100">
-                                <img src="{{URL::asset('template/front/img/testimonial-2.jpg') }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
+                                <img src="{{URL::asset('template/front/img/testimonial-1.jpg') }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
                             </div>
                         </div>
                         <div class="col-8 col-lg-8 col-xl-9">
                             <div class="d-flex flex-column my-auto text-start p-4">
                                 <h4 class="text-dark mb-0">Client Name</h4>
                                 <p class="mb-3">Profession</p>
-                                <div class="d-flex text-primary mb-3">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star text-body"></i>
-                                </div>
                                 <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
                                 </p>
                             </div>
@@ -525,20 +401,13 @@
                     <div class="row g-0">
                         <div class="col-4  col-lg-4 col-xl-3">
                             <div class="h-100">
-                                <img src="{{URL::asset('template/front/img/testimonial-3.jpg') }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
+                                <img src="{{URL::asset('template/front/img/testimonial-1.jpg') }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
                             </div>
                         </div>
                         <div class="col-8 col-lg-8 col-xl-9">
                             <div class="d-flex flex-column my-auto text-start p-4">
                                 <h4 class="text-dark mb-0">Client Name</h4>
                                 <p class="mb-3">Profession</p>
-                                <div class="d-flex text-primary mb-3">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star text-body"></i>
-                                    <i class="fas fa-star text-body"></i>
-                                </div>
                                 <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
                                 </p>
                             </div>

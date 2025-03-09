@@ -21,10 +21,11 @@
                         <div class="col-md-6 col-lg-6 col-xl-3">
                             <div class="footer-item">
                                 <h4 class="text-white mb-4">Link</h4>
-                                <a href="#"><i class="fas fa-angle-right me-2"></i> Tentang</a>
-                                <a href="#"><i class="fas fa-angle-right me-2"></i> Layanan</a>
-                                <a href="#"><i class="fas fa-angle-right me-2"></i> Katalog</a>
-                                <a href="#"><i class="fas fa-angle-right me-2"></i> Kontak</a>
+                                <a href="{{ URL('/') }}"><i class="fas fa-angle-right me-2"></i> Beranda</a>
+                                <a href="{{ URL('/tentang-kami') }}"><i class="fas fa-angle-right me-2"></i> Tentang</a>
+                                <a href="{{ URL('/layanan') }}"><i class="fas fa-angle-right me-2"></i> Layanan</a>
+                                <a href="{{ URL('/katalog') }}"><i class="fas fa-angle-right me-2"></i> Katalog</a>
+                                <a href="{{ URL('kontak') }}"><i class="fas fa-angle-right me-2"></i> Kontak</a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-4">
@@ -130,9 +131,9 @@
             <div class="col-xl-3">
                 <div class="footer-item">
                     <h4 class="text-white mb-4">Penawaran</h4>
-                    <p class="text-white mb-3">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="text-white mb-3">Silahkan klik tombol dibawah untuk mendapatkan penawaran terbaik dari kami atau hubungi ke no telepon kami.</p>
                     <div class="position-relative rounded-pill mb-4">
-                        <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-3 flex-shrink-0"> Dapatkan Penawaran</a>
+                        <a href="{{ URL('/penawaran') }}" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-3 flex-shrink-0"> Dapatkan Penawaran</a>
                     </div>
                     <div class="d-flex flex-shrink-0">
                         <div class="footer-btn">
