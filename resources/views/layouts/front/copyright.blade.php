@@ -1,24 +1,13 @@
 
-<div class="copyright-area wow fadeIn">
+<div class="container-fluid copyright py-4">
    <div class="container">
-      <div class="row">
-         <div class="col-md-8">
-            <div class="footer-text">
-               <p>© {{ date('Y') }}. Distributed by <a id="tw" href="https://themewagon.com/" target="_blank">ThemeWagon</a></p>
-            </div>
-         </div>
-         <div class="col-md-4">
-            <div class="social">
-               <ul class="social-links">
-                  <li><a href=""><i class="fa fa-rss"></i></a></li>
-                  <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                  <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                  <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                  <li><a href=""><i class="fa fa-youtube"></i></a></li>
-                  <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-               </ul>
-            </div>
-         </div>
-      </div>
+       <div class="row g-4 align-items-center">
+           <div class="col-md-6 text-center text-md-end mb-md-0">
+               <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>{{ $aplikasi->nama_aplikasis }}</a>, All right reserved.</span>
+           </div>
+           <div class="col-md-6 text-center text-md-start text-body">
+               Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
+           </div>
+       </div>
    </div>
 </div>

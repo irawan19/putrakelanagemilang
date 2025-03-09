@@ -5,6 +5,7 @@ use App\Http\Controllers\BerandaController as Beranda;
 
 use App\Http\Controllers\Admin\DashboardController as Dashboard;
 use App\Http\Controllers\Admin\AkunController as Akun;
+use App\Http\Controllers\Admin\SlideshowController as Slideshow;
 use App\Http\Controllers\Admin\SosialMediaController as SosialMedia;
 use App\Http\Controllers\Admin\KontakController as Kontak;
 use App\Http\Controllers\Admin\PesanController as Pesan;
@@ -25,6 +26,15 @@ Route::middleware([
         Route::group(['prefix' => 'akun'], function() {
             Route::get('/', [Akun::class, 'index']);
             Route::patch('/prosesedit', [Akun::class, 'prosesedit']);
+        });
+
+        Route::group(['prefix' => 'slideshow'], function(){
+            Route::get('/', [Slideshow::class, 'index']);
+            Route::get('/tambah', [Slideshow::class, 'tambah']);
+            Route::post('/prosestambah', [Slideshow::class, 'prosestambah']);
+            Route::get('/edit/{id}', [Slideshow::class, 'edit']);
+            Route::patch('/prosesedit/{id}', [Slideshow::class, 'prosesedit']);
+            Route::delete('/hapus/{id}', [Slideshow::class, 'hapus']);
         });
 
         Route::group(['prefix' => 'sosial-media'], function() {

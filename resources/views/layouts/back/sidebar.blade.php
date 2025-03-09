@@ -20,6 +20,13 @@
         </li>
         <li class="nav-title">Data</li>
             <li class="nav-item">
+                <a class="nav-link" href="{{URL('/dashboard/slideshow')}}">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-featured-playlist')}}"></use>
+                    </svg> Slideshow
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{URL('/dashboard/sosial-media')}}">
                     <svg class="nav-icon">
                         <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-share-alt')}}"></use>

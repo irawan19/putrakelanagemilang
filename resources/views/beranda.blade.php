@@ -1,371 +1,577 @@
 @extends('layouts.front.app')
 @section('content')
 
-
-    <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url({{URL::asset('template/front/images/slider-bg.png')}});">
-       <div class="container">
-          <div class="row">
-             <div class="col-md-12 col-sm-12">
-                <div class="text-contant">
-                   <h2>
-                      <span class="center"><span class="icon"><img src="{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}" alt="#" /></span></span>
-                      <a href="" class="typewrite" data-period="2000" data-type='[ "PT. Putra Kelana Gemilang" ]'>
-                      <span class="wrap"></span>
-                      </a>
-                   </h2>
+    <!-- Carousel Start -->
+    <div class="header-carousel owl-carousel">
+        <div class="header-carousel-item bg-primary">
+            <div class="carousel-caption">
+                <div class="container">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-7 animated fadeInLeft">
+                            <div class="text-sm-center text-md-start">
+                                <h4 class="text-white text-uppercase fw-bold mb-4">Welcome To LifeSure</h4>
+                                <h1 class="display-1 text-white mb-4">Life Insurance Makes You Happy</h1>
+                                <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy... 
+                                </p>
+                                <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
+                                    <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
+                                    <a class="btn btn-dark rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 animated fadeInRight">
+                            <div class="calrousel-img" style="object-fit: cover;">
+                                <img src="{{URL::asset('template/front/img/carousel-2.png') }}" class="img-fluid w-100" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-             </div>
-          </div>
-          <!-- end row -->
-       </div>
-       <!-- end container -->
+            </div>
+        </div>
+        <div class="header-carousel-item bg-primary">
+            <div class="carousel-caption">
+                <div class="container">
+                    <div class="row gy-4 gy-lg-0 gx-0 gx-lg-5 align-items-center">
+                        <div class="col-lg-5 animated fadeInLeft">
+                            <div class="calrousel-img">
+                                <img src="{{URL::asset('template/front/img/carousel-2.png') }}" class="img-fluid w-100" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-7 animated fadeInRight">
+                            <div class="text-sm-center text-md-end">
+                                <h4 class="text-white text-uppercase fw-bold mb-4">Welcome To LifeSure</h4>
+                                <h1 class="display-1 text-white mb-4">Life Insurance Makes You Happy</h1>
+                                <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy... 
+                                </p>
+                                <div class="d-flex justify-content-center justify-content-md-end flex-shrink-0 mb-4">
+                                    <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
+                                    <a class="btn btn-dark rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- end section -->
-    <div id="time-table" class="time-table-section">
-       <div class="container">
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-             <div class="row">
-                <div class="service-time one" style="background:#fe0000;">
-                   <span class="info-icon"><i class="fa fa-ambulance" aria-hidden="true"></i></span>
-                   <h3>Emergency Case</h3>
-                   <p>Dignissimos ducimus qui blanditii sentium volta tum deleniti atque cori as quos dolores et quas mole.</p>
+    <!-- Carousel End -->
+
+    <!-- Feature Start -->
+    <div class="container-fluid feature bg-light py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary">Our Features</h4>
+                <h1 class="display-4 mb-4">Insurance Provide you a Better Future</h1>
+                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="feature-item p-4 pt-0">
+                        <div class="feature-icon p-4 mb-4">
+                            <i class="far fa-handshake fa-3x"></i>
+                        </div>
+                        <h4 class="mb-4">Trusted Company</h4>
+                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                    </div>
                 </div>
-             </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-             <div class="row">
-                <div class="service-time middle" style="background:#e30202;">
-                   <span class="info-icon"><i class="fa fa-clock-o" aria-hidden="true"></i></span> 
-                   <h3>Working Hours</h3>
-                   <div class="time-table-section">
-                      <ul>
-                         <li><span class="left">Monday - Friday</span><span class="right">8.00 – 18.00</span></li>
-                         <li><span class="left">Saturday</span><span class="right">8.00 – 16.00</span></li>
-                         <li><span class="left">Sunday</span><span class="right">8.00 – 13.00</span></li>
-                      </ul>
-                   </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="feature-item p-4 pt-0">
+                        <div class="feature-icon p-4 mb-4">
+                            <i class="fa fa-dollar-sign fa-3x"></i>
+                        </div>
+                        <h4 class="mb-4">Anytime Money Back</h4>
+                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                    </div>
                 </div>
-             </div>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-             <div class="row">
-                <div class="service-time three" style="background:#bf0404;">
-                   <span class="info-icon"><i class="fa fa-hospital-o" aria-hidden="true"></i></span>
-                   <h3>Clinic Timetable</h3>
-                   <p>Dignissimos ducimus qui blanditii sentium volta tum deleniti atque cori as quos dolores et quas mole.</p>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="feature-item p-4 pt-0">
+                        <div class="feature-icon p-4 mb-4">
+                            <i class="fa fa-bullseye fa-3x"></i>
+                        </div>
+                        <h4 class="mb-4">Flexible Plans</h4>
+                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                    </div>
                 </div>
-             </div>
-          </div>
-       </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="feature-item p-4 pt-0">
+                        <div class="feature-icon p-4 mb-4">
+                            <i class="fa fa-headphones fa-3x"></i>
+                        </div>
+                        <h4 class="mb-4">24/7 Fast Support</h4>
+                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
+                        </p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="tentang-kami" class="section wow fadeIn">
-       <div class="container">
-          <div class="heading">
-             <span class="icon-logo"><img src="{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}" alt="#"></span>
-             <h2>The Specialist Clinic</h2>
-          </div>
-          <!-- end title -->
-          <div class="row">
-             <div class="col-md-6">
-                <div class="message-box">
-                   <h4>What We Do</h4>
-                   <h2>Clinic Service</h2>
-                   <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>
-                   <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  </p>
-                   <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Learn More</a>
+    <!-- Feature End -->
+
+    <!-- About Start -->
+    <div class="container-fluid bg-light about pb-5">
+        <div class="container pb-5">
+            <div class="row g-5">
+                <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="about-item-content bg-white rounded p-5 h-100">
+                        <h4 class="text-primary">About Our Company</h4>
+                        <h1 class="display-4 mb-4">High Range of Exploring Protection</h1>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt debitis sint tempora. Corporis consequatur illo blanditiis voluptates aperiam quos aliquam totam aliquid rem explicabo,
+                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae praesentium recusandae eligendi modi hic
+                        </p>
+                        <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>We can save your money.</p>
+                        <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Production or trading of good</p>
+                        <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>Our life insurance is flexible</p>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Information</a>
+                    </div>
                 </div>
-                <!-- end messagebox -->
-             </div>
-             <!-- end col -->
-             <div class="col-md-6">
-                <div class="post-media wow fadeIn">
-                   <img src="{{URL::asset('template/front/images/about_03.jpg')}}" alt="" class="img-responsive">
-                   <a href="http://www.youtube.com/watch?v=nrJtHemSPW4" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
+                <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
+                    <div class="bg-white rounded p-5 h-100">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-12">
+                                <div class="rounded bg-light">
+                                    <img src="{{URL::asset('template/front/img/about-1.png') }}" class="img-fluid rounded w-100" alt="">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="counter-item bg-light rounded p-3 h-100">
+                                    <div class="counter-counting">
+                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">129</span>
+                                        <span class="h1 fw-bold text-primary">+</span>
+                                    </div>
+                                    <h4 class="mb-0 text-dark">Insurance Policies</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="counter-item bg-light rounded p-3 h-100">
+                                    <div class="counter-counting">
+                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">99</span>
+                                        <span class="h1 fw-bold text-primary">+</span>
+                                    </div>
+                                    <h4 class="mb-0 text-dark">Awards WON</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="counter-item bg-light rounded p-3 h-100">
+                                    <div class="counter-counting">
+                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">556</span>
+                                        <span class="h1 fw-bold text-primary">+</span>
+                                    </div>
+                                    <h4 class="mb-0 text-dark">Skilled Agents</h4>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="counter-item bg-light rounded p-3 h-100">
+                                    <div class="counter-counting">
+                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">967</span>
+                                        <span class="h1 fw-bold text-primary">+</span>
+                                    </div>
+                                    <h4 class="mb-0 text-dark">Team Members</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- end media -->
-             </div>
-             <!-- end col -->
-          </div>
-          <!-- end row -->
-          <hr class="hr1">
-          <div class="row">
-             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="service-widget">
-                   <div class="post-media wow fadeIn">
-                      <a href="{{URL::asset('template/front/images/clinic_01.jpg')}}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                      <img src="{{URL::asset('template/front/images/clinic_01.jpg')}}" alt="" class="img-responsive">
-                   </div>
-                   <h3>Digital Control Center</h3>
-                </div>
-                <!-- end service -->
-             </div>
-             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="service-widget">
-                   <div class="post-media wow fadeIn">
-                      <a href="{{URL::asset('template/front/images/clinic_02.jpg')}}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                      <img src="{{URL::asset('template/front/images/clinic_02.jpg')}}" alt="" class="img-responsive">
-                   </div>
-                   <h3>Hygienic Operating Room</h3>
-                </div>
-                <!-- end service -->
-             </div>
-             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="service-widget">
-                   <div class="post-media wow fadeIn">
-                      <a href="{{URL::asset('template/front/images/clinic_03.jpg')}}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                      <img src="{{URL::asset('template/front/images/clinic_03.jpg')}}" alt="" class="img-responsive">
-                   </div>
-                   <h3>Specialist Physicians</h3>
-                </div>
-                <!-- end service -->
-             </div>
-             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="service-widget">
-                   <div class="post-media wow fadeIn">
-                      <a href="{{URL::asset('template/front/images/clinic_01.jpg')}}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
-                      <img src="{{URL::asset('template/front/images/clinic_01.jpg')}}" alt="" class="img-responsive">
-                   </div>
-                   <h3>Digital Control Center</h3>
-                </div>
-                <!-- end service -->
-             </div>
-          </div>
-          <!-- end row -->
-       </div>
-       <!-- end container -->
+            </div>
+        </div>
     </div>
-    <div id="layanan" class="services wow fadeIn">
-       <div class="container">
-          <div class="row">
-             <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-                <div class="inner-services">
-                   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                      <div class="serv">
-                         <span class="icon-service"><img src="{{URL::asset('template/front/images/service-icon1.png')}}" alt="#" /></span>
-                         <h4>PREMIUM FACILITIES</h4>
-                         <p>Lorem Ipsum is simply dummy text of the printing.</p>
-                      </div>
-                   </div>
-                   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                      <div class="serv">
-                         <span class="icon-service"><img src="{{URL::asset('template/front/images/service-icon2.png')}}" alt="#" /></span>
-                         <h4>LARGE LABORATORY</h4>
-                         <p>Lorem Ipsum is simply dummy text of the printing.</p>
-                      </div>
-                   </div>
-                   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                      <div class="serv">
-                         <span class="icon-service"><img src="{{URL::asset('template/front/images/service-icon3.png')}}" alt="#" /></span>
-                         <h4>DETAILED SPECIALIST</h4>
-                         <p>Lorem Ipsum is simply dummy text of the printing.</p>
-                      </div>
-                   </div>
-                   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                      <div class="serv">
-                         <span class="icon-service"><img src="{{URL::asset('template/front/images/service-icon4.png')}}" alt="#" /></span>
-                         <h4>CHILDREN CARE CENTER</h4>
-                         <p>Lorem Ipsum is simply dummy text of the printing.</p>
-                      </div>
-                   </div>
-                   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                      <div class="serv">
-                         <span class="icon-service"><img src="{{URL::asset('template/front/images/service-icon5.png')}}" alt="#" /></span>
-                         <h4>FINE INFRASTRUCTURE</h4>
-                         <p>Lorem Ipsum is simply dummy text of the printing.</p>
-                      </div>
-                   </div>
-                   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                      <div class="serv">
-                         <span class="icon-service"><img src="{{URL::asset('template/front/images/service-icon6.png')}}" alt="#" /></span>
-                         <h4>ANYTIME BLOOD BANK</h4>
-                         <p>Lorem Ipsum is simply dummy text of the printing.</p>
-                      </div>
-                   </div>
+    <!-- About End -->
+
+    <!-- Service Start -->
+    <div class="container-fluid service py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary">Our Services</h4>
+                <h1 class="display-4 mb-4">We Provide Best Services</h1>
+                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
+                </p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="{{URL::asset('template/front/img/blog-1.png') }}" class="img-fluid rounded-top w-100" alt="">
+                            <div class="service-icon p-3">
+                                <i class="fa fa-users fa-2x"></i>
+                            </div>
+                        </div>
+                        <div class="service-content p-4">
+                            <div class="service-content-inner">
+                                <a href="#" class="d-inline-block h4 mb-4">Life Insurance</a>
+                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
+                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-             </div>
-             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <div class="appointment-form">
-                   <h3><span>+</span> Book Appointment</h3>
-                   <div class="form">
-                      <form action="index.html">
-                         <fieldset>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                               <div class="row">
-                                  <div class="form-group">
-                                     <input type="text" id="name" placeholder="Your Name"  />
-                                  </div>
-                               </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="{{URL::asset('template/front/img/blog-2.png') }}" class="img-fluid rounded-top w-100" alt="">
+                            <div class="service-icon p-3">
+                                <i class="fa fa-hospital fa-2x"></i>
                             </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                               <div class="row">
-                                  <div class="form-group">
-                                     <input type="email" placeholder="Email Address" id="email" />
-                                  </div>
-                               </div>
+                        </div>
+                        <div class="service-content p-4">
+                            <div class="service-content-inner">
+                                <a href="#" class="d-inline-block h4 mb-4">Health Insurance</a>
+                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
+                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
                             </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 select-section">
-                               <div class="row">
-                                  <div class="form-group">
-                                     <select class="form-control">
-                                        <option>Day</option>
-                                        <option>Sunday</option>
-                                        <option>Monday</option>
-                                     </select>
-                                  </div>
-                                  <div class="form-group">
-                                     <select class="form-control">
-                                        <option>Time</option>
-                                        <option>AM</option>
-                                        <option>PM</option>
-                                     </select>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                               <div class="row">
-                                  <div class="form-group">
-                                     <select class="form-control">
-                                        <option>Doctor Name</option>
-                                        <option>Mr.XYZ</option>
-                                        <option>Mr.ABC</option>
-                                     </select>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                               <div class="row">
-                                  <div class="form-group">
-                                     <textarea rows="4" id="textarea_message" class="form-control" placeholder="Your Message..."></textarea>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                               <div class="row">
-                                  <div class="form-group">
-                                     <div class="center"><button type="submit">Submit</button></div>
-                                  </div>
-                               </div>
-                            </div>
-                         </fieldset>
-                      </form>
-                   </div>
+                        </div>
+                    </div>
                 </div>
-             </div>
-          </div>
-       </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="{{URL::asset('template/front/img/blog-3.png') }}" class="img-fluid rounded-top w-100" alt="">
+                            <div class="service-icon p-3">
+                                <i class="fa fa-car fa-2x"></i>
+                            </div>
+                        </div>
+                        <div class="service-content p-4">
+                            <div class="service-content-inner">
+                                <a href="#" class="d-inline-block h4 mb-4">Car Insurance</a>
+                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
+                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="{{URL::asset('template/front/img/blog-4.png') }}" class="img-fluid rounded-top w-100" alt="">
+                            <div class="service-icon p-3">
+                                <i class="fa fa-home fa-2x"></i>
+                            </div>
+                        </div>
+                        <div class="service-content p-4">
+                            <div class="service-content-inner">
+                                <a href="#" class="d-inline-block h4 mb-4">Home Insurance</a>
+                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
+                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Services</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="katalog" class="parallax section db" data-stellar-background-ratio="0.4" style="background:#fff;" data-scroll-id="doctors" tabindex="-1">
-      <div class="container">
-    	<div class="heading">
-             <span class="icon-logo"><img src="{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}" alt="#"></span>
-             <h2>The Specialist Clinic</h2>
-          </div>
+    <!-- Service End -->
 
-          <div class="row dev-list text-center">
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeIn;">
-                  <div class="widget clearfix">
-                      <img src="{{URL::asset('template/front/images/doctor_01.jpg')}}" alt="" class="img-responsive img-rounded">
-                      <div class="widget-title">
-                          <h3>Soren Bo Bostian</h3>
-                          <small>Clinic Owner</small>
-                      </div>
-                      <!-- end title -->
-                      <p>Hello guys, I am Soren from Sirbistana. I am senior art director and founder of Violetta.</p>
-
-                      <div class="footer-social">
-                          <a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
-                          <a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
-                          <a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
-                          <a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
-                      </div>
-                  </div><!--widget -->
-              </div><!-- end col -->
-
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.4s; animation-name: fadeIn;">
-                  <div class="widget clearfix">
-                      <img src="{{URL::asset('template/front/images/doctor_02.jpg')}}" alt="" class="img-responsive img-rounded">
-                      <div class="widget-title">
-                          <h3>Bryan Saftler</h3>
-                          <small>Internal Diseases</small>
-                      </div>
-                      <!-- end title -->
-                      <p>Hello guys, I am Soren from Sirbistana. I am senior art director and founder of Violetta.</p>
-
-                      <div class="footer-social">
-                          <a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
-                          <a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
-                          <a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
-                          <a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
-                      </div>
-                  </div><!--widget -->
-              </div><!-- end col -->
-
-              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn">
-                  <div class="widget clearfix">
-                      <img src="{{URL::asset('template/front/images/doctor_03.jpg')}}" alt="" class="img-responsive img-rounded">
-                      <div class="widget-title">
-                          <h3>Matthew Bayliss</h3>
-                          <small>Orthopedics Expert</small>
-                      </div>
-                      <!-- end title -->
-                      <p>Hello guys, I am Soren from Sirbistana. I am senior art director and founder of Violetta.</p>
-
-                      <div class="footer-social">
-                          <a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
-                          <a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
-                          <a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
-                          <a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
-                      </div>
-                  </div><!--widget -->
-              </div><!-- end col -->
-
-          </div><!-- end row -->
-      </div><!-- end container -->
-    <div>
-    <div id="kontak" class="section wb wow fadeIn" style="padding-bottom:0;">
-       <div class="container">
-          <div class="heading">
-             <span class="icon-logo"><img src="{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}" alt="#"></span>
-             <h2>Get in Touch</h2>
-          </div>
-       </div>
-       <div class="contact-section">
-          <div class="form-contant">
-             <form id="ajax-contact" action="assets/mailer.php" method="post">
-                <div class="row">
-                   <div class="col-md-6">
-                      <div class="form-group in_name">
-                         <input type="text" class="form-control" placeholder="Name" required="required">
-                      </div>
-                   </div>
-                   <div class="col-md-6">
-                      <div class="form-group in_email">
-                         <input type="email" class="form-control" placeholder="E-mail" required="required">
-                      </div>
-                   </div>
-                   <div class="col-md-6">
-                      <div class="form-group in_email">
-                         <input type="tel" class="form-control" id="phone" placeholder="Phone" required="required">
-                      </div>
-                   </div>
-                   <div class="col-md-6">
-                      <div class="form-group in_email">
-                         <input type="text" class="form-control" id="subject" placeholder="Subject" required="required">
-                      </div>
-                   </div>
-                   <div class="col-md-12">
-                      <div class="form-group in_message"> 
-                         <textarea class="form-control" id="message" rows="5" placeholder="Message" required="required"></textarea>
-                      </div>
-                      <div class="actions">
-                         <input type="submit" value="Send Message" name="submit" id="submitButton" class="btn small" title="Submit Your Message!">
-                      </div>
-                   </div>
+    <!-- FAQs Start -->
+    <div class="container-fluid faq-section bg-light py-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="h-100">
+                        <div class="mb-5">
+                            <h4 class="text-primary">Some Important FAQ's</h4>
+                            <h1 class="display-4 mb-0">Common Frequently Asked Questions</h1>
+                        </div>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Q: What happens during Freshers' Week?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show active" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body rounded">
+                                        A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Q: What is the transfer application process?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Q: Why should I attend community college?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        A: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-             </form>
-          </div>
-          <div id="googleMap" style="width:100%;height:450px;"></div>
-       </div>
+                <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
+                    <img src="{{URL::asset('template/front/img/carousel-2.png') }}" class="img-fluid w-100" alt="">
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- FAQs End -->
+
+    <!-- Blog Start -->
+    <div class="container-fluid blog py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary">From Blog</h4>
+                <h1 class="display-4 mb-4">News And Updates</h1>
+                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
+                </p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="{{URL::asset('template/front/img/blog-1.png') }}" class="img-fluid rounded-top w-100" alt="">
+                            <div class="blog-categiry py-2 px-4">
+                                <span>Business</span>
+                            </div>
+                        </div>
+                        <div class="blog-content p-4">
+                            <div class="blog-comment d-flex justify-content-between mb-3">
+                                <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div>
+                                <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Dec 2025</div>
+                                <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Comments</div>
+                            </div>
+                            <a href="#" class="h4 d-inline-block mb-3">Which allows you to pay down insurance bills</a>
+                            <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
+                            <a href="#" class="btn p-0">Read More  <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="{{URL::asset('template/front/img/blog-2.png') }}" class="img-fluid rounded-top w-100" alt="">
+                            <div class="blog-categiry py-2 px-4">
+                                <span>Business</span>
+                            </div>
+                        </div>
+                        <div class="blog-content p-4">
+                            <div class="blog-comment d-flex justify-content-between mb-3">
+                                <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div>
+                                <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Dec 2025</div>
+                                <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Comments</div>
+                            </div>
+                            <a href="#" class="h4 d-inline-block mb-3">Leverage agile frameworks to provide</a>
+                            <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
+                            <a href="#" class="btn p-0">Read More  <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="{{URL::asset('template/front/img/blog-3.png') }}" class="img-fluid rounded-top w-100" alt="">
+                            <div class="blog-categiry py-2 px-4">
+                                <span>Business</span>
+                            </div>
+                        </div>
+                        <div class="blog-content p-4">
+                            <div class="blog-comment d-flex justify-content-between mb-3">
+                                <div class="small"><span class="fa fa-user text-primary"></span> Martin.C</div>
+                                <div class="small"><span class="fa fa-calendar text-primary"></span> 30 Dec 2025</div>
+                                <div class="small"><span class="fa fa-comment-alt text-primary"></span> 6 Comments</div>
+                            </div>
+                            <a href="#" class="h4 d-inline-block mb-3">Leverage agile frameworks to provide</a>
+                            <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
+                            <a href="#" class="btn p-0">Read More  <i class="fa fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+    <!-- Team Start -->
+    <div class="container-fluid team pb-5">
+        <div class="container pb-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary">Our Team</h4>
+                <h1 class="display-4 mb-4">Meet Our Expert Team Members</h1>
+                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="{{URL::asset('template/front/img/team-1.jpg') }}" class="img-fluid rounded-top w-100" alt="">
+                            <div class="team-icon">
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-title p-4">
+                            <h4 class="mb-0">David James</h4>
+                            <p class="mb-0">Profession</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="{{URL::asset('template/front/img/team-2.jpg') }}" class="img-fluid rounded-top w-100" alt="">
+                            <div class="team-icon">
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-title p-4">
+                            <h4 class="mb-0">David James</h4>
+                            <p class="mb-0">Profession</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="{{URL::asset('template/front/img/team-3.jpg') }}" class="img-fluid rounded-top w-100" alt="">
+                            <div class="team-icon">
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-title p-4">
+                            <h4 class="mb-0">David James</h4>
+                            <p class="mb-0">Profession</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="{{URL::asset('template/front/img/team-4.jpg') }}" class="img-fluid rounded-top w-100" alt="">
+                            <div class="team-icon">
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-title p-4">
+                            <h4 class="mb-0">David James</h4>
+                            <p class="mb-0">Profession</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid testimonial pb-5">
+        <div class="container pb-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="text-primary">Testimonial</h4>
+                <h1 class="display-4 mb-4">What Our Customers Are Saying</h1>
+                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
+                </p>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s">
+                <div class="testimonial-item bg-light rounded">
+                    <div class="row g-0">
+                        <div class="col-4  col-lg-4 col-xl-3">
+                            <div class="h-100">
+                                <img src="{{URL::asset('template/front/img/testimonial-1.jpg') }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
+                            </div>
+                        </div>
+                        <div class="col-8 col-lg-8 col-xl-9">
+                            <div class="d-flex flex-column my-auto text-start p-4">
+                                <h4 class="text-dark mb-0">Client Name</h4>
+                                <p class="mb-3">Profession</p>
+                                <div class="d-flex text-primary mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light rounded">
+                    <div class="row g-0">
+                        <div class="col-4  col-lg-4 col-xl-3">
+                            <div class="h-100">
+                                <img src="{{URL::asset('template/front/img/testimonial-2.jpg') }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
+                            </div>
+                        </div>
+                        <div class="col-8 col-lg-8 col-xl-9">
+                            <div class="d-flex flex-column my-auto text-start p-4">
+                                <h4 class="text-dark mb-0">Client Name</h4>
+                                <p class="mb-3">Profession</p>
+                                <div class="d-flex text-primary mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star text-body"></i>
+                                </div>
+                                <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light rounded">
+                    <div class="row g-0">
+                        <div class="col-4  col-lg-4 col-xl-3">
+                            <div class="h-100">
+                                <img src="{{URL::asset('template/front/img/testimonial-3.jpg') }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
+                            </div>
+                        </div>
+                        <div class="col-8 col-lg-8 col-xl-9">
+                            <div class="d-flex flex-column my-auto text-start p-4">
+                                <h4 class="text-dark mb-0">Client Name</h4>
+                                <p class="mb-3">Profession</p>
+                                <div class="d-flex text-primary mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star text-body"></i>
+                                    <i class="fas fa-star text-body"></i>
+                                </div>
+                                <p class="mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim error molestiae aut modi corrupti fugit eaque rem nulla incidunt temporibus quisquam,
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
 
 @endsection

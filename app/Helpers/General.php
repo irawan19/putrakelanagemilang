@@ -93,7 +93,7 @@ class General {
 
 		public static function tambah($link = '')
 		{
-			echo  '<a href="' . URL($link) . '" class="btn btn-sm btn-success">
+			echo  '<a href="' . URL($link) . '" class="btn btn-sm btn-success" style="color:#fff">
 						<span class="cil-plus"></span> Tambah
 					</a>';
 		}

@@ -1,15 +1,14 @@
 @php($aplikasi				= \App\Models\Aplikasi::first())
+@php($kontak                = \App\Models\Kontak::first())
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
         <title>{{ $aplikasi->nama_aplikasis }}</title>
-        <meta name="keywords" content="{{ $aplikasi->keyword_aplikasis }}">
-        <meta name="description" content="{{ $aplikasi->deskripsi_aplikasis }}">
-        <meta name="author" content="admin {{ $aplikasi->nama_aplikasis }}">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
         <link rel="apple-touch-icon" sizes="57x57" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
         <link rel="apple-touch-icon" sizes="60x60" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
         <link rel="apple-touch-icon" sizes="72x72" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
@@ -23,23 +22,51 @@
         <link rel="icon" type="image/png" sizes="32x32" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
         <link rel="icon" type="image/png" sizes="96x96" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
-        <link rel="stylesheet" href="{{URL::asset('template/front/css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{URL::asset('template/front/style.css')}}">
-        <link rel="stylesheet" href="{{URL::asset('template/front/css/colors.css')}}">
-        <link rel="stylesheet" href="{{URL::asset('template/front/css/versions.css')}}">
-        <link rel="stylesheet" href="{{URL::asset('template/front/css/responsive.css')}}">
-        <link rel="stylesheet" href="{{URL::asset('template/front/css/custom.css')}}">
-        <script src="{{URL::asset('template/front/js/modernizer.js')}}"></script>
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="{{ URL::asset('template/front/lib/animate/animate.min.css') }}"/>
+        <link href="{{ URL::asset('template/front/lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
+        <link href="{{ URL::asset('template/front/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="{{ URL::asset('template/front/css/bootstrap.min.css') }}" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="{{ URL::asset('template/front/css/style.css') }}" rel="stylesheet">
     </head>
-   <body class="clinic_version">
+
+    <body>
         @include('layouts.front.loader')
-        @include('layouts.front.header')
+        @include('layouts.front.topbar')
+        @include('layouts.front.navbar')
         @yield('content')
         @include('layouts.front.footer')
         @include('layouts.front.copyright')
-        <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
-        <script src="{{URL::asset('template/front/js/all.js')}}"></script>
-        <script src="{{URL::asset('template/front/js/custom.js')}}"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUPWkb4Cjd7Wxo-T4uoUldFjoiUA1fJc&callback=myMap"></script>
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ URL::asset('template/front/lib/wow/wow.min.js') }}"></script>
+        <script src="{{ URL::asset('template/front/lib/easing/easing.min.js') }}"></script>
+        <script src="{{ URL::asset('template/front/lib/waypoints/waypoints.min.js') }}"></script>
+        <script src="{{ URL::asset('template/front/lib/counterup/counterup.min.js') }}"></script>
+        <script src="{{ URL::asset('template/front/lib/lightbox/js/lightbox.min.js') }}"></script>
+        <script src="{{ URL::asset('template/front/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+        
+        <!-- Template Javascript -->
+        <script src="{{ URL::asset('template/front/js/main.js') }}"></script>
     </body>
+
 </html>
