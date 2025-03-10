@@ -151,4 +151,15 @@ class LayananController extends AdminCoreController {
         }
     }
 
+    public function hapusdetail(Request $request, $idlayanandetails) {
+        $cek_layanan_details = Layanan_detail::find($idlayanandetails);
+        if (!empty($cek_layanan_details)) {
+            Storage::disk('public')->delete($cek_layanan_details->gambar_layanan_details);
+            Layanan_detail::find($idlayanandetails)->delete();
+            return response()->json(['sukses' => '"sukses'], 200);
+        } else {
+            return redirect('dashboard/layanan');
+        }
+    }
+
 }
