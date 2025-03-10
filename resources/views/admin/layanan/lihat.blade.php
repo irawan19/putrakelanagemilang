@@ -23,6 +23,78 @@
                 </form>
             </div>
         </div>
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <strong>Detail</strong>
+                        </div>
+                        <div class="col-md-6 right-align">
+                            {{\App\Helpers\General::tambah('dashboard/layanan/tambahdetail')}}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+	            	<div class="scrolltable">
+                        <table id="tablesort" class="table table-responsive-sm table-bordered table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th class="nowrap"></th>
+                                    <th class="nowrap" width="10px">No</th>
+                                    <th class="nowrap">Gambar</th>
+                                    <th class="nowrap">Icon</th>
+                                    <th class="nowrap">Judul</th>
+                                    <th class="nowrap">Konten</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if(!$layanan_details->isEmpty())
+					    			@php($no = 1)
+		            				@foreach($layanan_details as $layanan_detail)
+                                        <tr>
+                                            <td class="nowrap">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-primary dropdown-toggle" data-coreui-toggle="dropdown" aria-expanded="false">
+                                                        Pilih
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            {{\App\Helpers\General::edit('dashboard/layanan/editdetail/'.$layanan_detail->id_layanan_details)}}
+                                                        </li>
+                                                        <li>
+                                                            {{\App\Helpers\General::hapus('dashboard/layanan/hapusdetail/'.$layanan_detail->id_layanan_details, $layanan_detail->url_layanan_details)}}
+                                                        </li>
+                                                    </ul>
+                                                </div>
+											</td>
+                                            <td class="nowrap">{{$no}}</td>
+								    		<td class="nowrap">
+                                                <a data-fancybox="gallery" href="{{URL::asset('storage/'.$layanan_detail->gambar_layanan_details)}}">
+                                                    <img src="{{ URL::asset('storage/'.$layanan_detail->gambar_layanan_details) }}" width="108">
+                                                </a>
+                                            </td>
+                                            <td class="nowrap">{{$layanan_detail->icon_layanan_details}}</td>
+                                            <td class="nowrap">{{$layanan_detail->judul_layanan_details}}</td>
+                                            <td class="nowrap">{!! $layanan_detail->konten_layanan_details !!}</td>
+                                            </tr>
+                                        @php($no++)
+                                    @endforeach
+                                @else
+                                    <td colspan="6" class="center-align">Tidak ada data ditampilkan</td>
+								    <td style="display:none"></td>
+								    <td style="display:none"></td>
+								    <td style="display:none"></td>
+								    <td style="display:none"></td>
+								    <td style="display:none"></td>
+                                @endif
+                            </tbody>
+				    	</table>
+				    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
     @if (Session::get('setelah_simpan.alert') == 'sukses')

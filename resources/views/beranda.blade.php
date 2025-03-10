@@ -156,77 +156,24 @@
                 <p class="mb-0">{{ $layanan->text_layanans }}</p>
             </div>
             <div class="row g-4 justify-content-center">
-                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="service-item">
-                        <div class="service-img">
-                            <img src="{{URL::asset('template/front/img/blog-1.png') }}" class="img-fluid rounded-top w-100" alt="">
-                            <div class="service-icon p-3">
-                                <i class="fa fa-users fa-2x"></i>
+                @foreach($layanan_details as $layanan_details)
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="{{URL::asset('storage/'.$layanan_details->gambar_layanan_details) }}" class="img-fluid rounded-top w-100" alt="">
+                                <div class="service-icon p-3">
+                                    <i class="fa fa-{{$layanan_details->icon_layanan_details}} fa-2x"></i>
+                                </div>
                             </div>
-                        </div>
-                        <div class="service-content p-4">
-                            <div class="service-content-inner">
-                                <a href="#" class="d-inline-block h4 mb-4">Life Insurance</a>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="service-item">
-                        <div class="service-img">
-                            <img src="{{URL::asset('template/front/img/blog-2.png') }}" class="img-fluid rounded-top w-100" alt="">
-                            <div class="service-icon p-3">
-                                <i class="fa fa-hospital fa-2x"></i>
-                            </div>
-                        </div>
-                        <div class="service-content p-4">
-                            <div class="service-content-inner">
-                                <a href="#" class="d-inline-block h4 mb-4">Health Insurance</a>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
+                            <div class="service-content p-4">
+                                <div class="service-content-inner">
+                                    <a href="#" class="d-inline-block h4 mb-4">{{ $layanan_details->judul_layanan_details }}</a>
+                                    <p class="mb-4">{!! $layanan_details->konten_layanan_details !!}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="service-item">
-                        <div class="service-img">
-                            <img src="{{URL::asset('template/front/img/blog-3.png') }}" class="img-fluid rounded-top w-100" alt="">
-                            <div class="service-icon p-3">
-                                <i class="fa fa-car fa-2x"></i>
-                            </div>
-                        </div>
-                        <div class="service-content p-4">
-                            <div class="service-content-inner">
-                                <a href="#" class="d-inline-block h4 mb-4">Car Insurance</a>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                    <div class="service-item">
-                        <div class="service-img">
-                            <img src="{{URL::asset('template/front/img/blog-4.png') }}" class="img-fluid rounded-top w-100" alt="">
-                            <div class="service-icon p-3">
-                                <i class="fa fa-home fa-2x"></i>
-                            </div>
-                        </div>
-                        <div class="service-content p-4">
-                            <div class="service-content-inner">
-                                <a href="#" class="d-inline-block h4 mb-4">Home Insurance</a>
-                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
-                                <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                    <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Services</a>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

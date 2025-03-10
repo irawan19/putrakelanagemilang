@@ -95,12 +95,11 @@ Route::middleware([
         Route::group(['prefix' => 'layanan'], function(){
             Route::get('/', [AdminLayanan::class, 'index']);
             Route::patch('/prosesedit', [AdminLayanan::class, 'prosesedit']);
-            
-            Route::get('/tambah', [AdminLayanan::class, 'tambah']);
-            Route::post('/prosestambah', [AdminLayanan::class, 'prosestambah']);
-            Route::get('/edit/{id}', [AdminLayanan::class, 'edit']);
-            Route::patch('/prosesedit/{id}', [AdminLayanan::class, 'prosesedit']);
-            Route::delete('/hapus/{id}', [AdminLayanan::class, 'hapus']);
+            Route::get('/tambahdetail', [AdminLayanan::class, 'tambahdetail']);
+            Route::post('/prosestambahdetail', [AdminLayanan::class, 'prosestambahdetail']);
+            Route::get('/editdetail/{id}', [AdminLayanan::class, 'editdetail']);
+            Route::patch('/proseseditdetail/{id}', [AdminLayanan::class, 'proseseditdetail']);
+            Route::delete('/hapusdetail/{id}', [AdminLayanan::class, 'hapusdetail']);
         });
 
         Route::group(['prefix' => 'pertanyaan-umum'], function(){

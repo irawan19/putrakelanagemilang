@@ -195,5 +195,22 @@ class General {
 		);
 		return $sosial_media_data;
 	}
+
+
+		
+	public static function iconlayanan()
+	{
+		$sosial_media_data = array(
+			array(
+				'nama' 	=> 'Hospital',
+				'icon'	=> 'hospital'
+			),
+			array(
+				'nama'	=> 'Users',
+				'icon'	=> 'user'
+			),
+		);
+		return $sosial_media_data;
+	}
     
 }
