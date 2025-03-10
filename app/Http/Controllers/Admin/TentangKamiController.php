@@ -18,13 +18,19 @@ class TentangKamiController extends AdminCoreController {
     public function prosesedit(Request $request)
     {
         $aturan = [
+            'userfile_gambar_tentang_kami'            => 'required|mimes:jpg,jpeg,png',
             'konten_sekilas_tentang_kamis'      => 'required',
             'konten_tentang_kamis'              => 'required',
             'konten_footer_tentang_kamis'       => 'required',
         ];
         $this->validate($request, $aturan);
 
+        $nama_gambar_tentang_kami = date('Ymd') . date('His') . str_replace(')', '', str_replace('(', '', str_replace(' ', '-', $request->file('userfile_gambar_tentang_kami')->getClientOriginalName())));
+        $path_gambar_tentang_kami = 'tentang_kami/';
+        Storage::disk('public')->put($path_gambar_tentang_kami . $nama_gambar_tentang_kami, file_get_contents($request->file('userfile_gambar_tentang_kami')));
+
         $tentang_kami_data = [
+            'gambar_tentang_kamis'              => $path_gambar_tentang_kami.$nama_gambar_tentang_kami,
             'konten_sekilas_tentang_kamis'      => $request->konten_sekilas_tentang_kamis,
             'konten_tentang_kamis'              => $request->konten_tentang_kamis,
             'konten_footer_tentang_kamis'       => $request->konten_footer_tentang_kamis,

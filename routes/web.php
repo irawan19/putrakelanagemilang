@@ -94,6 +94,8 @@ Route::middleware([
 
         Route::group(['prefix' => 'layanan'], function(){
             Route::get('/', [AdminLayanan::class, 'index']);
+            Route::patch('/prosesedit', [AdminLayanan::class, 'prosesedit']);
+            
             Route::get('/tambah', [AdminLayanan::class, 'tambah']);
             Route::post('/prosestambah', [AdminLayanan::class, 'prosestambah']);
             Route::get('/edit/{id}', [AdminLayanan::class, 'edit']);

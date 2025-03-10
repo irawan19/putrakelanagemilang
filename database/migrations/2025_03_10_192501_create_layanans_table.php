@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tentang_kamis', function (Blueprint $table) {
-            $table->id('id_tentang_kamis');
-            $table->string('gambar_tentang_kamis');
-            $table->longtext('konten_sekilas_tentang_kamis');
-            $table->longtext('konten_tentang_kamis');
-            $table->longtext('konten_footer_tentang_kamis');
+        Schema::create('layanans', function (Blueprint $table) {
+            $table->id('id_layanans');
+            $table->string('text_layanans');
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tentang_kamis');
+        Schema::dropIfExists('layanans');
     }
 };

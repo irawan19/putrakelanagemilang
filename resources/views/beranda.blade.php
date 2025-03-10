@@ -91,7 +91,9 @@
                         <h4 class="text-primary">Tentang {{ $aplikasi->nama_aplikasis }}</h4>
                         <p>{!! nl2br($tentang_kami->konten_sekilas_tentang_kamis) !!}
                         </p>
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="{{ URL('/tentang-kami') }}">Kenali Kami Lebih Jauh</a>
+                        <div style="text-align:center; padding-top:20px">
+                            <a class="btn btn-primary rounded-pill py-3 px-5" href="{{ URL('/tentang-kami') }}">Kenali Kami Lebih Jauh</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
@@ -99,7 +101,7 @@
                         <div class="row g-4 justify-content-center">
                             <div class="col-12">
                                 <div class="rounded bg-light">
-                                    <img src="{{URL::asset('template/front/img/about-1.png') }}" class="img-fluid rounded w-100" alt="">
+                                    <img src="{{URL::asset('storage/'.$tentang_kami->gambar_tentang_kamis) }}" class="img-fluid rounded w-100" alt="">
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -151,9 +153,7 @@
         <div class="container py-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h4 class="text-primary">Layanan</h4>
-                <h1 class="display-4 mb-4">We Provide Best Services</h1>
-                <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
-                </p>
+                <p class="mb-0">{{ $layanan->text_layanans }}</p>
             </div>
             <div class="row g-4 justify-content-center">
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
