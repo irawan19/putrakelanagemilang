@@ -12,7 +12,7 @@
                     @method('PATCH')
                     <div class="card-body">
 						<div class="mb-3">
-							<label class="form-col-form-label" for="userfile_gambar_testimonial">Gambar (159x199px)</label>
+							<label class="form-col-form-label" for="userfile_gambar_testimonial">Gambar (400x500px)</label>
 							<br/>
 							<div class="form-group center-align">
 							    <a data-fancybox="gallery" href="{{URL::asset('storage/'.$testimonials->gambar_testimonials)}}">

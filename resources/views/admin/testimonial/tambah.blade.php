@@ -11,7 +11,7 @@
 					{{ csrf_field() }}
                     <div class="card-body">
 						<div class="mb-3">
-							<label class="form-col-form-label" for="userfile_gambar_testimonial">Gambar (159x199px)</label>
+							<label class="form-col-form-label" for="userfile_gambar_testimonial">Gambar (400x500px)</label>
 							<br/>
 							<input id="userfile_gambar_testimonial" class="form-control" type="file" name="userfile_gambar_testimonial">
 							{{\App\Helpers\General::pesanErrorForm($errors->first('userfile_gambar_testimonial'))}}
