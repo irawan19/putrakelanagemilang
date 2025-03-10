@@ -59,9 +59,15 @@
 											</td>
                                             <td class="nowrap">{{$no}}</td>
 								    		<td class="nowrap">
-                                                <a data-fancybox="gallery" href="{{URL::asset('storage/'.$testimonial->gambar_testimonials)}}">
-                                                    <img src="{{ URL::asset('storage/'.$testimonial->gambar_testimonials) }}" width="108">
-                                                </a>
+                                                @if($testimonial->gambar_testimonials !== 'template/front/img/default-testimonial.png')
+                                                    <a data-fancybox="gallery" href="{{URL::asset('storage/'.$testimonial->gambar_testimonials)}}">
+                                                        <img src="{{ URL::asset('storage/'.$testimonial->gambar_testimonials) }}" width="50">
+                                                    </a>
+                                                @else
+                                                    <a data-fancybox="gallery" href="{{URL::asset($testimonial->gambar_testimonials)}}">
+                                                        <img src="{{ URL::asset($testimonial->gambar_testimonials) }}" width="50">
+                                                    </a>
+                                                @endif
                                             </td>
                                             <td class="nowrap">{{$testimonial->nama_testimonials}}</td>
                                             <td class="nowrap">{{$testimonial->jabatan_testimonials}}</td>

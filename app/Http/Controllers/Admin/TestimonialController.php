@@ -35,15 +35,23 @@ class TestimonialController extends AdminCoreController {
     }
 
     public function prosestambah(Request $request) {
-        $aturan = [
-            'userfile_gambar_testimonial' => 'required|mimes:jpg,jpeg,png',
-            'nama_testimonials'          => 'required',
-        ];
-        $this->validate($request, $aturan);
+        if(!empty($request->userfile_gambar_testimonials))
+        {
+            $aturan = [
+                'userfile_gambar_testimonial' => 'required|mimes:jpg,jpeg,png',
+                'nama_testimonials'          => 'required',
+            ];
+            $this->validate($request, $aturan);
 
-        $nama_gambar_testimonial = date('Ymd') . date('His') . str_replace(')', '', str_replace('(', '', str_replace(' ', '-', $request->file('userfile_gambar_testimonial')->getClientOriginalName())));
-        $path_gambar_testimonial = 'testimonial/';
-        Storage::disk('public')->put($path_gambar_testimonial . $nama_gambar_testimonial, file_get_contents($request->file('userfile_gambar_testimonial')));
+            $nama_gambar_testimonial = date('Ymd') . date('His') . str_replace(')', '', str_replace('(', '', str_replace(' ', '-', $request->file('userfile_gambar_testimonial')->getClientOriginalName())));
+            $path_gambar_testimonial = 'testimonial/';
+            Storage::disk('public')->put($path_gambar_testimonial . $nama_gambar_testimonial, file_get_contents($request->file('userfile_gambar_testimonial')));
+        }
+        else
+        {
+            $path_gambar_testimonial   = 'template/front/images/';
+            $nama_gambar_testimonial    = 'default-testimonial.png'; 
+        }
 
         $data = [
             'gambar_testimonials' => $path_gambar_testimonial . $nama_gambar_testimonial,

@@ -27,6 +27,7 @@
                                 <a href="{{ URL('/katalog') }}"><i class="fas fa-angle-right me-2"></i> Katalog</a>
                                 <a href="{{ URL('/kontak') }}"><i class="fas fa-angle-right me-2"></i> Kontak</a>
                                 <a href="{{ URL('/lowongan-kerja') }}"><i class="fas fa-angle-right me-2"></i> Lowongan Kerja</a>
+                                <a href="{{ URL('/sitemap') }}"><i class="fas fa-angle-right me-2"></i> Sitemap</a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-4">
