@@ -71,7 +71,7 @@
                                             </td>
                                             <td class="nowrap">{{$testimonial->nama_testimonials}}</td>
                                             <td class="nowrap">{{$testimonial->jabatan_testimonials}}</td>
-                                            <td class="nowrap">{!! nl2br($testimonial->konten_testimonials) }}</td>
+                                            <td class="nowrap">{!! nl2br($testimonial->konten_testimonials) !!}</td>
                                         </tr>
                                         @php($no++)
                                     @endforeach

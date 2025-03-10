@@ -84,6 +84,8 @@ Route::middleware([
         Route::group(['prefix' => 'tentang-kami'], function(){
             Route::get('/', [AdminTentangKami::class, 'index']);
             Route::get('/tambah', [AdminTentangKami::class, 'tambah']);
+            Route::patch('/prosesedit', [AdminTentangKami::class, 'prosesedit']);
+
             Route::post('/prosestambah', [AdminTentangKami::class, 'prosestambah']);
             Route::get('/edit/{id}', [AdminTentangKami::class, 'edit']);
             Route::patch('/prosesedit/{id}', [AdminTentangKami::class, 'prosesedit']);

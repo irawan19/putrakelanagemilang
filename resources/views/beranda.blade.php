@@ -45,7 +45,6 @@
                         <h4 class="mb-4">Trusted Company</h4>
                         <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
                         </p>
-                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
@@ -56,7 +55,6 @@
                         <h4 class="mb-4">Anytime Money Back</h4>
                         <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
                         </p>
-                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
@@ -67,7 +65,6 @@
                         <h4 class="mb-4">Flexible Plans</h4>
                         <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
                         </p>
-                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
@@ -78,7 +75,6 @@
                         <h4 class="mb-4">24/7 Fast Support</h4>
                         <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
                         </p>
-                        <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -92,15 +88,10 @@
             <div class="row g-5">
                 <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
                     <div class="about-item-content bg-white rounded p-5 h-100">
-                        <h4 class="text-primary">Sekilas Tentang {{ $aplikasi->nama_aplikasis }}</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt debitis sint tempora. Corporis consequatur illo blanditiis voluptates aperiam quos aliquam totam aliquid rem explicabo,
+                        <h4 class="text-primary">Tentang {{ $aplikasi->nama_aplikasis }}</h4>
+                        <p>{!! nl2br($tentang_kami->konten_sekilas_tentang_kamis) !!}
                         </p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae praesentium recusandae eligendi modi hic
-                        </p>
-                        <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>We can save your money.</p>
-                        <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Production or trading of good</p>
-                        <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>Our life insurance is flexible</p>
-                        <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Information</a>
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="{{ URL('/tentang-kami') }}">Kenali Kami Lebih Jauh</a>
                     </div>
                 </div>
                 <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">

@@ -4,6 +4,7 @@ namespace App\Helpers;
 use Auth;
 use Datetime;
 use URL;
+use Str;
 
 class General {
 
@@ -119,6 +120,12 @@ class General {
 					</button>';
 		}
 	//Tombol
+
+
+	public static function potongText($text='',$jumlah)
+	{
+		return Str::limit(strip_tags($text),$jumlah);
+	}
 
     public static function ubahDBKeTanggal($tanggal = '')
     {
