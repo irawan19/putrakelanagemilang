@@ -10,12 +10,60 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-0 mx-lg-auto">
-                    <a href="{{ URL('/') }}" class="nav-item nav-link active">Beranda</a>
-                    <a href="{{ URL('/tentang-kami') }}" class="nav-item nav-link">Tentang</a>
-                    <a href="{{ URL('/layanan') }}" class="nav-item nav-link">Layanan</a>
-                    <a href="{{ URL('/katalog') }}" class="nav-item nav-link">Katalog</a>
-                    <a href="{{ URL('/kontak') }}" class="nav-item nav-link">Kontak</a>
-                    <a href="{{ URL('/lowongan-kerja') }}" class="nav-item nav-link">Lowongan</a>
+                    @php($active_beranda = '')
+                    @php($active_tentang_kami = '')
+                    @php($active_layanan = '')
+                    @php($active_katalog = '')
+                    @php($active_kontak = '')
+                    @php($active_lowongan_kerja = '')
+                    @if(Request::segment(1) == '' || Request::segment(1) == 'beranda')
+                        @php($active_beranda = 'active')
+                        @php($active_tentang_kami = '')
+                        @php($active_layanan = '')
+                        @php($active_katalog = '')
+                        @php($active_kontak = '')
+                    @elseif(Request::segment(1) == 'tentang-kami')
+                        @php($active_beranda = '')
+                        @php($active_tentang_kami = 'active')
+                        @php($active_layanan = '')
+                        @php($active_katalog = '')
+                        @php($active_kontak = '')
+                        @php($active_lowongan = '')
+                    @elseif(Request::segment(1) == 'layanan')
+                        @php($active_beranda = '')
+                        @php($active_tentang_kami = '')
+                        @php($active_layanan = 'active')
+                        @php($active_katalog = '')
+                        @php($active_kontak = '')
+                        @php($active_lowongan = '')
+                    @elseif(Request::segment(1) == 'katalog')
+                        @php($active_beranda = '')
+                        @php($active_tentang_kami = '')
+                        @php($active_layanan = '')
+                        @php($active_katalog = 'active')
+                        @php($active_kontak = '')
+                        @php($active_lowongan = '')
+                    @elseif(Request::segment(1) == 'kontak')
+                        @php($active_beranda = '')
+                        @php($active_tentang_kami = '')
+                        @php($active_layanan = '')
+                        @php($active_katalog = '')
+                        @php($active_kontak = 'active')
+                        @php($active_lowongan = '')
+                    @elseif(Request::segment(1) == 'lowongan')
+                        @php($active_beranda = '')
+                        @php($active_tentang_kami = '')
+                        @php($active_layanan = '')
+                        @php($active_katalog = '')
+                        @php($active_kontak = '')
+                        @php($active_lowongan = 'active')
+                    @endif
+                    <a href="{{ URL('/') }}" class="nav-item nav-link {{$active_beranda}}">Beranda</a>
+                    <a href="{{ URL('/tentang-kami') }}" class="nav-item nav-link {{$active_tentang_kami}}">Tentang</a>
+                    <a href="{{ URL('/layanan') }}" class="nav-item nav-link {{$active_layanan}}">Layanan</a>
+                    <a href="{{ URL('/katalog') }}" class="nav-item nav-link {{$active_katalog}}">Katalog</a>
+                    <a href="{{ URL('/kontak') }}" class="nav-item nav-link {{$active_kontak}}">Kontak</a>
+                    <a href="{{ URL('/lowongan-kerja') }}" class="nav-item nav-link {{$active_lowongan}}">Lowongan</a>
                     <div class="nav-btn px-3">
                         <a href="{{ URL('/penawaran') }}" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Dapatkan Penawaran</a>
                     </div>
