@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('layanans', function (Blueprint $table) {
-            $table->id('id_layanans');
-            $table->string('text1_layanans');
-            $table->string('text2_layanans');
+        Schema::create('tentang_kami_details', function (Blueprint $table) {
+            $table->id('id_tentang_kami_details');
+            $table->string('icon_tentang_kami_details');
+            $table->string('judul_tentang_kami_details');
+            $table->longtext('konten_tentang_kami_details');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('layanans');
+        Schema::dropIfExists('tentang_kami_details');
     }
 };

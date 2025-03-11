@@ -83,13 +83,12 @@ Route::middleware([
 
         Route::group(['prefix' => 'tentang-kami'], function(){
             Route::get('/', [AdminTentangKami::class, 'index']);
-            Route::get('/tambah', [AdminTentangKami::class, 'tambah']);
             Route::patch('/prosesedit', [AdminTentangKami::class, 'prosesedit']);
-
-            Route::post('/prosestambah', [AdminTentangKami::class, 'prosestambah']);
-            Route::get('/edit/{id}', [AdminTentangKami::class, 'edit']);
-            Route::patch('/prosesedit/{id}', [AdminTentangKami::class, 'prosesedit']);
-            Route::delete('/hapus/{id}', [AdminTentangKami::class, 'hapus']);
+            Route::get('/tambahdetail', [AdminTentangKami::class, 'tambahdetail']);
+            Route::post('/prosestambahdetail', [AdminTentangKami::class, 'prosestambahdetail']);
+            Route::get('/editdetail/{id}', [AdminTentangKami::class, 'editdetail']);
+            Route::patch('/proseseditdetail/{id}', [AdminTentangKami::class, 'proseseditdetail']);
+            Route::delete('/hapusdetail/{id}', [AdminTentangKami::class, 'hapusdetail']);
         });
 
         Route::group(['prefix' => 'layanan'], function(){

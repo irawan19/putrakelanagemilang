@@ -37,46 +37,17 @@
                 <p class="mb-0">Kami perusahaan yang bergerak di bidang distribusi penjualan alat medis dan kesehatan</p>
             </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="feature-item p-4 pt-0">
-                        <div class="feature-icon p-4 mb-4">
-                            <i class="far fa-handshake fa-3x"></i>
+                @foreach($tentang_kami_details as $tentang_kami_detail)
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="feature-item p-4 pt-0">
+                            <div class="feature-icon p-4 mb-4">
+                                <i class="far fa-{{$tentang_kami_detail->icon_tentang_kami_details}} fa-3x"></i>
+                            </div>
+                            <h4 class="mb-4">{{ $tentang_kami_detail->judul_tentang_kami_details }}</h4>
+                            <p class="mb-4">{!! nl2br($tentang_kami_detail->konten_tentang_kami_details) !!}</p>
                         </div>
-                        <h4 class="mb-4">Trusted Company</h4>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
-                        </p>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="feature-item p-4 pt-0">
-                        <div class="feature-icon p-4 mb-4">
-                            <i class="fa fa-dollar-sign fa-3x"></i>
-                        </div>
-                        <h4 class="mb-4">Anytime Money Back</h4>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="feature-item p-4 pt-0">
-                        <div class="feature-icon p-4 mb-4">
-                            <i class="fa fa-bullseye fa-3x"></i>
-                        </div>
-                        <h4 class="mb-4">Flexible Plans</h4>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                    <div class="feature-item p-4 pt-0">
-                        <div class="feature-icon p-4 mb-4">
-                            <i class="fa fa-headphones fa-3x"></i>
-                        </div>
-                        <h4 class="mb-4">24/7 Fast Support</h4>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea hic laborum odit pariatur...
-                        </p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -153,7 +124,8 @@
         <div class="container py-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h4 class="text-primary">Layanan</h4>
-                <p class="mb-0">{{ $layanan->text_layanans }}</p>
+                <h1 class="display-4 mb-4">{{ $layanan->text1_layanans }}</h1>
+                <p class="mb-0">{{ $layanan->text2_layanans }}</p>
             </div>
             <div class="row g-4 justify-content-center">
                 @foreach($layanan_details as $layanan_details)
@@ -168,7 +140,7 @@
                             <div class="service-content p-4">
                                 <div class="service-content-inner">
                                     <a href="#" class="d-inline-block h4 mb-4">{{ $layanan_details->judul_layanan_details }}</a>
-                                    <p class="mb-4">{!! $layanan_details->konten_layanan_details !!}</p>
+                                    <p class="mb-4">{!! nl2br($layanan_details->konten_layanan_details) !!}</p>
                                 </div>
                             </div>
                         </div>

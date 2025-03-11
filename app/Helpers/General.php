@@ -196,9 +196,7 @@ class General {
 		return $sosial_media_data;
 	}
 
-
-		
-	public static function iconlayanan()
+	public static function iconFontAwesome()
 	{
 		$sosial_media_data = array(
 			array(

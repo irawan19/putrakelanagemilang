@@ -12,9 +12,14 @@
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
-                            <label class="form-label" for="text_layanans">Text <b style="color:red">*</b></label>
-                            <input class="form-control {{ \App\Helpers\General::validForm($errors->first('text_layanans')) }}" id="text_layanans" type="text" name="text_layanans" value="{{Request::old('text_layanans') == '' ? $layanans->text_layanans : Request::old('text_layanans')}}">
-                            {{\App\Helpers\General::pesanErrorForm($errors->first('text_layanans'))}}
+                            <label class="form-label" for="text1_layanans">Text 1 <b style="color:red">*</b></label>
+                            <input class="form-control {{ \App\Helpers\General::validForm($errors->first('text1_layanans')) }}" id="text1_layanans" type="text" name="text1_layanans" value="{{Request::old('text1_layanans') == '' ? $layanans->text1_layanans : Request::old('text1_layanans')}}">
+                            {{\App\Helpers\General::pesanErrorForm($errors->first('text1_layanans'))}}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="text2_layanans">Text 2 <b style="color:red">*</b></label>
+                            <input class="form-control {{ \App\Helpers\General::validForm($errors->first('text2_layanans')) }}" id="text2_layanans" type="text" name="text2_layanans" value="{{Request::old('text2_layanans') == '' ? $layanans->text2_layanans : Request::old('text2_layanans')}}">
+                            {{\App\Helpers\General::pesanErrorForm($errors->first('text2_layanans'))}}
                         </div>
                     </div>
                     <div class="card-footer right-align">

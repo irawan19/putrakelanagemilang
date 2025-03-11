@@ -20,12 +20,14 @@ class LayananController extends AdminCoreController {
     public function prosesedit(Request $request)
     {
         $aturan = [
-            'text_layanans'        => 'required',
+            'text1_layanans'        => 'required',
+            'text2_layanans'        => 'required',
         ];
         $this->validate($request, $aturan);
 
         $layanan_data = [
-            'text_layanans'        => $request->text_layanans,
+            'text1_layanans'        => $request->text1_layanans,
+            'text2_layanans'        => $request->text2_layanans,
             'updated_at'            => date('Y-m-d H:i:s'),
         ];
         Layanan::query()->update($layanan_data);
@@ -39,7 +41,7 @@ class LayananController extends AdminCoreController {
     }
 
     public function tambahdetail() {
-        $data['icon_layanan_details']  = General::iconlayanan();
+        $data['icon_layanan_details']  = General::iconFontAwesome();
         return view('admin.layanan.tambah',$data);
     }
 
@@ -80,7 +82,7 @@ class LayananController extends AdminCoreController {
     public function editdetail(Request $request, $idlayanandetails) {
         $cek_layanan_details = Layanan_detail::find($idlayanandetails);
         if (!empty($cek_layanan_details)) {
-            $data['icon_layanan_details']   = General::iconlayanan();
+            $data['icon_layanan_details']   = General::iconFontAwesome();
             $data['layanan_details'] = Layanan_detail::find($idlayanandetails);
             return view('admin.layanan.edit', $data);
         } else {
