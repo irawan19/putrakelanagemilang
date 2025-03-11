@@ -146,6 +146,7 @@ Route::middleware([
             Route::get('/', [AdminLowonganKerja::class, 'index']);
             Route::get('/tambah', [AdminLowonganKerja::class, 'tambah']);
             Route::post('/prosestambah', [AdminLowonganKerja::class, 'prosestambah']);
+            Route::get('/baca/{id}', [AdminLowonganKerja::class, 'baca']);
             Route::get('/edit/{id}', [AdminLowonganKerja::class, 'edit']);
             Route::patch('/prosesedit/{id}', [AdminLowonganKerja::class, 'prosesedit']);
             Route::delete('/hapus/{id}', [AdminLowonganKerja::class, 'hapus']);

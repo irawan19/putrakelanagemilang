@@ -106,6 +106,13 @@ class General {
 					</a';
 		}
 
+		public static function baca($link = '')
+		{
+			echo  '<a href="' . URL($link) . '" class="dropdown-item" style="color:orange">
+						<span class="cil-book"></span> Baca
+					</a>';
+		}
+
 		public static function edit($link = '')
 		{
 			echo  '<a href="' . URL($link) . '" class="dropdown-item" style="color:#3399ff">

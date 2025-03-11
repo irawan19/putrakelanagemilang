@@ -57,16 +57,6 @@
     <div class="container-fluid bg-light about pb-5">
         <div class="container pb-5">
             <div class="row g-5">
-                <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
-                    <div class="about-item-content bg-white rounded p-5 h-100">
-                        <h4 class="text-primary">Tentang {{ $aplikasi->nama_aplikasis }}</h4>
-                        <p>{!! nl2br($tentang_kami->konten_sekilas_tentang_kamis) !!}
-                        </p>
-                        <div style="text-align:center; padding-top:20px">
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="{{ URL('/tentang-kami') }}">Kenali Kami Lebih Jauh</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
                     <div class="bg-white rounded p-5 h-100">
                         <div class="row g-4 justify-content-center">
@@ -75,42 +65,16 @@
                                     <img src="{{URL::asset('storage/'.$tentang_kami->gambar_tentang_kamis) }}" class="img-fluid rounded w-100" alt="">
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="counter-item bg-light rounded p-3 h-100">
-                                    <div class="counter-counting">
-                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">129</span>
-                                        <span class="h1 fw-bold text-primary">+</span>
-                                    </div>
-                                    <h4 class="mb-0 text-dark">Insurance Policies</h4>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="counter-item bg-light rounded p-3 h-100">
-                                    <div class="counter-counting">
-                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">99</span>
-                                        <span class="h1 fw-bold text-primary">+</span>
-                                    </div>
-                                    <h4 class="mb-0 text-dark">Awards WON</h4>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="counter-item bg-light rounded p-3 h-100">
-                                    <div class="counter-counting">
-                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">556</span>
-                                        <span class="h1 fw-bold text-primary">+</span>
-                                    </div>
-                                    <h4 class="mb-0 text-dark">Skilled Agents</h4>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="counter-item bg-light rounded p-3 h-100">
-                                    <div class="counter-counting">
-                                        <span class="text-primary fs-2 fw-bold" data-toggle="counter-up">967</span>
-                                        <span class="h1 fw-bold text-primary">+</span>
-                                    </div>
-                                    <h4 class="mb-0 text-dark">Team Members</h4>
-                                </div>
-                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="about-item-content bg-white rounded p-5 h-100">
+                        <h4 class="text-primary">Tentang {{ $aplikasi->nama_aplikasis }}</h4>
+                        <p>{!! nl2br($tentang_kami->konten_sekilas_tentang_kamis) !!}
+                        </p>
+                        <div style="text-align:center; padding-top:20px">
+                            <a class="btn btn-primary rounded-pill py-3 px-5" href="{{ URL('/tentang-kami') }}">Kenali Kami Lebih Jauh</a>
                         </div>
                     </div>
                 </div>
