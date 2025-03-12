@@ -41,12 +41,16 @@
                                 @if(!$pesans->isEmpty())
 					    			@php($no = 1)
 		            				@foreach($pesans as $pesan)
-                                        <tr>
+                                        @php($stylebelumbaca = '')
+                                        @if($pesan->status_baca_pesans !== 1)
+                                            @php($stylebelumbaca = 'style=font-weight:bold')
+                                        @endif
+                                        <tr {{$stylebelumbaca}}>
                                             <td class="nowrap">
                                                 {{\App\Helpers\General::bacatombol('dashboard/pesan/baca/'.$pesan->id_pesans)}}
 											</td>
                                             <td class="nowrap">{{$no}}</td>
-                                            <td class="nowrap">{{$pesan->created_at}}</td>
+                                            <td class="nowrap">{{\App\Helpers\General::ubahDBKeTanggalWaktu($pesan->created_at)}}</td>
                                             <td class="nowrap">{{$pesan->nama_pesans}}</td>
                                             <td class="nowrap">{{$pesan->telepon_pesans}}</td>
                                             <td class="nowrap">{{$pesan->email_pesans}}</td>

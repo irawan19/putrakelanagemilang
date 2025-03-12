@@ -171,6 +171,12 @@ class General {
     	} else
     		return '';
     }
+
+	public static function ubahDBKeTanggalwaktu($tanggal = '')
+	{
+		$tanggal_waktu = General::ubahDBKeTanggal(date('Y-m-d', strtotime($tanggal))) . ' ' . date('H:i:s', strtotime($tanggal));
+		return $tanggal_waktu;
+	}
 		
 	public static function sosialMedia()
 	{
