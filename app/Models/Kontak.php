@@ -14,6 +14,7 @@ class Kontak extends Model
     protected $fillable = [
         'text1_kontaks',
         'text2_kontaks',
+        'gambar_kontaks',
         'telepon_kontaks',
         'email_kontaks',
         'alamat_kontaks',

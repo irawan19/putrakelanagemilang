@@ -4,7 +4,7 @@
     <div class="row g-4 mb-4">
         <div class="col-md-12">
             <div class="card">
-                <form class="form-horizontal m-t-40" action="{{ URL('dashboard/kontak/prosesedit') }}" method="POST">
+                <form class="form-horizontal m-t-40" enctype="multipart/form-data" action="{{ URL('dashboard/kontak/prosesedit') }}" method="POST">
                     {{ csrf_field() }}
                     @method('PATCH')
                     <div class="card-header">
@@ -21,6 +21,18 @@
                             <input class="form-control {{ \App\Helpers\General::validForm($errors->first('text2_kontaks')) }}" id="text2_kontaks" type="text" name="text2_kontaks" value="{{Request::old('text2_kontaks') == '' ? $kontaks->text2_kontaks : Request::old('text2_kontaks')}}">
                             {{\App\Helpers\General::pesanErrorForm($errors->first('text2_kontaks'))}}
                         </div>
+						<div class="mb-3">
+							<label class="form-col-form-label" for="userfile_gambar_kontak">Gambar (456x567px)</label>
+							<br/>
+							<div class="form-group center-align">
+							    <a data-fancybox="gallery" href="{{URL::asset('storage/'.$kontaks->gambar_kontaks)}}">
+							    	<img src="{{URL::asset('storage/'.$kontaks->gambar_kontaks)}}" width="250">
+							    </a>
+							</div>
+                            <br/>
+							<input id="userfile_gambar_kontak" class="form-control" type="file" name="userfile_gambar_kontak">
+							{{\App\Helpers\General::pesanErrorForm($errors->first('userfile_gambar_kontak'))}}
+						</div>
                         <div class="mb-3">
                             <label class="form-label" for="telepon_kontaks">Telepon Whatsapp <b style="color:red">*</b></label>
                             <input class="form-control {{ \App\Helpers\General::validForm($errors->first('telepon_kontaks')) }}" id="telepon_kontaks" type="text" name="telepon_kontaks" value="{{Request::old('telepon_kontaks') == '' ? $kontaks->telepon_kontaks : Request::old('telepon_kontaks')}}">

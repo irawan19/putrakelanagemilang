@@ -41,7 +41,7 @@ class LayananController extends AdminCoreController {
     }
 
     public function tambahdetail() {
-        $data['icon_layanan_details']  = General::iconFontAwesome();
+        $data['icon_layanan_details']  = General::iconlayanan();
         return view('admin.layanan.tambah',$data);
     }
 
@@ -82,7 +82,7 @@ class LayananController extends AdminCoreController {
     public function editdetail(Request $request, $idlayanandetails) {
         $cek_layanan_details = Layanan_detail::find($idlayanandetails);
         if (!empty($cek_layanan_details)) {
-            $data['icon_layanan_details']   = General::iconFontAwesome();
+            $data['icon_layanan_details']   = General::iconlayanan();
             $data['layanan_details'] = Layanan_detail::find($idlayanandetails);
             return view('admin.layanan.edit', $data);
         } else {
