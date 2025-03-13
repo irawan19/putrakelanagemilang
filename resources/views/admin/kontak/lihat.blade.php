@@ -27,14 +27,9 @@
                             {{\App\Helpers\General::pesanErrorForm($errors->first('alamat_kontaks'))}}
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="lat_alamat_kontaks">Latitude Alamat <b style="color:red">*</b></label>
-                            <input class="form-control {{ \App\Helpers\General::validForm($errors->first('lat_alamat_kontaks')) }}" id="lat_alamat_kontaks" type="text" name="lat_alamat_kontaks" value="{{Request::old('lat_alamat_kontaks') == '' ? $kontaks->lat_alamat_kontaks : Request::old('lat_alamat_kontaks')}}">
-                            {{\App\Helpers\General::pesanErrorForm($errors->first('lat_alamat_kontaks'))}}
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="long_alamat_kontaks">Longitude Alamat <b style="color:red">*</b></label>
-                            <input class="form-control {{ \App\Helpers\General::validForm($errors->first('long_alamat_kontaks')) }}" id="long_alamat_kontaks" type="text" name="long_alamat_kontaks" value="{{Request::old('long_alamat_kontaks') == '' ? $kontaks->long_alamat_kontaks : Request::old('long_alamat_kontaks')}}">
-                            {{\App\Helpers\General::pesanErrorForm($errors->first('long_alamat_kontaks'))}}
+                            <label class="form-label" for="url_alamat_kontaks">URL Alamat <b style="color:red">*</b></label>
+                            <input class="form-control {{ \App\Helpers\General::validForm($errors->first('url_alamat_kontaks')) }}" id="url_alamat_kontaks" type="text" name="url_alamat_kontaks" value="{{Request::old('url_alamat_kontaks') == '' ? $kontaks->url_alamat_kontaks : Request::old('url_alamat_kontaks')}}">
+                            {{\App\Helpers\General::pesanErrorForm($errors->first('url_alamat_kontaks'))}}
                         </div>
                     </div>
                     <div class="card-footer right-align">

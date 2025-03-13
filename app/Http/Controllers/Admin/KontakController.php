@@ -21,8 +21,7 @@ class KontakController extends AdminCoreController {
             'telepon_kontaks'           => 'required',
             'email_kontaks'             => 'required',
             'alamat_kontaks'            => 'required',
-            'lat_alamat_kontaks'        => 'required',
-            'long_alamat_kontaks'       => 'required',
+            'url_alamat_kontaks'        => 'required',
         ];
         $this->validate($request, $aturan);
 
@@ -30,8 +29,7 @@ class KontakController extends AdminCoreController {
             'telepon_kontaks'           => $request->telepon_kontaks,
             'email_kontaks'             => $request->email_kontaks,
             'alamat_kontaks'            => $request->alamat_kontaks,
-            'lat_alamat_kontaks'        => $request->lat_alamat_kontaks,
-            'long_alamat_kontaks'       => $request->long_alamat_kontaks,
+            'url_alamat_kontaks'        => $request->url_alamat_kontaks,
             'updated_at'                => date('Y-m-d H:i:s'),
         ];
         Kontak::query()->update($kontak_data);

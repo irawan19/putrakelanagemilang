@@ -11,7 +11,8 @@ class KontakController extends Controller {
     
     public function index()
     {
-        $data['aplikasi']          = Aplikasi::first();
+        $data['aplikasi']           = Aplikasi::first();
+        $data['kontak']             = Kontak::first();
         return view('kontak',$data);
     }
 

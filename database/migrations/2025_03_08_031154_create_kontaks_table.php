@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('telepon_kontaks');
             $table->string('email_kontaks');
             $table->string('alamat_kontaks');
-            $table->string('lat_alamat_kontaks');
-            $table->string('long_alamat_kontaks');
+            $table->string('url_alamat_kontaks');
             $table->timestamps();
         });
     }

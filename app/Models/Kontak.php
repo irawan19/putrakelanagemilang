@@ -15,7 +15,6 @@ class Kontak extends Model
         'telepon_kontaks',
         'email_kontaks',
         'alamat_kontaks',
-        'lat_alamat_kontaks',
-        'long_alamat_kontaks',
+        'url_alamat_kontaks',
     ];
 }
