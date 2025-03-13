@@ -17,6 +17,7 @@ class Aplikasi extends Model
         'keyword_aplikasis',
         'icon_aplikasis',
         'logo_aplikasis',
-        'logo_text_aplikasis'
+        'logo_text_aplikasis',
+        'header_aplikasis'
     ];
 }

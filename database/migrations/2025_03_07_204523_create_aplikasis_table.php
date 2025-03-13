@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('icon_aplikasis');
             $table->string('logo_aplikasis');
             $table->string('logo_text_aplikasis');
+            $table->string('header_aplikasis');
             $table->timestamps();
         });
     }

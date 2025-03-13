@@ -177,6 +177,7 @@ Route::middleware([
             Route::patch('/proseseditlogo', [AdminAplikasi::class, 'prosesedit']);
             Route::patch('/proseseditlogotext', [AdminAplikasi::class, 'proseseditlogotext']);
             Route::patch('/prosesediticon', [AdminAplikasi::class, 'prosesediticon']);
+            Route::patch('/proseseditheader', [AdminAplikasi::class, 'proseseditheader']);
         });
 
         Route::get('/logout', [AdminDashboard::class, 'logout']);

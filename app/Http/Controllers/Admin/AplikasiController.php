@@ -135,6 +135,38 @@ class AplikasiController extends AdminCoreController {
         return redirect()->back()->with('setelah_simpan', $setelah_simpan);
     }
 
+    public function proseseditheader(Request $request)
+    {
+        $aturan = [
+            'userfile_header'     => 'required|mimes:png,jpg,jpeg,svg',
+        ];
+        $this->validate($request, $aturan);
+
+        $cek_header       = Aplikasi::first();
+        if (!empty($cek_header)) {
+            $header_lama        = $cek_header->header_aplikasis;
+            if (Storage::disk('public')->exists($header_lama))
+                Storage::disk('public')->delete($header_lama);
+        }
+
+        $nama_header = date('Ymd') . date('His') . str_replace(')', '', str_replace('(', '', str_replace(' ', '-', $request->file('userfile_header')->getClientOriginalName())));
+        $path_header = 'aplikasi/';
+        Storage::disk('public')->put($path_header.$nama_header, file_get_contents($request->file('userfile_header')));
+
+        $data = [
+            'header_aplikasis'    => $path_header . $nama_header,
+            'updated_at'                    => date('Y-m-d H:i:s'),
+        ];
+
+        Aplikasi::query()->update($data);
+
+        $setelah_simpan = [
+            'alert'                     => 'sukses',
+            'text'                      => 'Header berhasil diperbarui',
+        ];
+        return redirect()->back()->with('setelah_simpan', $setelah_simpan);
+    }
+
 }
 
 ?>

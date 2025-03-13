@@ -35,6 +35,19 @@
         <link href="{{ URL::asset('template/front/css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ URL::asset('template/front/css/style.css') }}" rel="stylesheet">
         <meta name="_token" content="{{ csrf_token() }}">
+
+        <style>
+            .bg-breadcrumb {
+                position: relative;
+                overflow: hidden;
+                background: linear-gradient(rgba(22, 36, 61, 0.5), rgba(0, 0, 0, 0.5)), url('{{ URL::asset("storage/".$aplikasi->header_aplikasis) }}');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding: 60px 0 60px 0;
+                transition: 0.5s;
+            }
+        </style>
     </head>
 
     <body>
