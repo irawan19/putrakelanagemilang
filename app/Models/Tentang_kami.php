@@ -12,6 +12,8 @@ class Tentang_kami extends Model
     protected $primaryKey = 'id_tentang_kamis';
 
     protected $fillable = [
+        'text1_tentang_kamis',
+        'text2_tentang_kamis',
         'gambar_tentang_kamis',
         'sekilas_tentang_kamis',
         'konten_tentang_kamis',

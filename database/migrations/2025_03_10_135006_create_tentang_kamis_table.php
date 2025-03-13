@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('tentang_kamis', function (Blueprint $table) {
             $table->id('id_tentang_kamis');
+            $table->string('text1_tentang_kamis');
+            $table->string('text2_tentang_kamis');
             $table->string('gambar_tentang_kamis');
             $table->longtext('konten_sekilas_tentang_kamis');
             $table->longtext('konten_tentang_kamis');

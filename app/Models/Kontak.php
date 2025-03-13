@@ -12,6 +12,8 @@ class Kontak extends Model
     protected $primaryKey = 'id_kontaks';
 
     protected $fillable = [
+        'text1_kontaks',
+        'text2_kontaks',
         'telepon_kontaks',
         'email_kontaks',
         'alamat_kontaks',

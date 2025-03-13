@@ -12,6 +12,16 @@
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
+                            <label class="form-label" for="text1_kontaks">Text 1 <b style="color:red">*</b></label>
+                            <input class="form-control {{ \App\Helpers\General::validForm($errors->first('text1_kontaks')) }}" id="text1_kontaks" type="text" name="text1_kontaks" value="{{Request::old('text1_kontaks') == '' ? $kontaks->text1_kontaks : Request::old('text1_kontaks')}}">
+                            {{\App\Helpers\General::pesanErrorForm($errors->first('text1_kontaks'))}}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="text2_kontaks">Text 2 <b style="color:red">*</b></label>
+                            <input class="form-control {{ \App\Helpers\General::validForm($errors->first('text2_kontaks')) }}" id="text2_kontaks" type="text" name="text2_kontaks" value="{{Request::old('text2_kontaks') == '' ? $kontaks->text2_kontaks : Request::old('text2_kontaks')}}">
+                            {{\App\Helpers\General::pesanErrorForm($errors->first('text2_kontaks'))}}
+                        </div>
+                        <div class="mb-3">
                             <label class="form-label" for="telepon_kontaks">Telepon Whatsapp <b style="color:red">*</b></label>
                             <input class="form-control {{ \App\Helpers\General::validForm($errors->first('telepon_kontaks')) }}" id="telepon_kontaks" type="text" name="telepon_kontaks" value="{{Request::old('telepon_kontaks') == '' ? $kontaks->telepon_kontaks : Request::old('telepon_kontaks')}}">
                             {{\App\Helpers\General::pesanErrorForm($errors->first('telepon_kontaks'))}}

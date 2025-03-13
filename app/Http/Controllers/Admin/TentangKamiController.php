@@ -22,7 +22,9 @@ class TentangKamiController extends AdminCoreController {
         if(!empty($request->userfile_gambar_tentang_kami))
         {
             $aturan = [
-                'userfile_gambar_tentang_kami'            => 'required|mimes:jpg,jpeg,png',
+                'userfile_gambar_tentang_kami'      => 'required|mimes:jpg,jpeg,png',
+                'text1_tentang_kamis'               => 'required',
+                'text2_tentang_kamis'               => 'required',
                 'konten_sekilas_tentang_kamis'      => 'required',
                 'konten_tentang_kamis'              => 'required',
                 'konten_footer_tentang_kamis'       => 'required',
@@ -34,6 +36,8 @@ class TentangKamiController extends AdminCoreController {
             Storage::disk('public')->put($path_gambar_tentang_kami . $nama_gambar_tentang_kami, file_get_contents($request->file('userfile_gambar_tentang_kami')));
 
             $tentang_kami_data = [
+                'text1_tentang_kamis'               => $request->text1_tentang_kamis,
+                'text2_tentang_kamis'               => $request->text2_tentang_kamis,
                 'gambar_tentang_kamis'              => $path_gambar_tentang_kami.$nama_gambar_tentang_kami,
                 'konten_sekilas_tentang_kamis'      => $request->konten_sekilas_tentang_kamis,
                 'konten_tentang_kamis'              => $request->konten_tentang_kamis,
@@ -44,6 +48,8 @@ class TentangKamiController extends AdminCoreController {
         else
         {
             $aturan = [
+                'text1_tentang_kamis'               => 'required',
+                'text2_tentang_kamis'               => 'required',
                 'konten_sekilas_tentang_kamis'      => 'required',
                 'konten_tentang_kamis'              => 'required',
                 'konten_footer_tentang_kamis'       => 'required',
@@ -51,6 +57,8 @@ class TentangKamiController extends AdminCoreController {
             $this->validate($request, $aturan);
 
             $tentang_kami_data = [
+                'text1_tentang_kamis'               => $request->text1_tentang_kamis,
+                'text2_tentang_kamis'               => $request->text2_tentang_kamis,
                 'konten_sekilas_tentang_kamis'      => $request->konten_sekilas_tentang_kamis,
                 'konten_tentang_kamis'              => $request->konten_tentang_kamis,
                 'konten_footer_tentang_kamis'       => $request->konten_footer_tentang_kamis,

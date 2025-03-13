@@ -6,7 +6,7 @@
         <div class="container py-5">
             <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
                 <h4 class="text-primary">Kontak Kami</h4>
-                <h1 class="display-4 mb-4">Selalu Terhubung Dengan Kami</h1>
+                <h1 class="display-4 mb-4">{{ $kontak->text1_kontaks }}</h1>
             </div>
             <div class="row g-5">
                 <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
@@ -19,7 +19,7 @@
                 <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
                     <div>
                         <h4 class="text-primary">Kirim Pesan Anda</h4>
-                        <p class="mb-4">Silahkan isi form dibawah ini untuk mengirim pesan ke kami, kami akan balas secepetnya.</p>
+                        <p class="mb-4">{{ $kontak->text2_kontaks }}</p>
                         <form method="POST" action="{{ URL('kirim-pesan') }}">
                             {{ csrf_field() }}
                             <div class="row g-3">
@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="col-lg-12 col-xl-12">
                                     <div class="form-floating">
-                                        <input type="text" name="telepon_pesans" class="form-control border-0" id="telepon_pesans" value="{{ Request::old('telepon_pesans') }}"  placeholder="Telepon">
+                                        <input type="number" name="telepon_pesans" class="form-control border-0" id="telepon_pesans" value="{{ Request::old('telepon_pesans') }}"  placeholder="Telepon">
                                         <label for="telepon_pesans">Telepon</label>
                                     </div>
                                 </div>

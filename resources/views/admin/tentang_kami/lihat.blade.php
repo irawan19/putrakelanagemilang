@@ -11,6 +11,16 @@
                         <strong>Tentang Kami</strong>
                     </div>
                     <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label" for="text1_tentang_kamis">Text 1 <b style="color:red">*</b></label>
+                            <input class="form-control {{ \App\Helpers\General::validForm($errors->first('text1_tentang_kamis')) }}" id="text1_tentang_kamis" type="text" name="text1_tentang_kamis" value="{{Request::old('text1_tentang_kamis') == '' ? $tentang_kamis->text1_tentang_kamis : Request::old('text1_tentang_kamis')}}">
+                            {{\App\Helpers\General::pesanErrorForm($errors->first('text1_tentang_kamis'))}}
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="text2_tentang_kamis">Text 2 <b style="color:red">*</b></label>
+                            <input class="form-control {{ \App\Helpers\General::validForm($errors->first('text2_tentang_kamis')) }}" id="text2_tentang_kamis" type="text" name="text2_tentang_kamis" value="{{Request::old('text2_tentang_kamis') == '' ? $tentang_kamis->text2_tentang_kamis : Request::old('text2_tentang_kamis')}}">
+                            {{\App\Helpers\General::pesanErrorForm($errors->first('text2_tentang_kamis'))}}
+                        </div>
 						<div class="mb-3">
 							<label class="form-col-form-label" for="userfile_gambar_tentang_kami">Gambar (500x250px)</label>
 							<br/>
