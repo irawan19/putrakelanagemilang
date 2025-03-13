@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    <base href="./">
         <meta charset="utf-8">
         <title>{{ $aplikasi->nama_aplikasis }}</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -33,6 +34,7 @@
         <link href="{{ URL::asset('template/front/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
         <link href="{{ URL::asset('template/front/css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ URL::asset('template/front/css/style.css') }}" rel="stylesheet">
+        <meta name="_token" content="{{ csrf_token() }}">
     </head>
 
     <body>

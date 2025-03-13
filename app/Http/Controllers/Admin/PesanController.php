@@ -24,6 +24,10 @@ class PesanController extends AdminCoreController {
         $cek = Pesan::where('id_pesans', $id_pesans)->first();
         if(!empty($cek))
         {
+            $data = [
+                'status_baca_pesans'    => true
+            ];
+            Pesan::find($id_pesans)->update($data);
             $data['baca_pesans'] = $cek;
             return view('admin.pesan.baca', $data);
         }
