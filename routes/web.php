@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\Admin\AkunController as AdminAkun;
 use App\Http\Controllers\Admin\SlideshowController as AdminSlideshow;
 use App\Http\Controllers\Admin\TentangKamiController as AdminTentangKami;
+use App\Http\Controllers\Admin\GaleriController as AdminGaleri;
 use App\Http\Controllers\Admin\LayananController as AdminLayanan;
 use App\Http\Controllers\Admin\PertanyaanUmumController as AdminPertanyaanUmum;
 use App\Http\Controllers\Admin\KatalogController as AdminKatalog;
@@ -91,6 +92,15 @@ Route::middleware([
             Route::get('/editdetail/{id}', [AdminTentangKami::class, 'editdetail']);
             Route::patch('/proseseditdetail/{id}', [AdminTentangKami::class, 'proseseditdetail']);
             Route::delete('/hapusdetail/{id}', [AdminTentangKami::class, 'hapusdetail']);
+        });
+
+        Route::group(['prefix' => 'galeri'], function() {
+            Route::get('/', [AdminGaleri::class, 'index']);
+            Route::get('/tambah', [AdminGaleri::class, 'tambah']);
+            Route::post('/prosestambah', [AdminGaleri::class, 'prosestambah']);
+            Route::get('/edit/{id}', [AdminGaleri::class, 'edit']);
+            Route::patch('/prosesedit/{id}', [AdminGaleri::class, 'prosesedit']);
+            Route::delete('/hapus/{id}', [AdminGaleri::class, 'hapus']);
         });
 
         Route::group(['prefix' => 'layanan'], function(){

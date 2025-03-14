@@ -34,6 +34,13 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{URL('/dashboard/galeri')}}">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-image')}}"></use>
+                    </svg> Galeri
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{URL('/dashboard/layanan')}}">
                     <svg class="nav-icon">
                         <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-badge')}}"></use>

@@ -7,15 +7,15 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-6">
-                            <strong>Slideshow</strong>
+                            <strong>Galeri</strong>
                         </div>
                         <div class="col-md-6 right-align">
-                            {{\App\Helpers\General::tambah('dashboard/slideshow/tambah')}}
+                            {{\App\Helpers\General::tambah('dashboard/galeri/tambah')}}
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <form method="GET" action="{{ URL('dashboard/slideshow/cari') }}">
+                    <form method="GET" action="{{ URL('dashboard/galeri/cari') }}">
 						@csrf
 	                	<div class="input-group">
 	                		<input class="form-control" id="input2-group2" type="text" name="cari_kata" placeholder="Cari" value="{{$hasil_kata}}">
@@ -31,16 +31,14 @@
                                 <tr>
                                     <th class="nowrap"></th>
                                     <th class="nowrap" width="10px">No</th>
-                                    <th class="nowrap">Gambar</th>
+                                    <th class="nowrap">Foto</th>
                                     <th class="nowrap">Judul</th>
-                                    <th class="nowrap">Text 1</th>
-                                    <th class="nowrap">Text 2</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @if(!$slideshows->isEmpty())
+                                @if(!$galeris->isEmpty())
 					    			@php($no = 1)
-		            				@foreach($slideshows as $slideshow)
+		            				@foreach($galeris as $galeri)
                                         <tr>
                                             <td class="nowrap">
                                                 <div class="btn-group">
@@ -49,31 +47,27 @@
                                                     </button>
                                                     <ul class="dropdown-menu">
                                                         <li>
-                                                            {{\App\Helpers\General::edit('dashboard/slideshow/edit/'.$slideshow->id_slideshows)}}
+                                                            {{\App\Helpers\General::edit('dashboard/galeri/edit/'.$galeri->id_galeris)}}
                                                         </li>
                                                         <div class="dropdown-divider"></div>
                                                         <li>
-                                                            {{\App\Helpers\General::hapus('dashboard/slideshow/hapus/'.$slideshow->id_slideshows, $slideshow->url_slideshows)}}
+                                                            {{\App\Helpers\General::hapus('dashboard/galeri/hapus/'.$galeri->id_galeris, $galeri->url_galeris)}}
                                                         </li>
                                                     </ul>
                                                 </div>
 											</td>
                                             <td class="nowrap">{{$no}}</td>
 								    		<td class="nowrap">
-                                                <a data-fancybox="gallery" href="{{URL::asset('storage/'.$slideshow->gambar_slideshows)}}">
-                                                    <img src="{{ URL::asset('storage/'.$slideshow->gambar_slideshows) }}" width="108">
+                                                <a data-fancybox="gallery" href="{{URL::asset('storage/'.$galeri->foto_galeris)}}">
+                                                    <img src="{{ URL::asset('storage/'.$galeri->foto_galeris) }}" width="108">
                                                 </a>
                                             </td>
-                                            <td class="nowrap">{{$slideshow->judul_slideshows}}</td>
-                                            <td class="nowrap">{{$slideshow->text1_slideshows}}</td>
-                                            <td class="nowrap">{{$slideshow->text2_slideshows}}</td>
+                                            <td class="nowrap">{{$galeri->judul_galeris}}</td>
                                         </tr>
                                         @php($no++)
                                     @endforeach
                                 @else
-                                    <td colspan="6" class="center-align">Tidak ada data ditampilkan</td>
-								    <td style="display:none"></td>
-								    <td style="display:none"></td>
+                                    <td colspan="4" class="center-align">Tidak ada data ditampilkan</td>
 								    <td style="display:none"></td>
 								    <td style="display:none"></td>
 								    <td style="display:none"></td>
@@ -82,7 +76,7 @@
 				    	</table>
 				    </div>
 					<br/>
-				   	{{ $slideshows->appends(Request::except('page'))->links('vendor.pagination.custom') }}
+				   	{{ $galeris->appends(Request::except('page'))->links('vendor.pagination.custom') }}
                 </div>
             </div>
         </div>

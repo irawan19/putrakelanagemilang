@@ -36,54 +36,16 @@
                             <div class="footer-item">
                                 <h4 class="mb-4 text-white">Galeri</h4>
                                 <div class="row g-3">
-                                    <div class="col-4">
-                                        <div class="footer-instagram rounded">
-                                            <img src="{{ URL::asset('template/front/img/instagram-footer-1.jpg') }}" class="img-fluid w-100" alt="">
-                                            <div class="footer-search-icon">
-                                                <a href="{{ URL::asset('template/front/img/instagram-footer-1.jpg') }}" data-lightbox="footerInstagram-1" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                    @foreach($galeris as $galeri)
+                                        <div class="col-4">
+                                            <div class="footer-instagram rounded">
+                                                <img src="{{ URL::asset('storage/'.$galeri->foto_galeris) }}" class="img-fluid w-100" alt="{{ $galeri->judul_galeris }}">
+                                                <div class="footer-search-icon">
+                                                    <a href="{{ URL::asset('storage/'.$galeri->foto_galeris) }}" data-lightbox="footerInstagram-1" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                                </div>
                                             </div>
                                         </div>
-                                   </div>
-                                   <div class="col-4">
-                                        <div class="footer-instagram rounded">
-                                            <img src="{{ URL::asset('template/front/img/instagram-footer-2.jpg') }}" class="img-fluid w-100" alt="">
-                                            <div class="footer-search-icon">
-                                                <a href="{{ URL::asset('template/front/img/instagram-footer-2.jpg') }}" data-lightbox="footerInstagram-2" class="my-auto"><i class="fas fa-link text-white"></i></a>
-                                            </div>
-                                        </div>
-                                   </div>
-                                    <div class="col-4">
-                                        <div class="footer-instagram rounded">
-                                            <img src="{{ URL::asset('template/front/img/instagram-footer-3.jpg') }}" class="img-fluid w-100" alt="">
-                                            <div class="footer-search-icon">
-                                                <a href="{{ URL::asset('template/front/img/instagram-footer-3.jpg') }}" data-lightbox="footerInstagram-3" class="my-auto"><i class="fas fa-link text-white"></i></a>
-                                            </div>
-                                        </div>
-                                   </div>
-                                    <div class="col-4">
-                                        <div class="footer-instagram rounded">
-                                            <img src="{{ URL::asset('template/front/img/instagram-footer-4.jpg') }}" class="img-fluid w-100" alt="">
-                                            <div class="footer-search-icon">
-                                                <a href="{{ URL::asset('template/front/img/instagram-footer-4.jpg') }}" data-lightbox="footerInstagram-4" class="my-auto"><i class="fas fa-link text-white"></i></a>
-                                            </div>
-                                        </div>
-                                   </div>
-                                    <div class="col-4">
-                                        <div class="footer-instagram rounded">
-                                            <img src="{{ URL::asset('template/front/img/instagram-footer-5.jpg') }}" class="img-fluid w-100" alt="">
-                                            <div class="footer-search-icon">
-                                                <a href="{{ URL::asset('template/front/img/instagram-footer-5.jpg') }}" data-lightbox="footerInstagram-5" class="my-auto"><i class="fas fa-link text-white"></i></a>
-                                            </div>
-                                        </div>
-                                   </div>
-                                   <div class="col-4">
-                                        <div class="footer-instagram rounded">
-                                            <img src="{{ URL::asset('template/front/img/instagram-footer-6.jpg') }}" class="img-fluid w-100" alt="">
-                                            <div class="footer-search-icon">
-                                                <a href="{{ URL::asset('template/front/img/instagram-footer-6.jpg') }}" data-lightbox="footerInstagram-6" class="my-auto"><i class="fas fa-link text-white"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

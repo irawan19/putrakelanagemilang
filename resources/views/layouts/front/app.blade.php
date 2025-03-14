@@ -1,6 +1,7 @@
 @php($aplikasi				= \App\Models\Aplikasi::first())
 @php($kontak                = \App\Models\Kontak::first())
 @php($sosial_medias         = \App\Models\Sosial_media::get())
+@php($galeris               = \App\Models\Galeri::get())
 <!DOCTYPE html>
 <html lang="en">
     <head>
