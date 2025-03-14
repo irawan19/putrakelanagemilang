@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Helpers\General;
 use App\Models\Aplikasi;
 use App\Models\Lowongan_kerja;
+use App\Models\Pelamar_lowongan_kerja;
 use Storage;
 
 class LowonganKerjaController extends AdminCoreController {
@@ -85,6 +86,20 @@ class LowonganKerjaController extends AdminCoreController {
             $redirect_halaman  = 'dashboard/lowongan-kerja';
 
         return redirect($redirect_halaman);
+    }
+
+    public function baca(Request $request, $idlowongankerja)
+    {
+        $cek_lowongan_kerjas = Lowongan_kerja::find($idlowongankerja);
+        if (!empty($cek_lowongan_kerjas)) {
+            $data['lowongan_kerjas']            = $cek_lowongan_kerjas;
+            $data['aplikasi']                   = Aplikasi::first();
+            $data['pelamar_lowongan_kerjas']    = Pelamar_lowongan_kerja::orderBy('created_at','asc')
+                                                                        ->paginate(10);
+            return view('admin.lowongankerja.baca',$data);
+        } else {
+            return redirect('dashboard/lowongan_kerja');
+        }
     }
 
     public function edit(Request $request, $idlowongankerja) {
