@@ -14,6 +14,24 @@ class LowonganKerjaController extends Controller {
         return view('lowongankerja',$data);
     }
 
+    public function detail(Request $request, $slug)
+    {
+        $cek_lowongan_kerja = Lowongan_kerja::where('slug_lowongan_kerjas', $slug)->first();
+        if(!empty($cek_lowongan_kerja))
+        {
+            $data['lowongan_kerja'] = $cek_lowongan_kerja;
+            $data['aplikasi']       = Aplikasi::first();
+            return view('lowongankerjadetail',$data);
+        } else {
+            return redirect('/lowongan-kerja');
+        }
+    }
+
+    public function kirim(Request $request)
+    {
+
+    }
+
 }
 
 ?>
