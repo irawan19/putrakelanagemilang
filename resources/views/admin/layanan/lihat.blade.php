@@ -68,6 +68,7 @@
                                                         <li>
                                                             {{\App\Helpers\General::edit('dashboard/layanan/editdetail/'.$layanan_detail->id_layanan_details)}}
                                                         </li>
+                                                        <div class="dropdown-divider"></div>
                                                         <li>
                                                             {{\App\Helpers\General::hapus('dashboard/layanan/hapusdetail/'.$layanan_detail->id_layanan_details, $layanan_detail->url_layanan_details)}}
                                                         </li>

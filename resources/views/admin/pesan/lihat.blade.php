@@ -42,7 +42,7 @@
 					    			@php($no = 1)
 		            				@foreach($pesans as $pesan)
                                         @php($stylebelumbaca = '')
-                                        @if($pesan->status_baca_pesans !== 1)
+                                        @if($pesan->status_baca_pesans != 1)
                                             @php($stylebelumbaca = 'style=font-weight:bold')
                                         @endif
                                         <tr {{$stylebelumbaca}}>

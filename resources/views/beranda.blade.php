@@ -18,7 +18,7 @@
                             </div>
                             <div class="col-lg-5 animated fadeInRight">
                                 <div class="calrousel-img" style="object-fit: cover;">
-                                    <img src="{{URL::asset('template/front/img/carousel-2.png') }}" class="img-fluid w-100" alt="">
+                                    <img src="{{URL::asset('storage/'.$slideshow->gambar_slideshows) }}" class="img-fluid w-100" alt="">
                                 </div>
                             </div>
                         </div>
@@ -144,7 +144,7 @@
                     </div>
                 </div>
                 <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
-                    <img src="{{URL::asset('template/front/img/carousel-2.png') }}" class="img-fluid w-100" alt="">
+                    <img src="{{URL::asset('template/front/img/faq.png') }}" class="img-fluid w-100" alt="">
                 </div>
             </div>
         </div>
@@ -220,7 +220,7 @@
                         <div class="row g-0">
                             <div class="col-4  col-lg-4 col-xl-3">
                                 <div class="h-100">
-                                    @if($testimonial->gambar_testimonials !== 'template/front/img/default-testimonial.png')
+                                    @if($testimonial->gambar_testimonials != 'template/front/img/default-testimonial.png')
                                         <img src="{{URL::asset('storage/'.$testimonial->gambar_testimonials) }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
                                     @else
                                         <img src="{{URL::asset('template/front/img/default-testimonial.png') }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">

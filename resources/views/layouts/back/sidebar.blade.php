@@ -4,7 +4,7 @@
     <div class="sidebar-header border-bottom" style="margin: 0 auto">
         <div class="sidebar-brand">
             <a class="anostylewhite" href="{{URL('/')}}" target="_blank">
-                <img class="sidebar-brand-full" width="162" src="{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}">
+                <img class="sidebar-brand-full" width="100" src="{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}">
                 <img class="sidebar-brand-narrow" width="32" src="{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}">
             </a>
         </div>

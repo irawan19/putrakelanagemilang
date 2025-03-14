@@ -50,6 +50,7 @@
                                                         <li>
                                                             {{\App\Helpers\General::edit('dashboard/admin/edit/'.$admin->id)}}
                                                         </li>
+                                                        <div class="dropdown-divider"></div>
                                                         <li>
                                                             {{\App\Helpers\General::hapus('dashboard/admin/hapus/'.$admin->id, $admin->name)}}
                                                         </li>

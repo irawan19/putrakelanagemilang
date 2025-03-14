@@ -34,7 +34,7 @@
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-4">
                             <div class="footer-item">
-                                <h4 class="mb-4 text-white">Instagram</h4>
+                                <h4 class="mb-4 text-white">Galeri</h4>
                                 <div class="row g-3">
                                     <div class="col-4">
                                         <div class="footer-instagram rounded">

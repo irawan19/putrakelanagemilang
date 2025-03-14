@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('lowongan_kerjas', function (Blueprint $table) {
             $table->id('id_lowongan_kerjas');
+            $table->string('gambar_lowongan_kerjas');
             $table->string('judul_lowongan_kerjas');
+            $table->string('slug_lowongan_kerjas');
             $table->longtext('konten_lowongan_kerjas');
+            $table->longtext('sekilas_konten_lowongan_kerjas');
             $table->timestamps();
         });
     }

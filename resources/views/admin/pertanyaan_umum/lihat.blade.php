@@ -49,6 +49,7 @@
                                                         <li>
                                                             {{\App\Helpers\General::edit('dashboard/pertanyaan-umum/edit/'.$pertanyaan_umum->id_pertanyaan_umums)}}
                                                         </li>
+                                                        <div class="dropdown-divider"></div>
                                                         <li>
                                                             {{\App\Helpers\General::hapus('dashboard/pertanyaan-umum/hapus/'.$pertanyaan_umum->id_pertanyaan_umums, $pertanyaan_umum->url_pertanyaan_umums)}}
                                                         </li>

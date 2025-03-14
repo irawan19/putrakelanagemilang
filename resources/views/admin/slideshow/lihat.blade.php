@@ -50,6 +50,7 @@
                                                         <li>
                                                             {{\App\Helpers\General::edit('dashboard/slideshow/edit/'.$slideshow->id_slideshows)}}
                                                         </li>
+                                                        <div class="dropdown-divider"></div>
                                                         <li>
                                                             {{\App\Helpers\General::hapus('dashboard/slideshow/hapus/'.$slideshow->id_slideshows, $slideshow->url_slideshows)}}
                                                         </li>

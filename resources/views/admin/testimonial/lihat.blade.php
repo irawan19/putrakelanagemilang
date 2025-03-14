@@ -51,6 +51,7 @@
                                                         <li>
                                                             {{\App\Helpers\General::edit('dashboard/testimonial/edit/'.$testimonial->id_testimonials)}}
                                                         </li>
+                                                        <div class="dropdown-divider"></div>
                                                         <li>
                                                             {{\App\Helpers\General::hapus('dashboard/testimonial/hapus/'.$testimonial->id_testimonials, $testimonial->url_testimonials)}}
                                                         </li>
@@ -59,7 +60,7 @@
 											</td>
                                             <td class="nowrap">{{$no}}</td>
 								    		<td class="nowrap">
-                                                @if($testimonial->gambar_testimonials !== 'template/front/img/default-testimonial.png')
+                                                @if($testimonial->gambar_testimonials != 'template/front/img/default-testimonial.png')
                                                     <a data-fancybox="gallery" href="{{URL::asset('storage/'.$testimonial->gambar_testimonials)}}">
                                                         <img src="{{ URL::asset('storage/'.$testimonial->gambar_testimonials) }}" width="50">
                                                     </a>

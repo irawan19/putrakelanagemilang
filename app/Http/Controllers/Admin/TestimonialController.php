@@ -136,6 +136,7 @@ class TestimonialController extends AdminCoreController {
     public function hapus($idtestimonial) {
         $cek_testimonials = Testimonial::find($idtestimonial);
         if (!empty($cek_testimonials)) {
+            if($cek_testimonials->gambar_testimonials != 'template/front/images/default-testimonial.png')
             Storage::disk('public')->delete($cek_testimonials->gambar_testimonials);
             Testimonial::find($idtestimonial)->delete();
             return response()->json(['sukses' => '"sukses'], 200);

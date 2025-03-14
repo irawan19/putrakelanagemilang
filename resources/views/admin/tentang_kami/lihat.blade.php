@@ -94,6 +94,7 @@
                                                         <li>
                                                             {{\App\Helpers\General::edit('dashboard/tentang-kami/editdetail/'.$tentang_kami_detail->id_tentang_kami_details)}}
                                                         </li>
+                                                        <div class="dropdown-divider"></div>
                                                         <li>
                                                             {{\App\Helpers\General::hapus('dashboard/tentang-kami/hapusdetail/'.$tentang_kami_detail->id_tentang_kami_details, $tentang_kami_detail->url_tentang_kami_details)}}
                                                         </li>

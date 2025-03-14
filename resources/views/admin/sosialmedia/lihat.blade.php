@@ -49,6 +49,7 @@
                                                         <li>
                                                             {{\App\Helpers\General::edit('dashboard/sosial-media/edit/'.$sosialmedia->id_sosial_medias)}}
                                                         </li>
+                                                        <div class="dropdown-divider"></div>
                                                         <li>
                                                             {{\App\Helpers\General::hapus('dashboard/sosial-media/hapus/'.$sosialmedia->id_sosial_medias, $sosialmedia->url_sosial_medias)}}
                                                         </li>

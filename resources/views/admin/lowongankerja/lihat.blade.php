@@ -31,7 +31,9 @@
                                 <tr>
                                     <th class="nowrap"></th>
                                     <th class="nowrap" width="10px">No</th>
+                                    <th class="nowrap">Gambar</th>
                                     <th class="nowrap">Judul</th>
+                                    <th class="nowrap">Sekilas</th>
                                     <th class="nowrap">Pelamar</th>
                                 </tr>
                             </thead>
@@ -49,9 +51,11 @@
                                                         <li>
                                                             {{\App\Helpers\General::baca('dashboard/lowongan-kerja/baca/'.$lowongankerja->id_lowongan_kerjas)}}
                                                         </li>
+                                                        <div class="dropdown-divider"></div>
                                                         <li>
                                                             {{\App\Helpers\General::edit('dashboard/lowongan-kerja/edit/'.$lowongankerja->id_lowongan_kerjas)}}
                                                         </li>
+                                                        <div class="dropdown-divider"></div>
                                                         <li>
                                                             {{\App\Helpers\General::hapus('dashboard/lowongan-kerja/hapus/'.$lowongankerja->id_lowongan_kerjas, $lowongankerja->url_lowongan_kerjas)}}
                                                         </li>
@@ -59,7 +63,19 @@
                                                 </div>
 											</td>
                                             <td class="nowrap">{{$no}}</td>
+								    		<td class="nowrap">
+                                                @if($lowongankerja->gambar_lowongan_kerja != '')
+                                                    <a data-fancybox="gallery" href="{{URL::asset('storage/'.$lowongankerja->gambar_lowongan_kerjas)}}">
+                                                        <img src="{{ URL::asset('storage/'.$lowongankerja->gambar_lowongan_kerjas) }}" width="108">
+                                                    </a>
+                                                @else
+                                                    <a data-fancybox="gallery" href="{{URL::asset('storage/'.$aplikasi->logo_text_aplikasis)}}">
+                                                        <img src="{{ URL::asset('storage/'.$aplikasi->logo_text_aplikasis) }}" width="108">
+                                                    </a>
+                                                @endif
+                                            </td>
                                             <td class="nowrap">{{$lowongankerja->judul_lowongan_kerjas}}</td>
+                                            <td class="nowrap">{!! nl2br($lowongankerja->sekilas_konten_lowongan_kerjas) !!}</td>
                                             <td class="nowrap">
                                                 @php($jumlah_pelamar = \App\Models\Pelamar_lowongan_kerja::where('lowongan_kerjas_id',$lowongankerja->id_lowongan_kerjas)->count())
                                                 {{$jumlah_pelamar}}
@@ -69,6 +85,7 @@
                                     @endforeach
                                 @else
                                     <td colspan="4" class="center-align">Tidak ada data ditampilkan</td>
+								    <td style="display:none"></td>
 								    <td style="display:none"></td>
 								    <td style="display:none"></td>
 								    <td style="display:none"></td>
