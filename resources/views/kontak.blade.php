@@ -26,27 +26,30 @@
                                 <div class="col-lg-12 col-xl-12">
                                     <div class="form-floating">
                                         <input type="text" name="nama_pesans" class="form-control border-0" id="nama_pesans" placeholder="Nama Lengkap" value="{{ Request::old('nama_pesans') }}" required>
-                                        <label for="name">Nama Lengkap</label>
+                                        <label for="nama_pesans">Nama Lengkap</label>
+                                        {{\App\Helpers\General::pesanErrorForm($errors->first('nama_pesans'))}}
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-12">
                                     <div class="form-floating">
                                         <input type="email" name="email_pesans" class="form-control border-0" id="email_pesans" placeholder="Email" value="{{ Request::old('email_pesans') }}" required>
                                         <label for="email_pesans">Email</label>
+                                        {{\App\Helpers\General::pesanErrorForm($errors->first('email_pesans'))}}
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-12">
                                     <div class="form-floating">
-                                        <input type="number" name="telepon_pesans" class="form-control border-0" id="telepon_pesans" value="{{ Request::old('telepon_pesans') }}"  placeholder="Telepon">
+                                        <input type="number" name="telepon_pesans" class="form-control border-0" id="telepon_pesans" value="{{ Request::old('telepon_pesans') }}"  placeholder="Telepon" required>
                                         <label for="telepon_pesans">Telepon</label>
+                                        {{\App\Helpers\General::pesanErrorForm($errors->first('telepon_pesans'))}}
                                     </div>
                                 </div>
                                 <div class="col-12 col-xl-12">
                                     <div class="form-floating">
-                                        <textarea name="konten_pesans" class="form-control border-0" placeholder="Isikan pesan anda" id="konten_pesans" style="height: 120px">{{ Request::old('konten_pesans') }}</textarea>
+                                        <textarea name="konten_pesans" required class="form-control border-0" placeholder="Isikan pesan anda" id="konten_pesans" style="height: 120px">{{ Request::old('konten_pesans') }}</textarea>
                                         <label for="konten_pesans">Pesan</label>
+                                        {{\App\Helpers\General::pesanErrorForm($errors->first('konten_pesans'))}}
                                     </div>
-
                                 </div>
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-3">Kirim Pesan</button>

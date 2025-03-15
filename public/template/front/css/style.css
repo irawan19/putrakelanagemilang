@@ -1,5 +1,13 @@
 
 /*** Spinner Start ***/
+.errorform{
+    color: red
+}
+
+.errorformfile{
+    color: red
+}
+
 #spinner {
     opacity: 0;
     visibility: hidden;
