@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="col-xl-4 wow fadeInRight" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
-                    <div class="bg-white rounded p-5 h-100">
+                    <div class="bg-light rounded p-5 h-100">
                         <form method="POST" action="{{ URL('kirim-pesan') }}">
                             {{ csrf_field() }}
                             <div class="row g-3">
