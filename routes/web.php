@@ -41,7 +41,7 @@ Route::get('/kontak', [Kontak::class, 'index']);
 Route::post('/kirim-pesan', [Kontak::class, 'kirim']);
 Route::get('/lowongan-kerja', [LowonganKerja::class, 'index']);
 Route::get('/lowongan-kerja/detail/{slug}', [LowonganKerja::class, 'detail']);
-Route::get('/kirim-lowongan-kerja', [LowonganKerja::class, 'kirim']);
+Route::post('/kirim-lowongan-kerja/{slug}', [LowonganKerja::class, 'kirim']);
 Route::get('/penawaran', [Penawaran::class, 'index']);
 Route::post('/kirim-penawaran', [Penawaran::class, 'kirim']);
 

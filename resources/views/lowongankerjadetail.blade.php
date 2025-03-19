@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-xl-4 wow fadeInRight" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
                     <div class="bg-light rounded p-5 h-100">
-                        <form method="POST" action="{{ URL('kirim-pesan') }}">
+                        <form method="POST" enctype="multipart/form-data" action="{{ URL('kirim-lowongan-kerja/'.$lowongan_kerja->slug_lowongan_kerjas) }}">
                             {{ csrf_field() }}
                             <div class="row g-3">
                                 <div class="col-lg-12 col-xl-12">
@@ -42,7 +42,7 @@
                                 <div class="col-lg-12 col-xl-12">
                                     <label for="userfile_cv_pelamar_lowongan_kerjas" style="margin-left:15px;">CV (pdf)</label>
                                     <div class="form-floating">
-                                        <input id="userfile_cv_pelamar_lowongan_kerjas" required class="form-control border-0" type="file" name="userfile_cv_pelamar_lowongan_kerjas">
+                                        <input id="userfile_cv_pelamar_lowongan_kerjas" required accept="application/pdf" class="form-control border-0" type="file" name="userfile_cv_pelamar_lowongan_kerjas">
                                     </div>
                                     {{\App\Helpers\General::pesanErrorFormFile($errors->first('userfile_cv_pelamar_lowongan_kerjas'))}}
                                 </div>

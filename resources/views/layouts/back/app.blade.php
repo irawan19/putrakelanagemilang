@@ -45,7 +45,7 @@
         <div class="wrapper d-flex flex-column min-vh-100">
             @include('layouts.back.header')
             <div class="body flex-grow-1">
-                <div class="container-lg">
+                <div class="container-fluid">
                     @yield('content')
                 </div>
             </div>

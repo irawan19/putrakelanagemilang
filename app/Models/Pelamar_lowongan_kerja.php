@@ -16,6 +16,6 @@ class Pelamar_lowongan_kerja extends Model
         'nama_lengkap_pelamar_lowongan_kerjas',
         'telepon_pelamar_lowongan_kerjas',
         'email_pelamar_lowongan_kerjas',
-        'cv_lowongan_kerjas',
+        'cv_pelamar_lowongan_kerjas',
     ];
 }

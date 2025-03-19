@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nama_lengkap_pelamar_lowongan_kerjas');
             $table->string('telepon_pelamar_lowongan_kerjas');
             $table->string('email_pelamar_lowongan_kerjas');
-            $table->string('cv_lowongan_kerjas');
+            $table->string('cv_pelamar_lowongan_kerjas');
             $table->timestamps();
         });
     }
