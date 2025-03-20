@@ -151,61 +151,33 @@
     </div>
     <!-- FAQs End -->
 
-    <!-- Blog Start -->
-    <div class="container-fluid blog py-5">
-        <div class="container py-5">
-            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                <h4 class="text-primary">Katalog</h4>
-                <h1 class="display-4 mb-4">Produk Terbaru</h1>
-                <p class="mb-0">Berikut beberapa produk terbaru yang kami jual</p>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{URL::asset('template/front/img/blog-1.png') }}" class="img-fluid rounded-top w-100" alt="">
-                            <div class="blog-categiry py-2 px-4">
-                                <span>Kategori Produk</span>
+    <!-- Katalog Start -->
+    <div class="container-fluid team py-5">
+        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+            <h4 class="text-primary">Katalog</h4>
+            <h1 class="display-4 mb-4">Produk Dari Kami</h1>
+            <p class="mb-0">Berikut beberapa yang kami jual</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            @foreach($katalogs->data as $katalog)
+                <div class="col-md-2 col-lg-2 col-xl-2 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="team-item">
+                        <a data-fancybox="gallery" href="{{URL::asset('storage/'.$aplikasi->logo_text_aplikasis)}}" data-caption="{{$katalog->nama_barangs}}">
+                            <div class="team-img">
+                                <img src="{{URL::asset('storage/'.$aplikasi->logo_text_aplikasis) }}" class="img-fluid rounded-top w-100" alt="">
                             </div>
-                        </div>
-                        <div class="blog-content p-4">
-                            <a href="#" class="h4 d-inline-block mb-3">Which allows you to pay down insurance bills</a>
-                            <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
+                        </a>
+                        <div class="team-title p-4">
+                            <h4 class="mb-0">{{ $katalog->nama_barangs }}</h4>
+                            <p class="mb-0" style="color:#c2c2c2">Merk&nbsp;: {{ $katalog->nama_merks }}</p>
+                            <p class="mb-0" style="color:#c2c2c2">Tipe&nbsp;&nbsp;: {{ $katalog->nama_tipes }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{URL::asset('template/front/img/blog-1.png') }}" class="img-fluid rounded-top w-100" alt="">
-                            <div class="blog-categiry py-2 px-4">
-                                <span>Kategori Produk</span>
-                            </div>
-                        </div>
-                        <div class="blog-content p-4">
-                            <a href="#" class="h4 d-inline-block mb-3">Which allows you to pay down insurance bills</a>
-                            <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{URL::asset('template/front/img/blog-1.png') }}" class="img-fluid rounded-top w-100" alt="">
-                            <div class="blog-categiry py-2 px-4">
-                                <span>Kategori Produk</span>
-                            </div>
-                        </div>
-                        <div class="blog-content p-4">
-                            <a href="#" class="h4 d-inline-block mb-3">Which allows you to pay down insurance bills</a>
-                            <p class="mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
-    <!-- Blog End -->
+    <!-- Katalog End -->
 
     <!-- Testimonial Start -->
     <div class="container-fluid testimonial pb-5">

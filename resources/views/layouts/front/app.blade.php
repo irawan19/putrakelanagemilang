@@ -36,7 +36,7 @@
         <link href="{{ URL::asset('template/front/css/bootstrap.min.css') }}" rel="stylesheet">
         <link href="{{ URL::asset('template/front/css/style.css') }}" rel="stylesheet">
         <meta name="_token" content="{{ csrf_token() }}">
-
+	    <link rel="stylesheet" href="{{URL::asset('template/back/vendors/fancybox/jquery.fancybox.min.css')}}" />
         <style>
             .bg-breadcrumb {
                 position: relative;
@@ -71,6 +71,7 @@
         <script src="{{ URL::asset('template/front/lib/owlcarousel/owl.carousel.min.js') }}"></script>
         
         <script src="{{ URL::asset('template/front/js/main.js') }}"></script>
+	    <script src="{{URL::asset('template/back/vendors/fancybox/jquery.fancybox.min.js')}}"></script>
     </body>
 
 </html>

@@ -13,7 +13,7 @@
                                 @else
                                     <img src="{{URL::asset('storage/'.$aplikasi->logo_text_aplikasis) }}" class="img-fluid rounded-top w-100" alt="">
                                 @endif
-                                    <div class="service-icon p-3">
+                                <div class="service-icon p-3">
                                     <i class="fa fa-briefcase fa-2x"></i>
                                 </div>
                             </div>

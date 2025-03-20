@@ -22,13 +22,11 @@ use App\Http\Controllers\Admin\TentangKamiController as AdminTentangKami;
 use App\Http\Controllers\Admin\GaleriController as AdminGaleri;
 use App\Http\Controllers\Admin\LayananController as AdminLayanan;
 use App\Http\Controllers\Admin\PertanyaanUmumController as AdminPertanyaanUmum;
-use App\Http\Controllers\Admin\KatalogController as AdminKatalog;
 use App\Http\Controllers\Admin\TestimonialController as AdminTestimonial;
 use App\Http\Controllers\Admin\SosialMediaController as AdminSosialMedia;
 use App\Http\Controllers\Admin\KontakController as AdminKontak;
 use App\Http\Controllers\Admin\LowonganKerjaController as AdminLowonganKerja;
 use App\Http\Controllers\Admin\PesanController as AdminPesan;
-use App\Http\Controllers\Admin\PenawaranController as AdminPenawaran;
 use App\Http\Controllers\Admin\AdminController as AdminAdmin;
 use App\Http\Controllers\Admin\AplikasiController as AdminAplikasi;
 
@@ -122,15 +120,6 @@ Route::middleware([
             Route::delete('/hapus/{id}', [AdminPertanyaanUmum::class, 'hapus']);
         });
 
-        Route::group(['prefix' => 'katalog'], function(){
-            Route::get('/', [AdminKatalog::class, 'index']);
-            Route::get('/tambah', [AdminKatalog::class, 'tambah']);
-            Route::post('/prosestambah', [AdminKatalog::class, 'prosestambah']);
-            Route::get('/edit/{id}', [AdminKatalog::class, 'edit']);
-            Route::patch('/prosesedit/{id}', [AdminKatalog::class, 'prosesedit']);
-            Route::delete('/hapus/{id}', [AdminKatalog::class, 'hapus']);
-        });
-
         Route::group(['prefix' => 'testimonial'], function(){
             Route::get('/', [AdminTestimonial::class, 'index']);
             Route::get('/tambah', [AdminTestimonial::class, 'tambah']);
@@ -167,11 +156,6 @@ Route::middleware([
         Route::group(['prefix' => 'pesan'], function() {
             Route::get('/', [AdminPesan::class, 'index']);
             Route::get('/baca/{id}', [AdminPesan::class, 'baca']);
-        });
-
-        Route::group(['prefix' => 'penawaran'], function() {
-            Route::get('/', [AdminPenawaran::class, 'index']);
-            Route::get('/baca/{id}', [AdminPenawaran::class, 'baca']);
         });
 
         Route::group(['prefix' => 'admin'], function() {

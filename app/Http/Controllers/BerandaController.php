@@ -11,6 +11,7 @@ use App\Models\Layanan_detail;
 use App\Models\Tentang_kami_detail;
 use App\Models\PertanyaanUmum;
 use App\Models\Testimonial;
+use GuzzleHttp\Client;
 
 class BerandaController extends Controller {
     
@@ -24,6 +25,22 @@ class BerandaController extends Controller {
         $data['layanan']                = Layanan::first();
         $data['layanan_details']        = Layanan_detail::get();
         $data['pertanyaan_umums']       = PertanyaanUmum::orderBy('created_at','asc')->get();
+        $api_katalog                = new Client(['http_errors' => false]);
+        $response                   = $api_katalog->request(
+            "GET",
+            "127.0.0.1:8000/api/barang",
+            [
+                'headers' => [
+                    'Accept'        => 'application/json',
+                    'Content-Type'  => 'application/json',
+                ]
+            ]
+        );
+        if($response->getStatusCode() == 200) {
+            $data['katalogs']          = json_decode($response->getBody());
+        } else {
+            $data['katalogs']          =  array();
+        }
         $data['testimonials']           = Testimonial::orderBy('created_at','desc')->get();
         return view('beranda',$data);
     }

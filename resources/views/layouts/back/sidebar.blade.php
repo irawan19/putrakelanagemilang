@@ -55,13 +55,6 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{URL('/dashboard/Katalog')}}">
-                    <svg class="nav-icon">
-                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-tags')}}"></use>
-                    </svg> Katalog
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="{{URL('/dashboard/testimonial')}}">
                     <svg class="nav-icon">
                         <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-comment-square')}}"></use>
@@ -83,17 +76,11 @@
                 </a>
             </li>
             <li class="nav-item">
+                @php($pesan = \App\Models\Pesan::where('status_baca_pesans',false)->count())
                 <a class="nav-link" href="{{URL('/dashboard/pesan')}}">
                     <svg class="nav-icon">
                         <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-envelope-open')}}"></use>
-                    </svg> Pesan
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{URL('/dashboard/penawaran')}}">
-                    <svg class="nav-icon">
-                        <use xlink:href="{{URL::asset('template/back/vendors/@coreui/icons/svg/free.svg#cil-file')}}"></use>
-                    </svg> Penawaran
+                    </svg> Pesan <span class="badge badge-sm bg-danger ms-auto">{{$pesan}}</span>
                 </a>
             </li>
             <li class="nav-item">
