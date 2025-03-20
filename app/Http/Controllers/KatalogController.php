@@ -13,7 +13,7 @@ class KatalogController extends Controller {
         $api_katalog                = new Client(['http_errors' => false]);
         $response                   = $api_katalog->request(
             "GET",
-            "127.0.0.1:8000/api/barang/0",
+            "https://penawaran.putrakelanagemilang.com/api/barang/0",
             [
                 'headers' => [
                     'Accept'        => 'application/json',

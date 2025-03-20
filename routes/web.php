@@ -13,7 +13,6 @@ use App\Http\Controllers\LayananController as Layanan;
 use App\Http\Controllers\KatalogController as Katalog;
 use App\Http\Controllers\KontakController as Kontak;
 use App\Http\Controllers\LowonganKerjaController as LowonganKerja;
-use App\Http\Controllers\PenawaranController as Penawaran;
 
 use App\Http\Controllers\Admin\DashboardController as AdminDashboard;
 use App\Http\Controllers\Admin\AkunController as AdminAkun;
@@ -40,8 +39,6 @@ Route::post('/kirim-pesan', [Kontak::class, 'kirim']);
 Route::get('/lowongan-kerja', [LowonganKerja::class, 'index']);
 Route::get('/lowongan-kerja/detail/{slug}', [LowonganKerja::class, 'detail']);
 Route::post('/kirim-lowongan-kerja/{slug}', [LowonganKerja::class, 'kirim']);
-Route::get('/penawaran', [Penawaran::class, 'index']);
-Route::post('/kirim-penawaran', [Penawaran::class, 'kirim']);
 
 Route::get('/sitemap', function(){
     $urlsitemap = 'https://www.putrakelanagemilang.com';

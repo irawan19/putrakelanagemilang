@@ -66,7 +66,7 @@
                     <a href="{{ URL('/kontak') }}" class="nav-item nav-link {{$active_kontak}}">Kontak</a>
                     <a href="{{ URL('/lowongan-kerja') }}" class="nav-item nav-link {{$active_lowongan_kerja}}">Lowongan</a>
                     <div class="nav-btn px-3">
-                        <a href="{{ URL('/penawaran') }}" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Dapatkan Penawaran</a>
+                        <a href="{{ URL('/kontak-kami') }}" class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"> Dapatkan Penawaran</a>
                     </div>
                 </div>
             </div>
