@@ -99,7 +99,7 @@
                     <h4 class="text-white mb-4">Penawaran</h4>
                     <p class="text-white mb-3">Silahkan klik tombol dibawah untuk mendapatkan penawaran terbaik dari kami atau hubungi ke no telepon kami.</p>
                     <div class="position-relative rounded-pill mb-4">
-                        <a href="{{ URL('/kontak') }}" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-3 flex-shrink-0"> Dapatkan Penawaran</a>
+                        <a href="https://wa.me/{{$kontak->telepon_kontaks}}?text=Hi saya ingin mendapatkan penawaran untuk produk anda" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-3 flex-shrink-0"> Dapatkan Penawaran</a>
                     </div>
                     <div class="d-flex flex-shrink-0">
                         <div class="footer-btn">
