@@ -99,11 +99,11 @@
                     <h4 class="text-white mb-4">Penawaran</h4>
                     <p class="text-white mb-3">Silahkan klik tombol dibawah untuk mendapatkan penawaran terbaik dari kami atau hubungi ke no telepon kami.</p>
                     <div class="position-relative rounded-pill mb-4">
-                        <a href="{{ URL('/kontak-kami') }}" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-3 flex-shrink-0"> Dapatkan Penawaran</a>
+                        <a href="{{ URL('/kontak') }}" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-3 flex-shrink-0"> Dapatkan Penawaran</a>
                     </div>
                     <div class="d-flex flex-shrink-0">
                         <div class="footer-btn">
-                            <a href="{{ $kontak->telepon_kontaks }}" class="btn btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s">
+                            <a href="https://wa.me/{{ $kontak->telepon_kontaks }}" class="btn btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s">
                                 <i class="fa fa-phone-alt fa-2x"></i>
                                 <div class="position-absolute" style="top: 2px; right: 12px;">
                                     <span><i class="fa fa-comment-dots text-secondary"></i></span>
