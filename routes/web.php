@@ -29,6 +29,12 @@ use App\Http\Controllers\Admin\PesanController as AdminPesan;
 use App\Http\Controllers\Admin\AdminController as AdminAdmin;
 use App\Http\Controllers\Admin\AplikasiController as AdminAplikasi;
 
+
+Route::get('/storage-link', function() {
+    Artisan::call('storage:link'); 
+    return 'The links have been created.';
+});
+
 Route::get('/', [Beranda::class, 'index']);
 Route::get('/beranda', [Beranda::class, 'index']);
 Route::get('/tentang-kami', [TentangKami::class, 'index']);
