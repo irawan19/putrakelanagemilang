@@ -9,8 +9,8 @@
         <meta charset="utf-8">
         <title>{{ $aplikasi->nama_aplikasis }}</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+        <meta content="{{$aplikasi->keyword_aplikasis}}" name="keywords">
+        <meta content="{{$aplikasi->deskripsi_aplikasis}}" name="description">
         <link rel="apple-touch-icon" sizes="57x57" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
         <link rel="apple-touch-icon" sizes="60x60" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
         <link rel="apple-touch-icon" sizes="72x72" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
