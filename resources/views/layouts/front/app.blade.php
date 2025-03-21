@@ -49,6 +49,7 @@
                 transition: 0.5s;
             }
         </style>
+        <meta name="google-site-verification" content="rYhfM6tdss674E0yspPsQ6UG44iuwqB0vkMTx3XUxQo" />
     </head>
 
     <body>
