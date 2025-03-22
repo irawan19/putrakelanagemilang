@@ -252,10 +252,6 @@ class General {
 				'nama'	=> 'Building',
 				'icon'	=> 'building'
 			),
-			array(
-				'nama'	=> 'Warehouse',
-				'icon'	=> 'warehouse'
-			),
 		);
 		return $sosial_media_data;
 	}
