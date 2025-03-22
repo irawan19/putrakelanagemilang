@@ -244,6 +244,10 @@ class General {
 				'nama'	=> 'Tools',
 				'icon'	=> 'tools'
 			),
+			array(
+				'nama'	=> 'Calendar',
+				'icon'	=> 'calendar'
+			),
 		);
 		return $sosial_media_data;
 	}
