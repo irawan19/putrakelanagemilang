@@ -10,8 +10,9 @@
         <title>{{ $aplikasi->nama_aplikasis }}</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <meta content="{{$aplikasi->keyword_aplikasis}}" name="keywords">
+        <meta content="{{$aplikasi->keyword_aplikasis}}" name="keyword">
         <meta content="{{$aplikasi->deskripsi_aplikasis}}" name="description">
+        <meta name="author" content="{{$aplikasi->nama_aplikasis}}">
         <link rel="apple-touch-icon" sizes="57x57" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
         <link rel="apple-touch-icon" sizes="60x60" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
         <link rel="apple-touch-icon" sizes="72x72" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
