@@ -41,7 +41,7 @@
                                             <div class="footer-instagram rounded">
                                                 <img src="{{ URL::asset('storage/'.$galeri->foto_galeris) }}" class="img-fluid w-100" alt="{{ $galeri->judul_galeris }}">
                                                 <div class="footer-search-icon">
-                                                    <a href="{{ URL::asset('storage/'.$galeri->foto_galeris) }}" data-lightbox="footerInstagram-1" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                                    <a href="{{ URL::asset('storage/'.$galeri->foto_galeris) }}" data-caption="{{$galeri->judul_galeris}}" data-lightbox="footerInstagram-1" class="my-auto"><i class="fas fa-link text-white"></i></a>
                                                 </div>
                                             </div>
                                         </div>
