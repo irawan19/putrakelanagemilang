@@ -248,6 +248,14 @@ class General {
 				'nama'	=> 'Calendar',
 				'icon'	=> 'calendar'
 			),
+			array(
+				'nama'	=> 'Building',
+				'icon'	=> 'building'
+			),
+			array(
+				'nama'	=> 'Briefcase',
+				'icon'	=> 'briefcase'
+			),
 		);
 		return $sosial_media_data;
 	}
