@@ -228,6 +228,22 @@ class General {
 				'nama'	=> 'Xray',
 				'icon'	=> 'x-ray'
 			),
+			array(
+				'nama'	=> 'Vials',
+				'icon'	=> 'vials'
+			),
+			array(
+				'nama'	=> 'User Cog',
+				'icon'	=> 'user-cog'
+			),
+			array(
+				'nama'	=> 'Universal Access',
+				'icon'	=> 'universal-access'
+			),
+			array(
+				'nama'	=> 'Tools',
+				'icon'	=> 'tools'
+			),
 		);
 		return $sosial_media_data;
 	}
