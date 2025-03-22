@@ -155,8 +155,8 @@
     <div class="container-fluid team py-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
             <h4 class="text-primary">Katalog</h4>
-            <h1 class="display-4 mb-4">Produk Dari Kami</h1>
-            <p class="mb-0">Berikut beberapa yang kami jual</p>
+            <h1 class="display-4 mb-4">Produk Terbaru Dari Kami</h1>
+            <p class="mb-0">Berikut beberapa produk terbaru yang kami jual</p>
         </div>
         <div class="row g-4 justify-content-center">
             @foreach($katalogs->data as $katalog)
@@ -175,6 +175,9 @@
                     </div>
                 </div>
             @endforeach
+            <div style="text-align:center; padding-top:20px">
+                <a class="btn btn-primary rounded-pill py-3 px-5" href="{{ URL('/katalog') }}">Lihat semua produk</a>
+            </div>
         </div>
     </div>
     <!-- Katalog End -->
