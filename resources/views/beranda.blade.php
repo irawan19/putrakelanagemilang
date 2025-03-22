@@ -192,10 +192,10 @@
                         <div class="row g-0">
                             <div class="col-4  col-lg-4 col-xl-3">
                                 <div class="h-100">
-                                    @if($testimonial->gambar_testimonials != 'template/front/img/default-testimonial.png')
+                                    @if($testimonial->gambar_testimonials != 'template/front/img/testimonial.png')
                                         <img src="{{URL::asset('storage/'.$testimonial->gambar_testimonials) }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
                                     @else
-                                        <img src="{{URL::asset('template/front/img/default-testimonial.png') }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
+                                        <img src="{{URL::asset('template/front/img/testimonial.png') }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
                                     @endif                                
                                 </div>
                             </div>

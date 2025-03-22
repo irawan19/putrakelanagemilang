@@ -50,7 +50,7 @@ class TestimonialController extends AdminCoreController {
         else
         {
             $path_gambar_testimonial   = 'template/front/images/';
-            $nama_gambar_testimonial    = 'default-testimonial.png'; 
+            $nama_gambar_testimonial    = 'testimonial.png'; 
         }
 
         $data = [
@@ -136,7 +136,7 @@ class TestimonialController extends AdminCoreController {
     public function hapus($idtestimonial) {
         $cek_testimonials = Testimonial::find($idtestimonial);
         if (!empty($cek_testimonials)) {
-            if($cek_testimonials->gambar_testimonials != 'template/front/images/default-testimonial.png')
+            if($cek_testimonials->gambar_testimonials != 'template/front/images/testimonial.png')
             Storage::disk('public')->delete($cek_testimonials->gambar_testimonials);
             Testimonial::find($idtestimonial)->delete();
             return response()->json(['sukses' => '"sukses'], 200);

@@ -60,7 +60,7 @@
 											</td>
                                             <td class="nowrap">{{$no}}</td>
 								    		<td class="nowrap">
-                                                @if($testimonial->gambar_testimonials != 'template/front/img/default-testimonial.png')
+                                                @if($testimonial->gambar_testimonials != 'template/front/img/testimonial.png')
                                                     <a data-fancybox="gallery" href="{{URL::asset('storage/'.$testimonial->gambar_testimonials)}}">
                                                         <img src="{{ URL::asset('storage/'.$testimonial->gambar_testimonials) }}" width="50">
                                                     </a>
