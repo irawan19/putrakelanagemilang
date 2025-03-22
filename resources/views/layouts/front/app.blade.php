@@ -38,6 +38,15 @@
         <link href="{{ URL::asset('template/front/css/style.css') }}" rel="stylesheet">
         <meta name="_token" content="{{ csrf_token() }}">
 	    <link rel="stylesheet" href="{{URL::asset('template/back/vendors/fancybox/jquery.fancybox.min.css')}}" />
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQE7Q13S85"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-QQE7Q13S85');
+        </script>
         <style>
             .bg-breadcrumb {
                 position: relative;
