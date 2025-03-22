@@ -29,7 +29,7 @@
 				                @foreach($icon_layanan_details as $icon_layanan_detail)
 				                  	@php($selected = '')
 				                     @if(Request::old('layanan_details') == '')
-				                         @if($icon_layanan_detail['icon'].'_'.$icon_layanan_detail['nama'] == $layanan_details->icon_layanan_details.'_'.$layanan_details->nama_layanan_details)
+				                         @if($icon_layanan_detail['icon'] == $layanan_details->icon_layanan_details)
 				                             @php($selected = 'selected')
 				                         @endif
 				                     @else

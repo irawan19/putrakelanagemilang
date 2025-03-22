@@ -17,7 +17,7 @@
 				                @foreach($icon_tentang_kami_details as $icon_tentang_kami_detail)
 				                  	@php($selected = '')
 				                     @if(Request::old('tentang_kami_details') == '')
-				                         @if($icon_tentang_kami_detail['icon'].'_'.$icon_tentang_kami_detail['nama'] == $tentang_kami_details->icon_tentang_kami_details.'_'.$tentang_kami_details->nama_tentang_kami_details)
+				                         @if($icon_tentang_kami_detail['icon'] == $tentang_kami_details->icon_tentang_kami_details)
 				                             @php($selected = 'selected')
 				                         @endif
 				                     @else
