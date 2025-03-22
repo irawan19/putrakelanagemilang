@@ -253,8 +253,8 @@ class General {
 				'icon'	=> 'building'
 			),
 			array(
-				'nama'	=> 'Chair Office',
-				'icon'	=> 'chair-office'
+				'nama'	=> 'Laptop House',
+				'icon'	=> 'laptop-house'
 			),
 		);
 		return $sosial_media_data;
