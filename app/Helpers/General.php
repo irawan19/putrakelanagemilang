@@ -220,6 +220,14 @@ class General {
 				'nama'	=> 'Users',
 				'icon'	=> 'user'
 			),
+			array(
+				'nama'	=> 'Wrench',
+				'icon'	=> 'wrench'
+			),
+			array(
+				'nama'	=> 'Xray',
+				'icon'	=> 'x-ray'
+			),
 		);
 		return $sosial_media_data;
 	}
