@@ -3,12 +3,13 @@
 @php($sosial_medias         = \App\Models\Sosial_media::get())
 @php($galeris               = \App\Models\Galeri::get())
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
     <base href="./">
         <meta charset="utf-8">
         <title>{{ $aplikasi->nama_aplikasis }}</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <meta content="{{$aplikasi->keyword_aplikasis}}" name="keywords">
         <meta content="{{$aplikasi->deskripsi_aplikasis}}" name="description">
         <link rel="apple-touch-icon" sizes="57x57" href="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
