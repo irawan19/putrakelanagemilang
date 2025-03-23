@@ -17,7 +17,7 @@
                                 @if($katalog->foto_barangs == '')
                                     <img src="{{URL::asset('storage/'.$aplikasi->logo_text_aplikasis) }}" class="img-fluid rounded-top w-100" alt="">
                                 @else
-                                    <img src="{{URL::asset('https://penawaran.putrakelanagemilang.com/storage/'.$aplikasi->logo_text_aplikasis) }}" class="img-fluid rounded-top w-100" alt="">
+                                    <img src="{{URL::asset('https://penawaran.putrakelanagemilang.com/storage/'.$katalog->foto_barangs) }}" class="img-fluid rounded-top w-100" alt="">
                                 @endif
                             </div>
                         </a>
