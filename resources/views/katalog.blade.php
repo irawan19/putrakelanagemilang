@@ -14,7 +14,11 @@
                     <div class="team-item">
                         <a data-fancybox="gallery" href="{{URL::asset('storage/'.$aplikasi->logo_text_aplikasis)}}" data-caption="{{$katalog->nama_barangs}}">
                             <div class="team-img">
-                                <img src="{{URL::asset('storage/'.$aplikasi->logo_text_aplikasis) }}" class="img-fluid rounded-top w-100" alt="">
+                                @if($katalo->foto_barangs == '')
+                                    <img src="{{URL::asset('storage/'.$aplikasi->logo_text_aplikasis) }}" class="img-fluid rounded-top w-100" alt="">
+                                @else
+                                    <img src="{{URL::asset('https://penawaran.putrakelanagemilang.com/storage/'.$aplikasi->logo_text_aplikasis) }}" class="img-fluid rounded-top w-100" alt="">
+                                @endif
                             </div>
                         </a>
                         <div class="team-title p-4">
