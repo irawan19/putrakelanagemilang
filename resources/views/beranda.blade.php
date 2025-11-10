@@ -64,6 +64,17 @@
                     </div>
                 @endforeach
             </div>
+            <!-- SEO Content untuk Alkes Magelang -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="text-center wow fadeInUp" data-wow-delay="0.4s">
+                        <h2 class="h4 mb-3" style="color: var(--medical-dark);">Distributor Alkes Magelang Terpercaya</h2>
+                        <p class="text-muted mb-0" style="line-height: 1.8;">
+                            Sebagai <strong>distributor alkes Magelang</strong> terpercaya, PT. Putra Kelana Gemilang menyediakan berbagai macam <strong>alat kesehatan Magelang</strong> berkualitas tinggi untuk memenuhi kebutuhan rumah sakit, klinik, dan fasilitas kesehatan di <strong>Magelang, Jawa Tengah</strong>. Kami adalah <strong>supplier alat kesehatan Magelang</strong> yang telah dipercaya oleh berbagai institusi kesehatan di seluruh Indonesia.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Feature End -->
@@ -75,7 +86,7 @@
                 <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
                     <div class="position-relative">
                         <div class="rounded-4 overflow-hidden shadow-lg">
-                            <img src="{{URL::asset('storage/'.$tentang_kami->gambar_tentang_kamis) }}" class="img-fluid w-100" alt="Tentang Kami" loading="lazy" style="transition: transform 0.6s ease;">
+                            <img src="{{URL::asset('storage/'.$tentang_kami->gambar_tentang_kamis) }}" class="img-fluid w-100" alt="Distributor Alkes Magelang - PT. Putra Kelana Gemilang" loading="lazy" style="transition: transform 0.6s ease;">
                         </div>
                         <div class="position-absolute top-0 start-0 m-4">
                             <div class="bg-white rounded-3 p-3 shadow" style="background: var(--medical-gradient); color: white;">
@@ -89,8 +100,11 @@
                         <span class="section-badge">
                             <i class="fas fa-info-circle me-2"></i>Tentang Kami
                         </span>
-                        <h2 class="section-title text-start mb-4" style="font-size: 2.5rem;">Tentang {{ $aplikasi->nama_aplikasis }}</h2>
+                        <h2 class="section-title text-start mb-4" style="font-size: 2.5rem;">Tentang {{ $aplikasi->nama_aplikasis }} - Distributor Alkes Magelang</h2>
                         <p class="lead text-muted mb-4" style="line-height: 1.8;">{!! nl2br($tentang_kami->konten_sekilas_tentang_kamis) !!}</p>
+                        <p class="text-muted mb-4" style="line-height: 1.8;">
+                            Sebagai <strong>distributor alkes Magelang</strong> yang berpengalaman, kami berkomitmen menyediakan <strong>alat kesehatan Magelang</strong> berkualitas tinggi dengan harga kompetitif. Melayani kebutuhan <strong>alkes Magelang Jawa Tengah</strong> untuk rumah sakit, klinik, puskesmas, dan fasilitas kesehatan lainnya.
+                        </p>
                         <div class="d-flex flex-wrap gap-3">
                             <a class="btn btn-medical" href="{{ URL('/tentang-kami') }}">
                                 <i class="fas fa-arrow-right me-2"></i>Kenali Kami Lebih Jauh
@@ -188,8 +202,8 @@
                 <span class="section-badge">
                     <i class="fas fa-box me-2"></i>Produk Terbaru
                 </span>
-                <h1 class="section-title">Produk Terbaru Dari Kami</h1>
-                <p class="lead text-muted">Berikut beberapa produk terbaru yang kami jual</p>
+                <h1 class="section-title">Katalog Alkes Magelang - Produk Terbaru Dari Kami</h1>
+                <p class="lead text-muted">Berikut beberapa produk alkes Magelang terbaru yang kami jual untuk kebutuhan medis di Magelang, Jawa Tengah</p>
             </div>
             <div class="row g-4 justify-content-center">
                 @if(isset($katalogs->data) && count($katalogs->data) > 0)

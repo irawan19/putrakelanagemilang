@@ -7,19 +7,26 @@
     // Set default values dengan fallback yang aman
     $app_name = ($aplikasi && isset($aplikasi->nama_aplikasis) && !empty($aplikasi->nama_aplikasis)) ? $aplikasi->nama_aplikasis : 'PT. Putra Kelana Gemilang';
     $app_desc = ($aplikasi && isset($aplikasi->deskripsi_aplikasis) && !empty($aplikasi->deskripsi_aplikasis)) ? $aplikasi->deskripsi_aplikasis : '';
-    $app_keywords = ($aplikasi && isset($aplikasi->keyword_aplikasis) && !empty($aplikasi->keyword_aplikasis)) ? $aplikasi->keyword_aplikasis : 'alat kesehatan, medical equipment';
+    $app_keywords = ($aplikasi && isset($aplikasi->keyword_aplikasis) && !empty($aplikasi->keyword_aplikasis)) ? $aplikasi->keyword_aplikasis : 'alkes magelang, alat kesehatan magelang, alkes magelang jawa tengah, distributor alkes magelang, supplier alat kesehatan magelang, medical equipment magelang';
     
-    // Set SEO variables dengan fallback
-    $default_title = $app_name . ' - ' . ($app_desc ? \Illuminate\Support\Str::limit(strip_tags($app_desc), 60) : 'Alat Kesehatan Terpercaya');
-    $default_description = $app_desc ? \Illuminate\Support\Str::limit(strip_tags($app_desc), 160) : 'Penyedia alat kesehatan terpercaya dengan kualitas terbaik untuk kebutuhan medis Anda.';
-    $default_og_description = $app_desc ? \Illuminate\Support\Str::limit(strip_tags($app_desc), 200) : 'Penyedia alat kesehatan terpercaya dengan kualitas terbaik untuk kebutuhan medis Anda.';
+    // Set SEO variables dengan fallback - optimized for "alkes magelang"
+    $is_homepage = request()->path() == '/' || request()->path() == 'beranda';
+    if ($is_homepage) {
+        $default_title = 'Alkes Magelang - PT. Putra Kelana Gemilang | Distributor Alat Kesehatan Terpercaya di Magelang';
+        $default_description = 'PT. Putra Kelana Gemilang adalah distributor alkes Magelang terpercaya. Menyediakan berbagai alat kesehatan berkualitas untuk rumah sakit, klinik, dan kebutuhan medis di Magelang, Jawa Tengah.';
+        $default_og_description = 'Distributor alkes Magelang terpercaya. PT. Putra Kelana Gemilang menyediakan alat kesehatan berkualitas untuk rumah sakit dan klinik di Magelang, Jawa Tengah.';
+    } else {
+        $default_title = $app_name . ' - ' . ($app_desc ? \Illuminate\Support\Str::limit(strip_tags($app_desc), 60) : 'Alkes Magelang - Alat Kesehatan Terpercaya');
+        $default_description = $app_desc ? \Illuminate\Support\Str::limit(strip_tags($app_desc), 160) : 'Distributor alkes Magelang terpercaya. Menyediakan berbagai alat kesehatan berkualitas untuk kebutuhan medis di Magelang, Jawa Tengah.';
+        $default_og_description = $app_desc ? \Illuminate\Support\Str::limit(strip_tags($app_desc), 200) : 'Distributor alkes Magelang terpercaya. Menyediakan berbagai alat kesehatan berkualitas untuk kebutuhan medis di Magelang, Jawa Tengah.';
+    }
     
     // Pastikan semua variabel terdefinisi
-    if (!isset($default_title)) $default_title = 'PT. Putra Kelana Gemilang - Alat Kesehatan Terpercaya';
-    if (!isset($default_description)) $default_description = 'Penyedia alat kesehatan terpercaya dengan kualitas terbaik untuk kebutuhan medis Anda.';
-    if (!isset($default_og_description)) $default_og_description = 'Penyedia alat kesehatan terpercaya dengan kualitas terbaik untuk kebutuhan medis Anda.';
+    if (!isset($default_title)) $default_title = 'Alkes Magelang - PT. Putra Kelana Gemilang | Distributor Alat Kesehatan Terpercaya';
+    if (!isset($default_description)) $default_description = 'Distributor alkes Magelang terpercaya. Menyediakan berbagai alat kesehatan berkualitas untuk rumah sakit dan klinik di Magelang, Jawa Tengah.';
+    if (!isset($default_og_description)) $default_og_description = 'Distributor alkes Magelang terpercaya. Menyediakan berbagai alat kesehatan berkualitas untuk rumah sakit dan klinik di Magelang, Jawa Tengah.';
     if (!isset($app_name)) $app_name = 'PT. Putra Kelana Gemilang';
-    if (!isset($app_keywords)) $app_keywords = 'alat kesehatan, medical equipment';
+    if (!isset($app_keywords)) $app_keywords = 'alkes magelang, alat kesehatan magelang, alkes magelang jawa tengah, distributor alkes magelang, supplier alat kesehatan magelang';
 @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -1171,11 +1178,12 @@
         {
             "@context": "https://schema.org",
             "@type": "MedicalBusiness",
-            "name": "{{$app_name}}",
-            "description": "{{strip_tags($app_desc)}}",
+            "name": "{{$app_name}} - Distributor Alkes Magelang",
+            "alternateName": "PT. Putra Kelana Gemilang",
+            "description": "Distributor alkes Magelang terpercaya. Menyediakan berbagai alat kesehatan berkualitas untuk rumah sakit, klinik, dan kebutuhan medis di Magelang, Jawa Tengah.",
             "url": "{{url('/')}}",
-            "logo": "{{URL::asset('storage/'.($aplikasi->logo_aplikasis ?? 'template/front/img/logo.png'))}}",
-            "image": "{{URL::asset('storage/'.($aplikasi->logo_aplikasis ?? 'template/front/img/logo.png'))}}",
+            "logo": "{{URL::asset('storage/'.(($aplikasi && isset($aplikasi->logo_aplikasis)) ? $aplikasi->logo_aplikasis : 'template/front/img/logo.png'))}}",
+            "image": "{{URL::asset('storage/'.(($aplikasi && isset($aplikasi->logo_aplikasis)) ? $aplikasi->logo_aplikasis : 'template/front/img/logo.png'))}}",
             @if($kontak)
             "address": {
                 "@type": "PostalAddress",
@@ -1211,17 +1219,74 @@
                 @endforeach
                 @endif
             ],
-            "areaServed": {
-                "@type": "Country",
-                "name": "Indonesia"
-            },
+            "areaServed": [
+                {
+                    "@type": "City",
+                    "name": "Magelang"
+                },
+                {
+                    "@type": "State",
+                    "name": "Jawa Tengah"
+                },
+                {
+                    "@type": "Country",
+                    "name": "Indonesia"
+                }
+            ],
             "hasOfferCatalog": {
                 "@type": "OfferCatalog",
-                "name": "Katalog Produk Alat Kesehatan",
+                "name": "Katalog Alkes Magelang - Alat Kesehatan",
                 "itemListElement": {
                     "@type": "ItemList",
                     "url": "{{url('/katalog')}}"
                 }
+            },
+            "keywords": "alkes magelang, alat kesehatan magelang, distributor alkes magelang, supplier alat kesehatan magelang, alkes magelang jawa tengah"
+        }
+        </script>
+        
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "@id": "{{url('/')}}",
+            "name": "{{$app_name}}",
+            "alternateName": "Distributor Alkes Magelang",
+            "description": "Distributor alkes Magelang terpercaya. Menyediakan berbagai alat kesehatan berkualitas untuk rumah sakit, klinik, dan kebutuhan medis di Magelang, Jawa Tengah.",
+            "url": "{{url('/')}}",
+            "logo": "{{URL::asset('storage/'.(($aplikasi && isset($aplikasi->logo_aplikasis)) ? $aplikasi->logo_aplikasis : 'template/front/img/logo.png'))}}",
+            "image": "{{URL::asset('storage/'.(($aplikasi && isset($aplikasi->logo_aplikasis)) ? $aplikasi->logo_aplikasis : 'template/front/img/logo.png'))}}",
+            @if($kontak)
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "{{$kontak->alamat_kontaks ?? ''}}",
+                "addressLocality": "Magelang",
+                "addressRegion": "Jawa Tengah",
+                "postalCode": "56192",
+                "addressCountry": "ID"
+            },
+            "telephone": "{{$kontak->telepon_kontaks ?? ''}}",
+            "email": "{{$kontak->email_kontaks ?? ''}}",
+            @if($kontak->latitude_kontaks && $kontak->longitude_kontaks)
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "{{$kontak->latitude_kontaks}}",
+                "longitude": "{{$kontak->longitude_kontaks}}"
+            },
+            @endif
+            @endif
+            "priceRange": "$$",
+            "openingHours": "Mo-Sa 08:00-17:00",
+            "sameAs": [
+                @if($sosial_medias && count($sosial_medias) > 0)
+                @foreach($sosial_medias as $index => $sosial_media)
+                "{{$sosial_media->url_sosial_media}}"@if($index < count($sosial_medias) - 1),@endif
+                @endforeach
+                @endif
+            ],
+            "areaServed": {
+                "@type": "City",
+                "name": "Magelang"
             }
         }
         </script>
@@ -1231,8 +1296,9 @@
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "{{$app_name}}",
+            "alternateName": "Distributor Alkes Magelang",
             "url": "{{url('/')}}",
-            "logo": "{{URL::asset('storage/'.($aplikasi->logo_aplikasis ?? 'template/front/img/logo.png'))}}",
+            "logo": "{{URL::asset('storage/'.(($aplikasi && isset($aplikasi->logo_aplikasis)) ? $aplikasi->logo_aplikasis : 'template/front/img/logo.png'))}}",
             "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "{{$kontak->telepon_kontaks ?? ''}}",
@@ -1249,6 +1315,24 @@
             ]
         }
         </script>
+        
+        @if(request()->path() == '/' || request()->path() == 'beranda')
+        <!-- Breadcrumb Structured Data for Homepage -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Beranda",
+                    "item": "{{url('/')}}"
+                }
+            ]
+        }
+        </script>
+        @endif
         
         @yield('structured_data')
         
