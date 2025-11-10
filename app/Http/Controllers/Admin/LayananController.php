@@ -154,13 +154,23 @@ class LayananController extends AdminCoreController {
     }
 
     public function hapusdetail(Request $request, $idlayanandetails) {
-        $cek_layanan_details = Layanan_detail::find($idlayanandetails);
-        if (!empty($cek_layanan_details)) {
-            Storage::disk('public')->delete($cek_layanan_details->gambar_layanan_details);
-            Layanan_detail::find($idlayanandetails)->delete();
-            return response()->json(['sukses' => '"sukses'], 200);
-        } else {
-            return redirect('dashboard/layanan');
+        try {
+            $cek_layanan_details = Layanan_detail::find($idlayanandetails);
+            if (!empty($cek_layanan_details)) {
+                if (!empty($cek_layanan_details->gambar_layanan_details) && Storage::disk('public')->exists($cek_layanan_details->gambar_layanan_details)) {
+                    Storage::disk('public')->delete($cek_layanan_details->gambar_layanan_details);
+                }
+                $deleted = Layanan_detail::where('id_layanan_details', $idlayanandetails)->delete();
+                if ($deleted) {
+                    return response()->json(['sukses' => 'sukses'], 200);
+                } else {
+                    return response()->json(['error' => 'Gagal menghapus data'], 500);
+                }
+            } else {
+                return response()->json(['error' => 'Data tidak ditemukan'], 404);
+            }
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Terjadi kesalahan: ' . $e->getMessage()], 500);
         }
     }
 

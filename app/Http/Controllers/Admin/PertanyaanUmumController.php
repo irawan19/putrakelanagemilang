@@ -95,12 +95,20 @@ class PertanyaanUmumController extends AdminCoreController {
     }
 
     public function hapus($id_pertanyaan_umum) {
-        $cek_pertanyaan_umums = PertanyaanUmum::find($id_pertanyaan_umum);
-        if (!empty($cek_pertanyaan_umums)) {
-            PertanyaanUmum::find($id_pertanyaan_umum)->delete();
-            return response()->json(['sukses' => '"sukses'], 200);
-        } else {
-            return redirect('dashboard/pertanyaan-umum');
+        try {
+            $cek_pertanyaan_umums = PertanyaanUmum::find($id_pertanyaan_umum);
+            if (!empty($cek_pertanyaan_umums)) {
+                $deleted = PertanyaanUmum::where('id_pertanyaan_umums', $id_pertanyaan_umum)->delete();
+                if ($deleted) {
+                    return response()->json(['sukses' => 'sukses'], 200);
+                } else {
+                    return response()->json(['error' => 'Gagal menghapus data'], 500);
+                }
+            } else {
+                return response()->json(['error' => 'Data tidak ditemukan'], 404);
+            }
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Terjadi kesalahan: ' . $e->getMessage()], 500);
         }
     }
 }

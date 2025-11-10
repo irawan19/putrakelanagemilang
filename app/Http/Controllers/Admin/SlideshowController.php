@@ -125,13 +125,24 @@ class SlideshowController extends AdminCoreController {
     }
 
     public function hapus($idslideshow) {
-        $cek_slideshows = Slideshow::find($idslideshow);
-        if (!empty($cek_slideshows)) {
-            Storage::disk('public')->delete($cek_slideshows->gambar_slideshows);
-            Slideshow::find($idslideshow)->delete();
-            return response()->json(['sukses' => '"sukses'], 200);
-        } else {
-            return redirect('dashboard/slideshow');
+        try {
+            $cek_slideshows = Slideshow::find($idslideshow);
+            if (!empty($cek_slideshows)) {
+                if (!empty($cek_slideshows->gambar_slideshows) && Storage::disk('public')->exists($cek_slideshows->gambar_slideshows)) {
+                    Storage::disk('public')->delete($cek_slideshows->gambar_slideshows);
+                }
+                $deleted = Slideshow::where('id_slideshows', $idslideshow)->delete();
+                if ($deleted) {
+                    $this->clearCache(['slideshows_data']);
+                    return response()->json(['sukses' => 'sukses'], 200);
+                } else {
+                    return response()->json(['error' => 'Gagal menghapus data'], 500);
+                }
+            } else {
+                return response()->json(['error' => 'Data tidak ditemukan'], 404);
+            }
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Terjadi kesalahan: ' . $e->getMessage()], 500);
         }
     }
 }

@@ -154,12 +154,20 @@ class TentangKamiController extends AdminCoreController {
     }
 
     public function hapusdetail(Request $request, $idtentang_kamidetails) {
-        $cek_tentang_kami_details = Tentang_kami_detail::find($idtentang_kamidetails);
-        if (!empty($cek_tentang_kami_details)) {
-            Tentang_kami_detail::find($idtentang_kamidetails)->delete();
-            return response()->json(['sukses' => '"sukses'], 200);
-        } else {
-            return redirect('dashboard/tentang-kami');
+        try {
+            $cek_tentang_kami_details = Tentang_kami_detail::find($idtentang_kamidetails);
+            if (!empty($cek_tentang_kami_details)) {
+                $deleted = Tentang_kami_detail::where('id_tentang_kami_details', $idtentang_kamidetails)->delete();
+                if ($deleted) {
+                    return response()->json(['sukses' => 'sukses'], 200);
+                } else {
+                    return response()->json(['error' => 'Gagal menghapus data'], 500);
+                }
+            } else {
+                return response()->json(['error' => 'Data tidak ditemukan'], 404);
+            }
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Terjadi kesalahan: ' . $e->getMessage()], 500);
         }
     }
 

@@ -28,6 +28,7 @@
         <meta name="msapplication-TileImage" content="{{URL::asset('storage/'.$aplikasi->icon_aplikasis)}}">
         <meta name="theme-color" content="#ffffff">
         <meta name="_token" content="{{ csrf_token() }}">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="stylesheet" href="{{URL::asset('template/back/vendors/simplebar/css/simplebar.css')}}">
         <link rel="stylesheet" href="{{URL::asset('template/back/css/vendors/simplebar.css')}}">
         <link rel="stylesheet" href="{{URL::asset('template/back/vendors/sweetalert2/dist/sweetalert2.min.css')}}" />
@@ -70,35 +71,49 @@
 	                var myLabel = $(that).data('nama');
 	                var myLink = $(that).data('link');
 	                swal({
-	                    title: "Anda yakin ingin mehapus " + myLabel + "?",
+	                    title: "Anda yakin ingin menghapus " + myLabel + "?",
 	                    text: "Data akan dihapus dan Anda tidak dapat mengembalikan",
-	                    type: "info",
+	                    type: "warning",
 	                    showCancelButton: true,
 	                    confirmButtonColor: "#dc3545",
-	                    confirmButtonText: "Ya",
+	                    confirmButtonText: "Ya, Hapus",
 	                    cancelButtonText: "Batal"
 	                }).then((result) => {
 	                    if (result.value) {
-	                        swal({
-	                            title: "Delete",
-	                            text: "Data anda berhasil di hapus",
-	                            type: "info"
-	                        }).then(function () {
-	                            $.ajax({
-	                                type: 'GET',
-	                                url: myLink,
-	                                headers: { 'X-CSRF-Token': $('meta[name=_token]').attr('content') },
-	                                success: function (data) {
+	                        $.ajax({
+	                            type: 'POST',
+	                            url: myLink,
+	                            data: {
+	                                _method: 'DELETE',
+	                                _token: $('meta[name="csrf-token"]').attr('content')
+	                            },
+	                            success: function (response) {
+	                                swal({
+	                                    title: "Berhasil!",
+	                                    text: "Data berhasil dihapus",
+	                                    type: "success"
+	                                }).then(function () {
 	                                    location.reload();
+	                                });
+	                            },
+	                            error: function (xhr) {
+	                                var errorMsg = 'Gagal menghapus data';
+	                                if (xhr.responseJSON && xhr.responseJSON.error) {
+	                                    errorMsg = xhr.responseJSON.error;
 	                                }
-	                            });
+	                                swal({
+	                                    title: "Error!",
+	                                    text: errorMsg,
+	                                    type: "error"
+	                                });
+	                            }
 	                        });
 	                    }
 	                    else if (result.dismiss === swal.DismissReason.cancel) {
 	                        swal(
 	                            'Batal',
 	                            'Tidak ada perubahan yang dilakukan.',
-	                            'error'
+	                            'info'
 	                        )
 	                    }
 	                });

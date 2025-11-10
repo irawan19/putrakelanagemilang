@@ -121,12 +121,24 @@ class AdminController extends AdminCoreController {
     }
 
     public function hapus($idadmin) {
-        $cek_admins = User::find($idadmin);
-        if (!empty($cek_admins)) {
-            User::find($idadmin)->delete();
-            return response()->json(['sukses' => '"sukses'], 200);
-        } else {
-            return redirect('dashboard/slideshow');
+        try {
+            $cek_admins = User::find($idadmin);
+            if (!empty($cek_admins)) {
+                // Jangan izinkan menghapus diri sendiri
+                if ($cek_admins->id == auth()->id()) {
+                    return response()->json(['error' => 'Tidak dapat menghapus akun sendiri'], 403);
+                }
+                $deleted = User::where('id', $idadmin)->delete();
+                if ($deleted) {
+                    return response()->json(['sukses' => 'sukses'], 200);
+                } else {
+                    return response()->json(['error' => 'Gagal menghapus data'], 500);
+                }
+            } else {
+                return response()->json(['error' => 'Data tidak ditemukan'], 404);
+            }
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Terjadi kesalahan: ' . $e->getMessage()], 500);
         }
     }
 }
