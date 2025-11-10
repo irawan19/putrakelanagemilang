@@ -2,17 +2,65 @@
 @php($kontak                = cache()->remember('kontak_data', 3600, function() { return \App\Models\Kontak::first(); }))
 @php($sosial_medias         = cache()->remember('sosial_medias_data', 3600, function() { return \App\Models\Sosial_media::get(); }))
 @php($galeris               = cache()->remember('galeris_data', 1800, function() { return \App\Models\Galeri::get(); }))
+@php
+    $default_title = $aplikasi->nama_aplikasis . ' - ' . ($aplikasi->deskripsi_aplikasis ? \Illuminate\Support\Str::limit(strip_tags($aplikasi->deskripsi_aplikasis), 60) : 'Alat Kesehatan Terpercaya');
+    $default_description = $aplikasi->deskripsi_aplikasis ? \Illuminate\Support\Str::limit(strip_tags($aplikasi->deskripsi_aplikasis), 160) : '';
+    $default_og_description = $aplikasi->deskripsi_aplikasis ? \Illuminate\Support\Str::limit(strip_tags($aplikasi->deskripsi_aplikasis), 200) : '';
+@endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <base href="./">
         <meta charset="utf-8">
-        <title>{{ $aplikasi->nama_aplikasis }}</title>
+        <title>@yield('title', $default_title)</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <meta content="{{$aplikasi->keyword_aplikasis}}" name="keyword">
-        <meta content="{{$aplikasi->deskripsi_aplikasis}}" name="description">
+        <meta name="description" content="@yield('description', $default_description)">
+        <meta name="keywords" content="@yield('keywords', $aplikasi->keyword_aplikasis)">
         <meta name="author" content="{{$aplikasi->nama_aplikasis}}">
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+        <meta name="googlebot" content="index, follow">
+        <meta name="language" content="Indonesian">
+        <meta name="revisit-after" content="7 days">
+        <meta name="rating" content="general">
+        
+        <!-- Canonical URL -->
+        <link rel="canonical" href="@yield('canonical', url()->current())">
+        
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="@yield('og_type', 'website')">
+        <meta property="og:url" content="@yield('og_url', url()->current())">
+        <meta property="og:title" content="@yield('og_title', $aplikasi->nama_aplikasis)">
+        <meta property="og:description" content="@yield('og_description', $default_og_description)">
+        <meta property="og:image" content="@yield('og_image', URL::asset('storage/'.$aplikasi->logo_aplikasis))">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="{{$aplikasi->nama_aplikasis}}">
+        <meta property="og:site_name" content="{{$aplikasi->nama_aplikasis}}">
+        <meta property="og:locale" content="id_ID">
+        
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:url" content="@yield('twitter_url', url()->current())">
+        <meta name="twitter:title" content="@yield('twitter_title', $aplikasi->nama_aplikasis)">
+        <meta name="twitter:description" content="@yield('twitter_description', $default_og_description)">
+        <meta name="twitter:image" content="@yield('twitter_image', URL::asset('storage/'.$aplikasi->logo_aplikasis))">
+        <meta name="twitter:image:alt" content="{{$aplikasi->nama_aplikasis}}">
+        
+        <!-- Additional SEO Meta Tags -->
+        <meta name="geo.region" content="ID-JT">
+        <meta name="geo.placename" content="Magelang">
+        @if($kontak)
+        <meta name="geo.position" content="{{$kontak->latitude_kontaks ?? ''}};{{$kontak->longitude_kontaks ?? ''}}">
+        <meta name="ICBM" content="{{$kontak->latitude_kontaks ?? ''}}, {{$kontak->longitude_kontaks ?? ''}}">
+        @endif
+        <meta name="theme-color" content="#0066cc">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="{{$aplikasi->nama_aplikasis}}">
+        
+        <!-- Sitemap -->
+        <link rel="sitemap" type="application/xml" href="{{url('/sitemap.xml')}}">
         
         <!-- DNS Prefetch untuk External Resources -->
         <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -1085,6 +1133,88 @@
         <script src="{{ URL::asset('template/front/lib/owlcarousel/owl.carousel.min.js') }}" defer></script>
         <script src="{{ URL::asset('template/front/js/main.js') }}" defer></script>
         <script src="{{URL::asset('template/back/vendors/fancybox/jquery.fancybox.min.js')}}" defer></script>
+        
+        <!-- Structured Data (JSON-LD) -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "MedicalBusiness",
+            "name": "{{$aplikasi->nama_aplikasis}}",
+            "description": "{{strip_tags($aplikasi->deskripsi_aplikasis)}}",
+            "url": "{{url('/')}}",
+            "logo": "{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}",
+            "image": "{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}",
+            @if($kontak)
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "{{$kontak->alamat_kontaks}}",
+                "addressLocality": "Magelang",
+                "addressRegion": "Jawa Tengah",
+                "postalCode": "56192",
+                "addressCountry": "ID"
+            },
+            "telephone": "{{$kontak->telepon_kontaks}}",
+            "email": "{{$kontak->email_kontaks}}",
+            @if($kontak->latitude_kontaks && $kontak->longitude_kontaks)
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "{{$kontak->latitude_kontaks}}",
+                "longitude": "{{$kontak->longitude_kontaks}}"
+            },
+            @endif
+            @endif
+            "priceRange": "$$",
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "opens": "08:00",
+                    "closes": "17:00"
+                }
+            ],
+            "sameAs": [
+                @foreach($sosial_medias as $index => $sosial_media)
+                "{{$sosial_media->url_sosial_media}}"@if($index < count($sosial_medias) - 1),@endif
+                @endforeach
+            ],
+            "areaServed": {
+                "@type": "Country",
+                "name": "Indonesia"
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Katalog Produk Alat Kesehatan",
+                "itemListElement": {
+                    "@type": "ItemList",
+                    "url": "{{url('/katalog')}}"
+                }
+            }
+        }
+        </script>
+        
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "{{$aplikasi->nama_aplikasis}}",
+            "url": "{{url('/')}}",
+            "logo": "{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "{{$kontak->telepon_kontaks ?? ''}}",
+                "contactType": "customer service",
+                "areaServed": "ID",
+                "availableLanguage": ["Indonesian"]
+            },
+            "sameAs": [
+                @foreach($sosial_medias as $index => $sosial_media)
+                "{{$sosial_media->url_sosial_media}}"@if($index < count($sosial_medias) - 1),@endif
+                @endforeach
+            ]
+        }
+        </script>
+        
+        @yield('structured_data')
         
         <!-- Inline script untuk load CSS async -->
         <script>

@@ -1,2 +1,13 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /admin/
+Disallow: /login
+Disallow: /register
+Disallow: /password/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://www.putrakelanagemilang.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
