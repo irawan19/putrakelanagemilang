@@ -1,23 +1,37 @@
-@php($aplikasi				= cache()->remember('aplikasi_data', 3600, function() { return \App\Models\Aplikasi::first(); }))
-@php($kontak                = cache()->remember('kontak_data', 3600, function() { return \App\Models\Kontak::first(); }))
-@php($sosial_medias         = cache()->remember('sosial_medias_data', 3600, function() { return \App\Models\Sosial_media::get(); }))
-@php($galeris               = cache()->remember('galeris_data', 1800, function() { return \App\Models\Galeri::get(); }))
 @php
-    $default_title = $aplikasi->nama_aplikasis . ' - ' . ($aplikasi->deskripsi_aplikasis ? \Illuminate\Support\Str::limit(strip_tags($aplikasi->deskripsi_aplikasis), 60) : 'Alat Kesehatan Terpercaya');
-    $default_description = $aplikasi->deskripsi_aplikasis ? \Illuminate\Support\Str::limit(strip_tags($aplikasi->deskripsi_aplikasis), 160) : '';
-    $default_og_description = $aplikasi->deskripsi_aplikasis ? \Illuminate\Support\Str::limit(strip_tags($aplikasi->deskripsi_aplikasis), 200) : '';
+    $aplikasi = cache()->remember('aplikasi_data', 3600, function() { return \App\Models\Aplikasi::first(); });
+    $kontak = cache()->remember('kontak_data', 3600, function() { return \App\Models\Kontak::first(); });
+    $sosial_medias = cache()->remember('sosial_medias_data', 3600, function() { return \App\Models\Sosial_media::get(); });
+    $galeris = cache()->remember('galeris_data', 1800, function() { return \App\Models\Galeri::get(); });
+    
+    // Set default values dengan fallback yang aman
+    $app_name = ($aplikasi && isset($aplikasi->nama_aplikasis) && !empty($aplikasi->nama_aplikasis)) ? $aplikasi->nama_aplikasis : 'PT. Putra Kelana Gemilang';
+    $app_desc = ($aplikasi && isset($aplikasi->deskripsi_aplikasis) && !empty($aplikasi->deskripsi_aplikasis)) ? $aplikasi->deskripsi_aplikasis : '';
+    $app_keywords = ($aplikasi && isset($aplikasi->keyword_aplikasis) && !empty($aplikasi->keyword_aplikasis)) ? $aplikasi->keyword_aplikasis : 'alat kesehatan, medical equipment';
+    
+    // Set SEO variables dengan fallback
+    $default_title = $app_name . ' - ' . ($app_desc ? \Illuminate\Support\Str::limit(strip_tags($app_desc), 60) : 'Alat Kesehatan Terpercaya');
+    $default_description = $app_desc ? \Illuminate\Support\Str::limit(strip_tags($app_desc), 160) : 'Penyedia alat kesehatan terpercaya dengan kualitas terbaik untuk kebutuhan medis Anda.';
+    $default_og_description = $app_desc ? \Illuminate\Support\Str::limit(strip_tags($app_desc), 200) : 'Penyedia alat kesehatan terpercaya dengan kualitas terbaik untuk kebutuhan medis Anda.';
+    
+    // Pastikan semua variabel terdefinisi
+    if (!isset($default_title)) $default_title = 'PT. Putra Kelana Gemilang - Alat Kesehatan Terpercaya';
+    if (!isset($default_description)) $default_description = 'Penyedia alat kesehatan terpercaya dengan kualitas terbaik untuk kebutuhan medis Anda.';
+    if (!isset($default_og_description)) $default_og_description = 'Penyedia alat kesehatan terpercaya dengan kualitas terbaik untuk kebutuhan medis Anda.';
+    if (!isset($app_name)) $app_name = 'PT. Putra Kelana Gemilang';
+    if (!isset($app_keywords)) $app_keywords = 'alat kesehatan, medical equipment';
 @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <base href="./">
         <meta charset="utf-8">
-        <title>@yield('title', $default_title)</title>
+        <title>@yield('title', isset($default_title) ? $default_title : 'PT. Putra Kelana Gemilang - Alat Kesehatan Terpercaya')</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <meta name="description" content="@yield('description', $default_description)">
-        <meta name="keywords" content="@yield('keywords', $aplikasi->keyword_aplikasis)">
-        <meta name="author" content="{{$aplikasi->nama_aplikasis}}">
+        <meta name="description" content="@yield('description', isset($default_description) ? $default_description : 'Penyedia alat kesehatan terpercaya dengan kualitas terbaik untuk kebutuhan medis Anda.')">
+        <meta name="keywords" content="@yield('keywords', isset($app_keywords) ? $app_keywords : 'alat kesehatan, medical equipment')">
+        <meta name="author" content="{{isset($app_name) ? $app_name : 'PT. Putra Kelana Gemilang'}}">
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
         <meta name="googlebot" content="index, follow">
         <meta name="language" content="Indonesian">
@@ -30,22 +44,22 @@
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="@yield('og_type', 'website')">
         <meta property="og:url" content="@yield('og_url', url()->current())">
-        <meta property="og:title" content="@yield('og_title', $aplikasi->nama_aplikasis)">
-        <meta property="og:description" content="@yield('og_description', $default_og_description)">
-        <meta property="og:image" content="@yield('og_image', URL::asset('storage/'.$aplikasi->logo_aplikasis))">
+        <meta property="og:title" content="@yield('og_title', isset($app_name) ? $app_name : 'PT. Putra Kelana Gemilang')">
+        <meta property="og:description" content="@yield('og_description', isset($default_og_description) ? $default_og_description : 'Penyedia alat kesehatan terpercaya dengan kualitas terbaik untuk kebutuhan medis Anda.')">
+        <meta property="og:image" content="@yield('og_image', URL::asset('storage/'.(($aplikasi && isset($aplikasi->logo_aplikasis)) ? $aplikasi->logo_aplikasis : 'template/front/img/logo.png')))">
         <meta property="og:image:width" content="1200">
         <meta property="og:image:height" content="630">
-        <meta property="og:image:alt" content="{{$aplikasi->nama_aplikasis}}">
-        <meta property="og:site_name" content="{{$aplikasi->nama_aplikasis}}">
+        <meta property="og:image:alt" content="{{isset($app_name) ? $app_name : 'PT. Putra Kelana Gemilang'}}">
+        <meta property="og:site_name" content="{{isset($app_name) ? $app_name : 'PT. Putra Kelana Gemilang'}}">
         <meta property="og:locale" content="id_ID">
         
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:url" content="@yield('twitter_url', url()->current())">
-        <meta name="twitter:title" content="@yield('twitter_title', $aplikasi->nama_aplikasis)">
-        <meta name="twitter:description" content="@yield('twitter_description', $default_og_description)">
-        <meta name="twitter:image" content="@yield('twitter_image', URL::asset('storage/'.$aplikasi->logo_aplikasis))">
-        <meta name="twitter:image:alt" content="{{$aplikasi->nama_aplikasis}}">
+        <meta name="twitter:title" content="@yield('twitter_title', isset($app_name) ? $app_name : 'PT. Putra Kelana Gemilang')">
+        <meta name="twitter:description" content="@yield('twitter_description', isset($default_og_description) ? $default_og_description : 'Penyedia alat kesehatan terpercaya dengan kualitas terbaik untuk kebutuhan medis Anda.')">
+        <meta name="twitter:image" content="@yield('twitter_image', URL::asset('storage/'.(($aplikasi && isset($aplikasi->logo_aplikasis)) ? $aplikasi->logo_aplikasis : 'template/front/img/logo.png')))">
+        <meta name="twitter:image:alt" content="{{isset($app_name) ? $app_name : 'PT. Putra Kelana Gemilang'}}">
         
         <!-- Additional SEO Meta Tags -->
         <meta name="geo.region" content="ID-JT">
@@ -57,7 +71,7 @@
         <meta name="theme-color" content="#0066cc">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title" content="{{$aplikasi->nama_aplikasis}}">
+        <meta name="apple-mobile-web-app-title" content="{{isset($app_name) ? $app_name : 'PT. Putra Kelana Gemilang'}}">
         
         <!-- Sitemap -->
         <link rel="sitemap" type="application/xml" href="{{url('/sitemap.xml')}}">
@@ -903,8 +917,26 @@
             
             .testimonial-rating {
                 color: #ffc107;
-                font-size: 1.2rem;
-                margin-bottom: 1rem;
+                font-size: 0.75rem;
+                margin-bottom: 0.5rem;
+                display: flex;
+                gap: 2px;
+                flex-wrap: wrap;
+            }
+            
+            .testimonial-rating i {
+                font-size: 0.75rem;
+                line-height: 1;
+            }
+            
+            @media (max-width: 768px) {
+                .testimonial-rating {
+                    font-size: 0.65rem;
+                }
+                
+                .testimonial-rating i {
+                    font-size: 0.65rem;
+                }
             }
             
             /* Accordion Medical Style */
@@ -1139,22 +1171,22 @@
         {
             "@context": "https://schema.org",
             "@type": "MedicalBusiness",
-            "name": "{{$aplikasi->nama_aplikasis}}",
-            "description": "{{strip_tags($aplikasi->deskripsi_aplikasis)}}",
+            "name": "{{$app_name}}",
+            "description": "{{strip_tags($app_desc)}}",
             "url": "{{url('/')}}",
-            "logo": "{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}",
-            "image": "{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}",
+            "logo": "{{URL::asset('storage/'.($aplikasi->logo_aplikasis ?? 'template/front/img/logo.png'))}}",
+            "image": "{{URL::asset('storage/'.($aplikasi->logo_aplikasis ?? 'template/front/img/logo.png'))}}",
             @if($kontak)
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "{{$kontak->alamat_kontaks}}",
+                "streetAddress": "{{$kontak->alamat_kontaks ?? ''}}",
                 "addressLocality": "Magelang",
                 "addressRegion": "Jawa Tengah",
                 "postalCode": "56192",
                 "addressCountry": "ID"
             },
-            "telephone": "{{$kontak->telepon_kontaks}}",
-            "email": "{{$kontak->email_kontaks}}",
+            "telephone": "{{$kontak->telepon_kontaks ?? ''}}",
+            "email": "{{$kontak->email_kontaks ?? ''}}",
             @if($kontak->latitude_kontaks && $kontak->longitude_kontaks)
             "geo": {
                 "@type": "GeoCoordinates",
@@ -1173,9 +1205,11 @@
                 }
             ],
             "sameAs": [
+                @if($sosial_medias && count($sosial_medias) > 0)
                 @foreach($sosial_medias as $index => $sosial_media)
                 "{{$sosial_media->url_sosial_media}}"@if($index < count($sosial_medias) - 1),@endif
                 @endforeach
+                @endif
             ],
             "areaServed": {
                 "@type": "Country",
@@ -1196,9 +1230,9 @@
         {
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "{{$aplikasi->nama_aplikasis}}",
+            "name": "{{$app_name}}",
             "url": "{{url('/')}}",
-            "logo": "{{URL::asset('storage/'.$aplikasi->logo_aplikasis)}}",
+            "logo": "{{URL::asset('storage/'.($aplikasi->logo_aplikasis ?? 'template/front/img/logo.png'))}}",
             "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "{{$kontak->telepon_kontaks ?? ''}}",
@@ -1207,9 +1241,11 @@
                 "availableLanguage": ["Indonesian"]
             },
             "sameAs": [
+                @if($sosial_medias && count($sosial_medias) > 0)
                 @foreach($sosial_medias as $index => $sosial_media)
                 "{{$sosial_media->url_sosial_media}}"@if($index < count($sosial_medias) - 1),@endif
                 @endforeach
+                @endif
             ]
         }
         </script>
