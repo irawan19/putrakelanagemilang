@@ -173,14 +173,38 @@ class LowonganKerjaController extends AdminCoreController {
     }
 
     public function hapus($idlowongankerja) {
-        $cek_lowongan_kerjas = Lowongan_kerja::find($idlowongankerja);
-        if (!empty($cek_lowongan_kerjas)) {
-            if($cek_lowongan_kerjas->gambar_lowongan_kerjas != '')
-                Storage::disk('public')->delete($cek_lowongan_kerjas->gambar_lowongan_kerjas);
-            Lowongan_kerja::find($idlowongankerja)->delete();
-            return response()->json(['sukses' => '"sukses'], 200);
-        } else {
-            return redirect('dashboard/lowongan_kerja');
+        try {
+            $cek_lowongan_kerjas = Lowongan_kerja::find($idlowongankerja);
+            if (!empty($cek_lowongan_kerjas)) {
+                // Hapus semua data pelamar yang terkait dengan lowongan kerja ini
+                $pelamar_lowongan_kerjas = Pelamar_lowongan_kerja::where('lowongan_kerjas_id', $idlowongankerja)->get();
+                foreach ($pelamar_lowongan_kerjas as $pelamar) {
+                    // Hapus file CV jika ada
+                    if (!empty($pelamar->cv_pelamar_lowongan_kerjas) && Storage::disk('public')->exists($pelamar->cv_pelamar_lowongan_kerjas)) {
+                        Storage::disk('public')->delete($pelamar->cv_pelamar_lowongan_kerjas);
+                    }
+                    // Hapus data pelamar
+                    Pelamar_lowongan_kerja::where('id_pelamar_lowongan_kerjas', $pelamar->id_pelamar_lowongan_kerjas)->delete();
+                }
+                
+                // Hapus gambar lowongan kerja jika ada
+                if (!empty($cek_lowongan_kerjas->gambar_lowongan_kerjas) && Storage::disk('public')->exists($cek_lowongan_kerjas->gambar_lowongan_kerjas)) {
+                    Storage::disk('public')->delete($cek_lowongan_kerjas->gambar_lowongan_kerjas);
+                }
+                
+                // Hapus data lowongan kerja
+                $deleted = Lowongan_kerja::where('id_lowongan_kerjas', $idlowongankerja)->delete();
+                
+                if ($deleted) {
+                    return response()->json(['sukses' => 'sukses'], 200);
+                } else {
+                    return response()->json(['error' => 'Gagal menghapus data'], 500);
+                }
+            } else {
+                return response()->json(['error' => 'Data tidak ditemukan'], 404);
+            }
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Terjadi kesalahan: ' . $e->getMessage()], 500);
         }
     }
 
