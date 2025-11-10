@@ -265,13 +265,13 @@
                     <div class="testimonial-card-medical">
                         <div class="row g-0">
                             <div class="col-4 col-lg-4 col-xl-3">
-                                <div class="h-100 position-relative">
+                                <div class="testimonial-image-wrapper position-relative h-100">
                                     @if($testimonial->gambar_testimonials != 'template/front/img/testimonial.png')
                                         <img src="{{URL::asset('storage/'.$testimonial->gambar_testimonials) }}" class="img-fluid h-100 w-100" style="object-fit: cover;" alt="{{ $testimonial->nama_testimonials }}" loading="lazy">
                                     @else
                                         <img src="{{URL::asset('template/front/img/testimonial.png') }}" class="img-fluid h-100 w-100" style="object-fit: cover;" alt="{{ $testimonial->nama_testimonials }}" loading="lazy">
                                     @endif
-                                    <div class="position-absolute top-0 start-0 m-3">
+                                    <div class="testimonial-rating-overlay">
                                         <div class="testimonial-rating">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>

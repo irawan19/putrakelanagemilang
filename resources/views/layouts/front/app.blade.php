@@ -915,6 +915,9 @@
                 overflow: hidden;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
                 transition: all 0.4s ease;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
             }
             
             .testimonial-card-medical:hover {
@@ -922,27 +925,89 @@
                 box-shadow: 0 20px 40px rgba(0, 102, 204, 0.15);
             }
             
+            .testimonial-card-medical .row {
+                height: 100%;
+                margin: 0;
+            }
+            
+            .testimonial-image-wrapper {
+                position: relative;
+                overflow: hidden;
+                min-height: 200px;
+            }
+            
+            .testimonial-image-wrapper img {
+                transition: transform 0.4s ease;
+            }
+            
+            .testimonial-card-medical:hover .testimonial-image-wrapper img {
+                transform: scale(1.05);
+            }
+            
+            .testimonial-rating-overlay {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(0, 0, 0, 0.6);
+                backdrop-filter: blur(10px);
+                padding: 0.5rem 1rem;
+                border-radius: 50px;
+                z-index: 2;
+            }
+            
             .testimonial-rating {
                 color: #ffc107;
-                font-size: 0.75rem;
-                margin-bottom: 0.5rem;
+                font-size: 0.85rem;
                 display: flex;
-                gap: 2px;
-                flex-wrap: wrap;
+                gap: 3px;
+                align-items: center;
+                justify-content: center;
             }
             
             .testimonial-rating i {
-                font-size: 0.75rem;
+                font-size: 0.85rem;
                 line-height: 1;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            
+            .testimonial-card-medical .col-8 .d-flex,
+            .testimonial-card-medical .col-lg-8 .d-flex,
+            .testimonial-card-medical .col-xl-9 .d-flex {
+                height: 100%;
+                min-height: 200px;
+            }
+            
+            .testimonial-card-medical .col-8,
+            .testimonial-card-medical .col-lg-8,
+            .testimonial-card-medical .col-xl-9 {
+                display: flex;
+                flex-direction: column;
+                min-height: 200px;
+            }
+            
+            .testimonial-card-medical .col-4,
+            .testimonial-card-medical .col-lg-4,
+            .testimonial-card-medical .col-xl-3 {
+                min-height: 200px;
             }
             
             @media (max-width: 768px) {
+                .testimonial-rating-overlay {
+                    padding: 0.4rem 0.8rem;
+                }
+                
                 .testimonial-rating {
-                    font-size: 0.65rem;
+                    font-size: 0.7rem;
+                    gap: 2px;
                 }
                 
                 .testimonial-rating i {
-                    font-size: 0.65rem;
+                    font-size: 0.7rem;
+                }
+                
+                .testimonial-image-wrapper {
+                    min-height: 150px;
                 }
             }
             
