@@ -1,24 +1,37 @@
 @extends('layouts.front.app')
 @section('content')
 
+    <!-- Hero Section - Elegant Medical Store -->
     <div class="header-carousel owl-carousel">
         @foreach($slideshows as $slideshow)
-            <div class="header-carousel-item bg-primary">
+            <div class="header-carousel-item">
                 <div class="carousel-caption">
                     <div class="container">
-                        <div class="row g-4 align-items-center">
-                            <div class="col-lg-7 animated fadeInLeft">
-                                <div class="text-sm-center text-md-start">
-                                    <h4 class="text-white text-uppercase fw-bold mb-4">{{ $slideshow->judul_slideshows }}</h4>
-                                    <h1 class="display-1 text-white mb-4">{{ $slideshow->text1_slideshows }}</h1>
-                                    <p class="mb-5 fs-5">
+                        <div class="row g-5 align-items-center min-vh-90">
+                            <div class="col-lg-7">
+                                <div class="hero-content text-white text-center text-lg-start">
+                                    <span class="hero-badge wow fadeInDown" data-wow-delay="0.2s">
+                                        <i class="fas fa-certificate me-2"></i>{{ $slideshow->judul_slideshows }}
+                                    </span>
+                                    <h1 class="hero-title wow fadeInUp" data-wow-delay="0.3s">
+                                        {{ $slideshow->text1_slideshows }}
+                                    </h1>
+                                    <p class="hero-subtitle wow fadeInUp" data-wow-delay="0.5s">
                                         {{ $slideshow->text2_slideshows }}
                                     </p>
+                                    <div class="hero-buttons d-flex flex-wrap gap-3 mt-4 wow fadeInUp justify-content-center justify-content-lg-start" data-wow-delay="0.7s">
+                                        <a href="{{ URL('/katalog') }}" class="btn btn-medical">
+                                            <i class="fas fa-shopping-cart me-2"></i>Lihat Produk
+                                        </a>
+                                        <a href="https://wa.me/{{$kontak->telepon_kontaks}}?text=Halo, saya tertarik dengan produk alat kesehatan Anda" class="btn btn-medical-outline" target="_blank">
+                                            <i class="fab fa-whatsapp me-2"></i>Konsultasi Gratis
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-lg-5 animated fadeInRight">
-                                <div class="calrousel-img" style="object-fit: cover;">
-                                    <img src="{{URL::asset('storage/'.$slideshow->gambar_slideshows) }}" class="img-fluid w-100" alt="">
+                            <div class="col-lg-5">
+                                <div class="hero-image-wrapper float-animation">
+                                    <img src="{{URL::asset('storage/'.$slideshow->gambar_slideshows) }}" class="img-fluid rounded-4 shadow-lg" alt="{{ $slideshow->judul_slideshows }}" loading="eager" fetchpriority="high" style="border: 5px solid rgba(255,255,255,0.2);">
                                 </div>
                             </div>
                         </div>
@@ -28,23 +41,25 @@
         @endforeach
     </div>
 
-    <!-- Feature Start -->
-    <div class="container-fluid feature bg-light py-5">
+    <!-- Feature Start - Elegant Cards -->
+    <div class="container-fluid feature bg-light py-5" style="background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);">
         <div class="container py-5">
-            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                <h4 class="text-primary">Tentang Kami</h4>
-                <h1 class="display-4 mb-4">{{ $tentang_kami->text1_tentang_kamis }}</h1>
-                <p class="mb-0">{{ $tentang_kami->text2_tentang_kamis }}</p>
+            <div class="section-header text-center mx-auto wow fadeInUp" data-wow-delay="0.2s">
+                <span class="section-badge">
+                    <i class="fas fa-star me-2"></i>Tentang Kami
+                </span>
+                <h1 class="section-title">{{ $tentang_kami->text1_tentang_kamis }}</h1>
+                <p class="lead text-muted">{{ $tentang_kami->text2_tentang_kamis }}</p>
             </div>
             <div class="row g-4">
-                @foreach($tentang_kami_details as $tentang_kami_detail)
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="feature-item p-4 pt-0">
-                            <div class="feature-icon p-4 mb-4">
-                                <i class="far fa-{{$tentang_kami_detail->icon_tentang_kami_details}} fa-3x"></i>
+                @foreach($tentang_kami_details as $index => $tentang_kami_detail)
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="{{ 0.2 + ($index * 0.1) }}s">
+                        <div class="feature-card">
+                            <div class="feature-icon-wrapper">
+                                <i class="far fa-{{$tentang_kami_detail->icon_tentang_kami_details}}"></i>
                             </div>
-                            <h4 class="mb-4">{{ $tentang_kami_detail->judul_tentang_kami_details }}</h4>
-                            <p class="mb-4">{!! nl2br($tentang_kami_detail->konten_tentang_kami_details) !!}</p>
+                            <h4 class="mb-3 fw-bold" style="color: var(--medical-dark);">{{ $tentang_kami_detail->judul_tentang_kami_details }}</h4>
+                            <p class="mb-0 text-muted">{!! nl2br($tentang_kami_detail->konten_tentang_kami_details) !!}</p>
                         </div>
                     </div>
                 @endforeach
@@ -53,28 +68,36 @@
     </div>
     <!-- Feature End -->
 
-    <!-- About Start -->
-    <div class="container-fluid bg-light about pb-5">
+    <!-- About Start - Elegant Section -->
+    <div class="container-fluid bg-light about pb-5" style="background: white;">
         <div class="container pb-5">
-            <div class="row g-5">
+            <div class="row g-5 align-items-center">
                 <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
-                    <div class="bg-white rounded p-5 h-100">
-                        <div class="row g-4 justify-content-center">
-                            <div class="col-12">
-                                <div class="rounded bg-light">
-                                    <img src="{{URL::asset('storage/'.$tentang_kami->gambar_tentang_kamis) }}" class="img-fluid rounded w-100" alt="">
-                                </div>
+                    <div class="position-relative">
+                        <div class="rounded-4 overflow-hidden shadow-lg">
+                            <img src="{{URL::asset('storage/'.$tentang_kami->gambar_tentang_kamis) }}" class="img-fluid w-100" alt="Tentang Kami" loading="lazy" style="transition: transform 0.6s ease;">
+                        </div>
+                        <div class="position-absolute top-0 start-0 m-4">
+                            <div class="bg-white rounded-3 p-3 shadow" style="background: var(--medical-gradient); color: white;">
+                                <i class="fas fa-award fa-2x"></i>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
-                    <div class="about-item-content bg-white rounded p-5 h-100">
-                        <h4 class="text-primary">Tentang {{ $aplikasi->nama_aplikasis }}</h4>
-                        <p>{!! nl2br($tentang_kami->konten_sekilas_tentang_kamis) !!}
-                        </p>
-                        <div style="text-align:center; padding-top:20px">
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="{{ URL('/tentang-kami') }}">Kenali Kami Lebih Jauh</a>
+                    <div class="ps-xl-4">
+                        <span class="section-badge">
+                            <i class="fas fa-info-circle me-2"></i>Tentang Kami
+                        </span>
+                        <h2 class="section-title text-start mb-4" style="font-size: 2.5rem;">Tentang {{ $aplikasi->nama_aplikasis }}</h2>
+                        <p class="lead text-muted mb-4" style="line-height: 1.8;">{!! nl2br($tentang_kami->konten_sekilas_tentang_kamis) !!}</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a class="btn btn-medical" href="{{ URL('/tentang-kami') }}">
+                                <i class="fas fa-arrow-right me-2"></i>Kenali Kami Lebih Jauh
+                            </a>
+                            <a class="btn btn-medical-outline" href="{{ URL('/kontak') }}" style="border-color: var(--medical-primary); color: var(--medical-primary);">
+                                <i class="fas fa-phone me-2"></i>Hubungi Kami
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -83,29 +106,29 @@
     </div>
     <!-- About End -->
 
-    <!-- Service Start -->
-    <div class="container-fluid service py-5">
+    <!-- Service Start - Modern Cards -->
+    <div class="container-fluid service py-5" style="background: white;">
         <div class="container py-5">
-            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                <h4 class="text-primary">Layanan</h4>
-                <h1 class="display-4 mb-4">{{ $layanan->text1_layanans }}</h1>
-                <p class="mb-0">{{ $layanan->text2_layanans }}</p>
+            <div class="section-header text-center mx-auto wow fadeInUp" data-wow-delay="0.2s">
+                <span class="section-badge">
+                    <i class="fas fa-concierge-bell me-2"></i>Layanan Kami
+                </span>
+                <h1 class="section-title">{{ $layanan->text1_layanans }}</h1>
+                <p class="lead text-muted">{{ $layanan->text2_layanans }}</p>
             </div>
             <div class="row g-4 justify-content-center">
-                @foreach($layanan_details as $layanan_detail)
-                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="service-item">
-                            <div class="service-img">
-                                <img src="{{URL::asset('storage/'.$layanan_detail->gambar_layanan_details) }}" class="img-fluid rounded-top w-100" alt="">
-                                <div class="service-icon p-3">
-                                    <i class="fa fa-{{$layanan_detail->icon_layanan_details}} fa-2x"></i>
+                @foreach($layanan_details as $index => $layanan_detail)
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="{{ 0.2 + ($index * 0.1) }}s">
+                        <div class="service-card-medical">
+                            <div class="service-image-medical">
+                                <img src="{{URL::asset('storage/'.$layanan_detail->gambar_layanan_details) }}" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="{{ $layanan_detail->judul_layanan_details }}" loading="lazy">
+                                <div class="service-icon-medical">
+                                    <i class="fa fa-{{$layanan_detail->icon_layanan_details}}"></i>
                                 </div>
                             </div>
-                            <div class="service-content p-4">
-                                <div class="service-content-inner">
-                                    <a href="#" class="d-inline-block h4 mb-4">{{ $layanan_detail->judul_layanan_details }}</a>
-                                    <p class="mb-4">{!! nl2br($layanan_detail->konten_layanan_details) !!}</p>
-                                </div>
+                            <div class="p-4 pt-5">
+                                <h4 class="mb-3 fw-bold" style="color: var(--medical-dark);">{{ $layanan_detail->judul_layanan_details }}</h4>
+                                <p class="mb-0 text-muted">{!! nl2br($layanan_detail->konten_layanan_details) !!}</p>
                             </div>
                         </div>
                     </div>
@@ -115,27 +138,32 @@
     </div>
     <!-- Service End -->
 
-    <!-- FAQs Start -->
-    <div class="container-fluid faq-section bg-light py-5">
+    <!-- FAQs Start - Elegant Accordion -->
+    <div class="container-fluid faq-section bg-light py-5" style="background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
                     <div class="h-100">
                         <div class="mb-5">
-                            <h4 class="text-primary">Pertanyaan</h4>
-                            <h1 class="display-4 mb-0">Pertanyaan Umum Yang Sering Diajukan</h1>
+                            <span class="section-badge">
+                                <i class="fas fa-question-circle me-2"></i>Pertanyaan
+                            </span>
+                            <h1 class="section-title text-start mb-3">Pertanyaan Umum Yang Sering Diajukan</h1>
+                            <p class="lead text-muted">Temukan jawaban untuk pertanyaan yang sering ditanyakan tentang produk dan layanan kami</p>
                         </div>
-                        <div class="accordion" id="accordionExample">
-                            @foreach($pertanyaan_umums as $pertanyaan_umum)
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            P: {{ $pertanyaan_umum->pertanyaan_pertanyaan_umums }}
+                        <div class="accordion accordion-medical" id="accordionExample">
+                            @foreach($pertanyaan_umums as $index => $pertanyaan_umum)
+                                <div class="accordion-item border-0 mb-3 rounded-3 shadow-sm">
+                                    <h2 class="accordion-header" id="heading{{ $index }}">
+                                        <button class="accordion-button {{ $index === 0 ? '' : 'collapsed' }}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $index }}" aria-expanded="{{ $index === 0 ? 'true' : 'false' }}" aria-controls="collapse{{ $index }}">
+                                            <i class="fas fa-question-circle text-primary me-3"></i>
+                                            {{ $pertanyaan_umum->pertanyaan_pertanyaan_umums }}
                                         </button>
                                     </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show active" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body rounded">
-                                            J: {!! nl2br($pertanyaan_umum->jawaban_pertanyaan_umums) !!}
+                                    <div id="collapse{{ $index }}" class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}" aria-labelledby="heading{{ $index }}" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <i class="fas fa-check-circle text-primary me-2"></i>
+                                            {!! nl2br($pertanyaan_umum->jawaban_pertanyaan_umums) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -144,73 +172,112 @@
                     </div>
                 </div>
                 <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
-                    <img src="{{URL::asset('template/front/img/faq.png') }}" class="img-fluid w-100" alt="">
+                    <div class="text-center">
+                        <img src="{{URL::asset('template/front/img/faq.png') }}" class="img-fluid rounded-4 shadow-lg float-animation" alt="FAQ" loading="lazy" style="max-width: 100%;">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- FAQs End -->
 
-    <!-- Katalog Start -->
-    <div class="container-fluid team py-5">
-        <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-            <h4 class="text-primary">Katalog</h4>
-            <h1 class="display-4 mb-4">Produk Terbaru Dari Kami</h1>
-            <p class="mb-0">Berikut beberapa produk terbaru yang kami jual</p>
-        </div>
-        <div class="row g-4 justify-content-center">
-            @foreach($katalogs->data as $katalog)
-                <div class="col-md-2 col-lg-2 col-xl-2 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="team-item">
-                        <a data-fancybox="gallery" href="{{URL::asset('storage/'.$aplikasi->logo_text_aplikasis)}}" data-caption="{{$katalog->nama_barangs}}">
-                            <div class="team-img">
-                                @if($katalog->foto_barangs == '')
-                                    <img src="{{URL::asset('storage/'.$aplikasi->logo_text_aplikasis) }}" class="img-fluid rounded-top w-100" alt="">
-                                @else
-                                    <img src="{{URL::asset('https://penawaran.putrakelanagemilang.com/storage/'.$katalog->foto_barangs) }}" class="img-fluid rounded-top w-100" alt="">
-                                @endif
+    <!-- Katalog Start - Elegant Product Cards -->
+    <div class="container-fluid team py-5" style="background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);">
+        <div class="container py-5">
+            <div class="section-header text-center mx-auto wow fadeInUp" data-wow-delay="0.2s">
+                <span class="section-badge">
+                    <i class="fas fa-box me-2"></i>Produk Terbaru
+                </span>
+                <h1 class="section-title">Produk Terbaru Dari Kami</h1>
+                <p class="lead text-muted">Berikut beberapa produk terbaru yang kami jual</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                @if(isset($katalogs->data) && count($katalogs->data) > 0)
+                    @foreach($katalogs->data as $index => $katalog)
+                        <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="{{ 0.2 + ($index * 0.1) }}s">
+                            <div class="product-card-medical">
+                                <a data-fancybox="gallery" href="{{ $katalog->foto_barangs != '' ? URL::asset('https://penawaran.putrakelanagemilang.com/storage/'.$katalog->foto_barangs) : URL::asset('storage/'.$aplikasi->logo_text_aplikasis) }}" data-caption="{{$katalog->nama_barangs}}">
+                                    <div class="product-image-wrapper">
+                                        @if($katalog->foto_barangs == '')
+                                            <img src="{{URL::asset('storage/'.$aplikasi->logo_text_aplikasis) }}" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="{{ $katalog->nama_barangs }}" loading="lazy">
+                                        @else
+                                            <img src="{{URL::asset('https://penawaran.putrakelanagemilang.com/storage/'.$katalog->foto_barangs) }}" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="{{ $katalog->nama_barangs }}" loading="lazy">
+                                        @endif
+                                        <div class="product-overlay-medical">
+                                            <i class="fas fa-search-plus"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="p-4">
+                                    <h5 class="mb-2 fw-bold" style="color: var(--medical-dark);">{{ $katalog->nama_barangs }}</h5>
+                                    <div class="d-flex flex-column gap-1">
+                                        <small class="text-muted"><i class="fas fa-tag me-1"></i>Merk: <strong>{{ $katalog->nama_merks }}</strong></small>
+                                        <small class="text-muted"><i class="fas fa-cog me-1"></i>Tipe: <strong>{{ $katalog->nama_tipes }}</strong></small>
+                                    </div>
+                                    <a href="https://wa.me/{{$kontak->telepon_kontaks}}?text=Halo, saya tertarik dengan produk {{ $katalog->nama_barangs }}" class="btn btn-sm btn-medical w-100 mt-3" target="_blank">
+                                        <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                                    </a>
+                                </div>
                             </div>
-                        </a>
-                        <div class="team-title p-4">
-                            <h4 class="mb-0">{{ $katalog->nama_barangs }}</h4>
-                            <p class="mb-0" style="color:#c2c2c2">Merk&nbsp;: {{ $katalog->nama_merks }}</p>
-                            <p class="mb-0" style="color:#c2c2c2">Tipe&nbsp;&nbsp;: {{ $katalog->nama_tipes }}</p>
                         </div>
+                    @endforeach
+                @else
+                    <div class="col-12 text-center">
+                        <p class="text-muted">Tidak ada produk tersedia saat ini.</p>
                     </div>
-                </div>
-            @endforeach
-            <div style="text-align:center; padding-top:20px">
-                <a class="btn btn-primary rounded-pill py-3 px-5" href="{{ URL('/katalog') }}">Lihat semua produk</a>
+                @endif
+            </div>
+            <div class="text-center mt-5 wow fadeInUp" data-wow-delay="0.5s">
+                <a class="btn btn-medical btn-lg px-5" href="{{ URL('/katalog') }}">
+                    <i class="fas fa-th-large me-2"></i>Lihat Semua Produk
+                </a>
             </div>
         </div>
     </div>
     <!-- Katalog End -->
 
-    <!-- Testimonial Start -->
-    <div class="container-fluid testimonial pb-5">
+    <!-- Testimonial Start - Elegant Cards -->
+    <div class="container-fluid testimonial pb-5" style="background: white;">
         <div class="container pb-5">
-            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-                <h4 class="text-primary">Testimonial</h4>
-                <h1 class="display-4 mb-4">Apa Kata Mereka</h1>
+            <div class="section-header text-center mx-auto wow fadeInUp" data-wow-delay="0.2s">
+                <span class="section-badge">
+                    <i class="fas fa-quote-left me-2"></i>Testimonial
+                </span>
+                <h1 class="section-title">Apa Kata Mereka</h1>
+                <p class="lead text-muted">Testimoni dari pelanggan yang puas dengan layanan kami</p>
             </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.2s">
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.3s">
                 @foreach($testimonials as $testimonial)
-                    <div class="testimonial-item bg-light rounded">
+                    <div class="testimonial-card-medical">
                         <div class="row g-0">
-                            <div class="col-4  col-lg-4 col-xl-3">
-                                <div class="h-100">
+                            <div class="col-4 col-lg-4 col-xl-3">
+                                <div class="h-100 position-relative">
                                     @if($testimonial->gambar_testimonials != 'template/front/img/testimonial.png')
-                                        <img src="{{URL::asset('storage/'.$testimonial->gambar_testimonials) }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
+                                        <img src="{{URL::asset('storage/'.$testimonial->gambar_testimonials) }}" class="img-fluid h-100 w-100" style="object-fit: cover;" alt="{{ $testimonial->nama_testimonials }}" loading="lazy">
                                     @else
-                                        <img src="{{URL::asset('template/front/img/testimonial.png') }}" class="img-fluid h-100 rounded" style="object-fit: cover;" alt="">
-                                    @endif                                
+                                        <img src="{{URL::asset('template/front/img/testimonial.png') }}" class="img-fluid h-100 w-100" style="object-fit: cover;" alt="{{ $testimonial->nama_testimonials }}" loading="lazy">
+                                    @endif
+                                    <div class="position-absolute top-0 start-0 m-3">
+                                        <div class="testimonial-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-8 col-lg-8 col-xl-9">
-                                <div class="d-flex flex-column my-auto text-start p-4">
-                                    <h4 class="text-dark mb-0">{{ $testimonial->nama_testimonials }}</h4>
-                                    <p class="mb-3">{{ $testimonial->jabatan_testimonials }}</p>
-                                    <p class="mb-0">{!! nl2br($testimonial->konten_testimonials) !!}</p>
+                                <div class="d-flex flex-column h-100 p-4">
+                                    <div class="mb-3">
+                                        <i class="fas fa-quote-left text-primary mb-2" style="font-size: 1.5rem; opacity: 0.3;"></i>
+                                    </div>
+                                    <p class="mb-auto text-muted" style="line-height: 1.8;">{!! nl2br($testimonial->konten_testimonials) !!}</p>
+                                    <div class="mt-3 pt-3 border-top">
+                                        <h5 class="mb-1 fw-bold" style="color: var(--medical-dark);">{{ $testimonial->nama_testimonials }}</h5>
+                                        <small class="text-muted"><i class="fas fa-briefcase me-1"></i>{{ $testimonial->jabatan_testimonials }}</small>
+                                    </div>
                                 </div>
                             </div>
                         </div>

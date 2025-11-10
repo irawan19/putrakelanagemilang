@@ -793,6 +793,32 @@
 
 
 /*** Footer Start ***/
+.footer-wrapper .footer {
+    background: transparent !important;
+}
+
+.footer-wrapper .footer-item a {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.footer-wrapper .footer-item a:hover {
+    color: white !important;
+}
+
+.footer-wrapper .footer-item .footer-btn a {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+}
+
+.footer-wrapper .footer-item .footer-btn a:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+}
+
+.footer-wrapper .footer-item .footer-btn a:hover i {
+    color: white !important;
+}
+
 .footer {
     background: var(--bs-dark);
 }

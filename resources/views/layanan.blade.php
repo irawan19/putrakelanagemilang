@@ -14,7 +14,7 @@
                     <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="service-item">
                             <div class="service-img">
-                                <img src="{{URL::asset('storage/'.$layanan_detail->gambar_layanan_details) }}" class="img-fluid rounded-top w-100" alt="">
+                                <img src="{{URL::asset('storage/'.$layanan_detail->gambar_layanan_details) }}" class="img-fluid rounded-top w-100" alt="{{ $layanan_detail->judul_layanan_details }}" loading="lazy">
                                 <div class="service-icon p-3">
                                     <i class="fa fa-{{$layanan_detail->icon_layanan_details}} fa-2x"></i>
                                 </div>
