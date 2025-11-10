@@ -251,8 +251,8 @@
     <!-- Katalog End -->
 
     <!-- Testimonial Start - Elegant Cards -->
-    <div class="container-fluid testimonial pb-5" style="background: white;">
-        <div class="container pb-5">
+    <div class="container-fluid testimonial pb-4" style="background: white;">
+        <div class="container pb-4">
             <div class="section-header text-center mx-auto wow fadeInUp" data-wow-delay="0.2s">
                 <span class="section-badge">
                     <i class="fas fa-quote-left me-2"></i>Testimonial

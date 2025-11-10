@@ -908,21 +908,112 @@
                 color: white;
             }
             
-            /* Testimonial Cards */
-            .testimonial-card-medical {
+            /* Job Cards - Elegant (Lowongan Kerja) */
+            .job-card-medical {
                 background: white;
                 border-radius: 20px;
                 overflow: hidden;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                transition: all 0.4s ease;
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+                border: 1px solid rgba(0, 102, 204, 0.1);
                 height: 100%;
                 display: flex;
                 flex-direction: column;
             }
             
+            .job-card-medical:hover {
+                transform: translateY(-12px) scale(1.02);
+                box-shadow: 0 25px 50px rgba(0, 102, 204, 0.2);
+            }
+            
+            .job-image-wrapper {
+                position: relative;
+                overflow: hidden;
+                aspect-ratio: 16/9;
+                min-height: 180px;
+            }
+            
+            .job-image-wrapper img {
+                transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+            
+            .job-card-medical:hover .job-image-wrapper img {
+                transform: scale(1.15) rotate(2deg);
+            }
+            
+            .job-overlay-medical {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 102, 204, 0.7);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: opacity 0.4s ease;
+            }
+            
+            .job-card-medical:hover .job-overlay-medical {
+                opacity: 0.9;
+            }
+            
+            .job-overlay-medical i {
+                font-size: 3rem;
+                color: white;
+                animation: pulse 2s infinite;
+            }
+            
+            .job-card-medical h5 a {
+                transition: color 0.3s ease;
+            }
+            
+            .job-card-medical h5 a:hover {
+                color: var(--medical-primary) !important;
+            }
+            
+            /* Testimonial Cards */
+            .testimonial-card-medical {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                z-index: 1;
+            }
+            
             .testimonial-card-medical:hover {
                 transform: translateY(-8px);
-                box-shadow: 0 20px 40px rgba(0, 102, 204, 0.15);
+                box-shadow: 0 15px 35px rgba(0, 102, 204, 0.2);
+                z-index: 2;
+            }
+            
+            /* Owl Carousel Stage - Testimonial */
+            .testimonial-carousel .owl-stage-outer {
+                margin-top: 0 !important;
+                padding: 15px 0;
+            }
+            
+            .testimonial-carousel .owl-stage {
+                display: flex;
+                align-items: stretch;
+            }
+            
+            .testimonial-carousel .owl-item {
+                display: flex;
+                height: 100%;
+                padding: 0 10px;
+            }
+            
+            .testimonial-carousel .owl-item > div {
+                width: 100%;
+                display: flex;
+                height: 100%;
             }
             
             .testimonial-card-medical .row {
